@@ -85,6 +85,8 @@ html[data-theme="mint"] {
   --chip-b-bg: rgba(63, 110, 121, 0.08);
   --mosaic: #62B8A0, #F2C94C, #EB6584, #4F7C87, #FFFFFF, #EEF7F3, #FFFFFF;
   --sec-alt-bg: #EEF7F3;
+  --sel-w: 3px;
+  --sel-line: #277A65;
 }
 
 /* --- theme: bold（黒と黄・2pxの枠線・影なし）--- 生成元: themes/bold.json */
@@ -162,6 +164,8 @@ html[data-theme="bold"] {
   --chip-b-bg: rgba(27, 27, 27, 0.08);
   --mosaic: #E3E143, #1B1B1B, #F9F8D9, #FFFFFF, #FFFFFF, #F2F1E2, #E3E143;
   --sec-alt-bg: #F9F8DE;
+  --sel-w: 4px;
+  --sel-line: #E3E143;
 }
 /* THEMES:GENERATED:END */
 
