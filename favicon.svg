@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <!-- Design Themes favicon: palette（各ページ右上のテーマ切り替えボタンと同じ形）/ SAI's DESIGN SYSTEM Favicon (B: ink tile + white line) -->
+  <rect width="24" height="24" rx="4" fill="#111"/>
+  <g transform="translate(3.6 3.6) scale(.7)" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"/>
+    <g fill="#fff" stroke="none">
+      <circle cx="13.5" cy="6.5" r="1.5"/><circle cx="17.5" cy="10.5" r="1.5"/>
+      <circle cx="6.5" cy="12.5" r="1.5"/><circle cx="8.5" cy="7.5" r="1.5"/>
+    </g>
+  </g>
+</svg>
