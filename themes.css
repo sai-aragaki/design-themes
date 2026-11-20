@@ -1,0 +1,263 @@
+/* =========================================================
+   DESIGN THEMES — テーマ本体（テーマのサイトから各ページが読み込む）
+   正本: 00_master/80_開発室/projects/design-themes/site/themes.css
+   GENERATED 区間は build-themes.py が themes/*.json から組み立てる。手で書き換えないこと。
+   土台（SAI v2）はブロックを持たず、各ページの :root と、ページに書き写した base.css が効く。
+   ========================================================= */
+
+/* 読み込めたことの目印。themes.js はこれが見えたときだけ data-theme を付ける
+   （CSS が読めずに JS だけ動いたときに、中途半端な見た目にしないため） */
+:root { --themes-loaded: 1; }
+
+/* THEMES:GENERATED:START */
+/* --- theme: mint（白と淡いミント・緑のアクセント・黄色のマーカー）--- 生成元: themes/mint.json */
+html[data-theme="mint"] {
+  --paper: #FFFFFF;
+  --paper-rgb: 255, 255, 255;
+  --white: #FFFFFF;
+  --ink: #16201D;
+  --text: #33403C;
+  --muted: #5B6A65;
+  --rule: #DCEAE4;
+  --rule-strong: #A9C9BE;
+  --tint: #EEF7F3;
+  --teal: #277A65;
+  --teal-deep: #3F6E79;
+  --coral: #B03A57;
+  --yellow: #F2C94C;
+  --deep-teal: #3F6E79;
+  --deep: #3F6E79;
+  --en: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+  --stripe: linear-gradient(transparent, transparent);
+  --r-card: 12px;
+  --r-pill: 999px;
+  --r-input: 12px;
+  --r-xs: 6px;
+  --r-inner: 12px;
+  --r-band-card: 12px;
+  --bw: 1px;
+  --r-scale: 1;
+  --card-line: var(--rule);
+  --input-line: var(--rule-strong);
+  --fw-display: 800;
+  --ls-display: 0.02em;
+  --ls-label: 0.16em;
+  --label-case: uppercase;
+  --lh-body: 1.9;
+  --shadow-card: none;
+  --shadow-pop: 0 24px 60px rgba(22, 32, 29, .10);
+  --ico-sw: 1.75;
+  --ico-sw-lg: 1.5;
+  --panel: #EEF7F3;
+  --paper-2: #EEF7F3;
+  --ink-soft: #33403C;
+  --ink-faint: #5B6A65;
+  --teal-wash: #E8F5F1;
+  --coral-wash: #FCE9EE;
+  --sand: #B03A57;
+  --sand-wash: #FCE9EE;
+  --line: #DCEAE4;
+  --line-soft: #EEF4F2;
+  --line-strong: #A9C9BE;
+  --paper-warm: #EEF7F3;
+  --card: #FFFFFF;
+  --shadow: none;
+  --caution: #B0363A;
+  --track-bg: #DCEAE4;
+  --track-bg-soft: #EEF4F2;
+  --teal-ink: #277A65;
+  --sand-ink: #B03A57;
+  --sand-ink-soft: #B03A57;
+  --coral-ink: #B0363A;
+  --pull-ink: #16201D;
+  --lang-en-bg: #EEF7F3;
+  --lang-en-fg: #5B6A65;
+  --teal-rgb: 98, 184, 160;
+  --coral-rgb: 176, 58, 87;
+  --yellow-rgb: 242, 201, 76;
+  --deep-rgb: 63, 110, 121;
+  --mark-bg: rgba(242, 201, 76, 0.6);
+  --mark-c-bg: rgba(176, 58, 87, 0.2);
+  --accent-band: #EEF7F3;
+  --footer-bg: #EEF7F3;
+  --footer-fg: #16201D;
+  --chip-g-bg: rgba(98, 184, 160, 0.34);
+  --chip-b-bg: rgba(63, 110, 121, 0.08);
+  --mosaic: #62B8A0, #F2C94C, #EB6584, #4F7C87, #FFFFFF, #EEF7F3, #FFFFFF;
+  --sec-alt-bg: #EEF7F3;
+}
+
+/* --- theme: bold（黒と黄・2pxの枠線・影なし）--- 生成元: themes/bold.json */
+html[data-theme="bold"] {
+  --paper: #FAF9EC;
+  --paper-rgb: 250, 249, 236;
+  --white: #FFFFFF;
+  --ink: #1B1B1B;
+  --text: #1B1B1B;
+  --muted: #6E6B5E;
+  --rule: #E4E2D2;
+  --rule-strong: #1B1B1B;
+  --tint: #F2F1E2;
+  --teal: #1B1B1B;
+  --teal-deep: #1B1B1B;
+  --coral: #6E6A12;
+  --yellow: #E3E143;
+  --deep-teal: #1B1B1B;
+  --deep: #1B1B1B;
+  --en: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+  --stripe: repeating-linear-gradient(135deg, #E3E143 0 16px, #1B1B1B 16px 18px, #E3E143 18px 34px);
+  --r-card: 12px;
+  --r-pill: 999px;
+  --r-input: 12px;
+  --r-xs: 999px;
+  --r-inner: 12px;
+  --r-band-card: 12px;
+  --bw: 2px;
+  --r-scale: 1;
+  --card-line: var(--ink);
+  --input-line: var(--ink);
+  --fw-display: 700;
+  --ls-display: 0;
+  --ls-label: 0.08em;
+  --label-case: uppercase;
+  --lh-body: 1.8;
+  --shadow-card: none;
+  --shadow-pop: none;
+  --ico-sw: 2;
+  --ico-sw-lg: 2;
+  --panel: #F3F1DF;
+  --paper-2: #F3F1DF;
+  --ink-soft: #1B1B1B;
+  --ink-faint: #6E6B5E;
+  --teal-wash: #E3E143;
+  --coral-wash: #F6F4C4;
+  --sand: #6E6A12;
+  --sand-wash: #F6F4C4;
+  --line: #E0DECB;
+  --line-soft: #EDEBD9;
+  --line-strong: #1B1B1B;
+  --paper-warm: #F3F1DF;
+  --card: #FFFFFF;
+  --shadow: none;
+  --caution: #9B2C2C;
+  --track-bg: #E0DECB;
+  --track-bg-soft: #EDEBD9;
+  --teal-ink: #1B1B1B;
+  --sand-ink: #6E6A12;
+  --sand-ink-soft: #6E6A12;
+  --coral-ink: #9B2C2C;
+  --pull-ink: #1B1B1B;
+  --lang-en-bg: #F0EFE2;
+  --lang-en-fg: #5B5848;
+  --teal-rgb: 227, 225, 67;
+  --coral-rgb: 110, 106, 18;
+  --yellow-rgb: 227, 225, 67;
+  --deep-rgb: 27, 27, 27;
+  --mark-bg: rgba(227, 225, 67, 0.6);
+  --mark-c-bg: rgba(110, 106, 18, 0.2);
+  --accent-band: #E3E143;
+  --footer-bg: #E3E143;
+  --footer-fg: #1B1B1B;
+  --chip-g-bg: rgba(227, 225, 67, 0.34);
+  --chip-b-bg: rgba(27, 27, 27, 0.08);
+  --mosaic: #E3E143, #1B1B1B, #F9F8D9, #FFFFFF, #FFFFFF, #F2F1E2, #E3E143;
+  --sec-alt-bg: #F9F8DE;
+}
+/* THEMES:GENERATED:END */
+
+/* =========================================================
+   切り替えボタン（.ts- 接頭辞。ページ側のCSSと衝突させない）
+   ページ側は <div data-theme-switch></div> を1つ置くだけ。
+   ========================================================= */
+
+[data-theme-switch] { position: relative; flex: none; line-height: 0; }
+
+/* ヘッダーの無いページ用：右上に浮かせる */
+[data-theme-switch][data-ts-float] { position: fixed; top: 16px; right: 16px; z-index: 300; }
+[data-theme-switch][data-ts-float] .ts-btn { background: var(--white); }
+
+.ts-btn {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background .18s, color .18s, border-color .18s;
+}
+
+.ts-btn:hover { background: var(--ink); color: var(--white); }
+.ts-btn:focus-visible { outline: 1px solid var(--ink); outline-offset: 2px; }
+
+.ts-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: var(--ico-sw);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.ts-btn svg circle[data-dot] { fill: currentColor; stroke: none; }
+
+.ts-menu {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  min-width: 290px;
+  background: var(--white);
+  border: var(--bw) solid var(--ink);
+  border-radius: var(--r-card);
+  box-shadow: var(--shadow-pop);
+  padding: 6px;
+  line-height: 1.5;
+  z-index: 200;
+}
+
+.ts-menu[hidden] { display: none; }
+
+.ts-opt {
+  appearance: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  text-align: left;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  padding: 9px 10px;
+  border-radius: var(--r-card);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background .18s;
+}
+
+.ts-opt:hover { background: var(--tint); }
+.ts-opt:focus-visible { outline: 1px solid var(--ink); outline-offset: -1px; }
+.ts-dots { display: flex; gap: 3px; flex: none; }
+.ts-dots i { display: block; width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--rule-strong); box-sizing: border-box; }
+.ts-text { flex: 1; min-width: 0; }
+.ts-name { font-family: var(--en); font-size: 12px; font-weight: 500; letter-spacing: .04em; }
+.ts-desc { display: block; font-size: 11px; color: var(--muted); line-height: 1.5; margin-top: 1px; }
+.ts-check { margin-left: auto; flex: none; font-size: 11px; color: var(--ink); opacity: 0; }
+.ts-opt[aria-selected="true"] .ts-check { opacity: 1; }
+
+/* research-sai の細いナビの中では一回り小さく */
+.nav-inner > [data-theme-switch] .ts-btn,
+.gnav-inner > [data-theme-switch] .ts-btn { width: 28px; height: 28px; }
+.nav-inner > [data-theme-switch] .ts-btn svg,
+.gnav-inner > [data-theme-switch] .ts-btn svg { width: 16px; height: 16px; }
+
+@media (max-width: 768px) {
+  .ts-btn { width: 32px; height: 32px; }
+  .ts-btn svg { width: 18px; height: 18px; }
+  .ts-menu { min-width: 264px; }
+}

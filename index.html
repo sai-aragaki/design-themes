@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Design Themes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<!-- このサイト自身のテーマ（同じ場所の themes.css / themes.js を読む） -->
+<link rel="stylesheet" href="themes.css">
+<script src="themes.js"></script>
+<style>
+  /* 土台（SAI v2）のパレット。テーマはこの上に html[data-theme] で重なる */
+  :root {
+    --paper: #FAFAFA;
+    --paper-rgb: 250, 250, 250;
+    --white: #FFFFFF;
+    --ink: #111111;
+    --text: #333333;
+    --muted: #808080;
+    --rule: #EEEEEE;
+    --rule-strong: #CCCCCC;
+    --tint: #F5F5F5;
+    --teal: #62B8A0;
+    --coral: #EB6584;
+    --yellow: #F2C94C;
+    --deep-teal: #4F7C87;
+    --en: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+    --jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    --stripe: repeating-linear-gradient(135deg, var(--yellow) 0 14px, var(--teal) 14px 28px, var(--white) 28px 42px, var(--deep-teal) 42px 56px, var(--white) 56px 70px);
+    --ls-display: 0.01em;
+  }
+/* THEMES:CSS:START */
+/* =========================================================
+   DESIGN THEMES — 土台（各ページに書き写す部分）
+   sync-themes.py が各ページの THEMES:CSS 区間に流し込む。ページ側で手で書き換えないこと。
+   ここにあるのは「テーマのサイトが読めなくても効いていてほしいもの」だけ:
+     - 土台（SAI v2）で足りないトークンの既定値
+     - 記事ページの節の帯（全テーマ共通）
+   テーマごとの値・切り替えボタン・切り替えの処理はテーマのサイト（site/themes.css・site/themes.js）にあり、
+   各ページは <link> と <script src> で読み込む。テーマを足す・並べ替える・色を直すときは、ここは触らない。
+   ========================================================= */
+
+/* --- 既定テーマ（sai）: ページ側のパレットに足りないトークンを補う --- */
+:root {
+  /* 形 */
+  --r-card: 0px;        /* カード・パネルの角丸 */
+  --r-pill: 48px;       /* チップ・タグ・ピルボタン */
+  --r-input: 4px;       /* 入力欄 */
+  --r-xs: 3px;          /* トースト等の極小要素 */
+  --r-inner: 12px;      /* 吹き出し・入れ子カード */
+  --r-band-card: 16px;  /* 一段大きいカード */
+  --bw: 1px;            /* カードの枠線幅 */
+  --r-scale: 1;         /* 角丸の倍率。値が散っているページ（research-sai）はこれで一括調整する */
+  /* ページによって罫線トークンの名前が違う（sai-works系は --rule、research系は --line）。
+     var() のフォールバックで両方に対応する。 */
+  --card-line: var(--rule, var(--line));
+  --input-line: var(--rule-strong, var(--line-strong));
+
+  /* ページごとに既定が違うトークン（--paper-rgb / --ls-display）は
+     ここに書かない。各ページの :root で定義し、テーマ側は
+     html[data-theme="..."] ブロックでだけ上書きする。 */
+
+  /* 文字 */
+  --fw-display: 300;         /* 大見出しのウェイト */
+  --ls-label: 0.14em;        /* 欧文ラベルの字間 */
+  --label-case: uppercase;   /* 欧文ラベルの大文字化 */
+  --lh-body: 1.9;            /* 本文の行間 */
+
+  /* 影（既定は使わない。浮かせるテーマ用の受け口） */
+  --shadow-card: none;
+  --shadow-pop: none;
+
+  /* アイコン（線画SVGの線の太さ） */
+  --ico-sw: 1.5;
+  --ico-sw-lg: 1.25;
+
+  /* 装飾 */
+  --caution: #c84e6c;                    /* 注意書きのラベル */
+  --track-bg: #dde5e1;                   /* バーの溝 */
+  --track-bg-soft: #eef1ef;              /* バーの溝（淡い方） */
+  --lang-en-bg: #eef1f5;                 /* 言語バッジ（EN） */
+  --lang-en-fg: #5a6b86;
+  --mark-bg: rgba(98, 184, 160, .34);    /* マーカー線（標準） */
+  --mark-c-bg: rgba(235, 101, 132, .28); /* マーカー線（強調） */
+  --accent-band: var(--stripe);
+  --footer-bg: var(--rule);
+  --footer-fg: var(--muted);
+  --chip-g-bg: rgba(98, 184, 160, .14);
+  --chip-b-bg: rgba(79, 124, 135, .14);
+  --mosaic: #62B8A0, #F2C94C, #EB6584, #4F7C87, #FFFFFF, #FFFFFF, #F5F5F5;
+  /* 記事ページの節の交互の帯 */
+  --sec-bg: var(--white);                /* 奇数番目の節の背景 */
+  --sec-alt-bg: #F6F6F6;                 /* 偶数番目の節の背景（薄いテーマカラー） */
+  --sec-pad-y: 48px;                     /* main 直下の節の上下余白 */
+  --bleed: 100vw;                        /* 画面幅いっぱいに広げるときの幅（帯・ストライプ） */
+  --hero-pb: 56px;                       /* ヘッダー（hero）の下余白。ストライプはこの下、節との境目に置く */
+  --stripe-h: 4px;                       /* ヘッダー下のストライプの太さ */
+}
+
+
+/* --- 記事ページ：節ごとに背景を交互に変える（全テーマ共通） ---
+   奇数番目の節は白、偶数番目は薄いテーマカラー（--sec-alt-bg）。
+   帯は画面幅いっぱいに広げる（box-shadow + clip-path で左右だけ伸ばす）。
+   節は body 直下のページと main 直下のページがある。 */
+/* 対象は research の記事ページ（ナビに .nav-inner / .gnav-inner がある）だけ。
+   sai-works・LP・デザインシステムのページには効かせない。 */
+body:has(.nav-inner, .gnav-inner) { overflow-x: clip; }
+body:has(.nav-inner, .gnav-inner) > section,
+body:has(.nav-inner, .gnav-inner) > main > section { background: var(--sec-bg); box-shadow: 0 0 0 var(--bleed) var(--sec-bg); clip-path: inset(0 calc(var(--bleed) * -1)); }
+body:has(.nav-inner, .gnav-inner) > section:nth-of-type(even),
+body:has(.nav-inner, .gnav-inner) > main > section:nth-of-type(even) { background: var(--sec-alt-bg); box-shadow: 0 0 0 var(--bleed) var(--sec-alt-bg); }
+body:has(.nav-inner, .gnav-inner) > main > section[id^="sec-"] { padding-top: var(--sec-pad-y); padding-bottom: var(--sec-pad-y); }
+/* 最後の節とフッターの間に紙の色の隙間を作らない */
+body:has(.nav-inner, .gnav-inner) section ~ footer,
+body:has(.nav-inner, .gnav-inner) main ~ footer { margin-top: 0 !important; }
+
+/* ヘッダー下のストライプは、帯の境目（最初の節の上端）に描く。
+   ページごとに hero の中の位置（.hero::after / .hero .wrap::after）と余白が違い、
+   帯の端とずれていたので、hero 側のストライプは消して節の ::before に一本化する。
+   hero の下余白は --hero-pb に揃え、hero の下罫線はストライプが代わりをするので消す。 */
+body:has(.nav-inner, .gnav-inner) .hero { padding-bottom: var(--hero-pb) !important; border-bottom-width: 0 !important; }
+body:has(.nav-inner, .gnav-inner) .hero::after,
+body:has(.nav-inner, .gnav-inner) .hero .wrap::after { display: none !important; }
+body:has(.nav-inner, .gnav-inner) > section:first-of-type,
+body:has(.nav-inner, .gnav-inner) > main > section:first-of-type { position: relative; }
+body:has(.nav-inner, .gnav-inner) > section:first-of-type::before,
+body:has(.nav-inner, .gnav-inner) > main > section:first-of-type::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: var(--stripe-h); background: var(--stripe); z-index: 1; }
+/* THEMES:CSS:END */
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--jp); font-size: 15px; line-height: var(--lh-body); }
+  a { color: var(--ink); }
+  code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 13px; background: var(--tint); padding: 1px 6px; border-radius: var(--r-xs); }
+
+  .header { position: sticky; top: 0; z-index: 50; background: rgba(var(--paper-rgb), .86); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid var(--rule); }
+  .header-inner { max-width: 1040px; margin: 0 auto; padding: 14px 16px; display: flex; align-items: center; gap: 16px; }
+  .brand { font-family: var(--en); font-weight: 500; font-size: 13px; letter-spacing: var(--ls-label); text-transform: var(--label-case); color: var(--ink); }
+  .header-right { margin-left: auto; display: flex; align-items: center; gap: 12px; }
+  .header-note { font-size: 12px; color: var(--muted); }
+
+  main { max-width: 1040px; margin: 0 auto; padding: 0 16px 80px; }
+  .hero { padding: 56px 0 32px; }
+  .label { font-family: var(--en); font-weight: 300; font-size: 13px; letter-spacing: var(--ls-label); text-transform: var(--label-case); color: var(--muted); margin: 0 0 10px; }
+  h1 { font-size: 36px; line-height: 1.35; font-weight: var(--fw-display); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 16px; }
+  .lead { max-width: 640px; margin: 0; }
+  .stripe { height: var(--stripe-h); background: var(--stripe); margin: 0 0 40px; }
+
+  section { margin: 0 0 56px; }
+  h2 { font-size: 22px; line-height: 1.5; font-weight: 700; color: var(--ink); margin: 0 0 20px; }
+
+  .themes { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+  .theme-card { background: var(--white); border: var(--bw) solid var(--card-line); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+  .theme-card[aria-current="true"] { outline: 2px solid var(--ink); outline-offset: 2px; }
+  .theme-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+  .theme-name { font-family: var(--en); font-size: 18px; font-weight: 500; color: var(--ink); }
+  .theme-id { font-size: 12px; color: var(--muted); }
+  .tags { display: flex; gap: 6px; flex-wrap: wrap; }
+  .tag { font-size: 11px; line-height: 1; padding: 5px 9px; border: 1px solid var(--rule-strong); border-radius: var(--r-pill); color: var(--text); }
+  .theme-desc { margin: 0; font-size: 13px; line-height: 1.7; }
+  .swatches { display: grid; grid-template-columns: repeat(8, 1fr); gap: 4px; }
+  .sw { aspect-ratio: 1; border-radius: var(--r-xs); border: 1px solid var(--rule); }
+  .specs { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: 2px 12px; font-size: 12px; line-height: 1.7; }
+  .specs dt { color: var(--muted); }
+  .specs dd { margin: 0; color: var(--text); overflow-wrap: anywhere; }
+  .theme-card .use { margin-top: auto; }
+
+  .btn { appearance: none; font: inherit; font-size: 13px; font-weight: 500; padding: 9px 18px; border-radius: var(--r-pill); border: var(--bw) solid var(--ink); background: var(--ink); color: var(--white); cursor: pointer; }
+  .btn:hover { opacity: .85; }
+  .btn[disabled] { background: transparent; color: var(--muted); border-color: var(--rule-strong); cursor: default; opacity: 1; }
+  .btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+  .sample { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+  .panel { background: var(--white); border: var(--bw) solid var(--card-line); border-radius: var(--r-card); box-shadow: var(--shadow-card); padding: 24px; }
+  .panel p { margin: 0 0 12px; }
+  .panel .big { font-size: 26px; line-height: 1.4; font-weight: var(--fw-display); letter-spacing: var(--ls-display); color: var(--ink); margin: 0 0 12px; }
+  mark { background: linear-gradient(transparent 60%, var(--mark-bg) 60%); color: inherit; padding: 0 2px; }
+  .chips { display: flex; gap: 6px; flex-wrap: wrap; margin: 0 0 16px; }
+  .chip { font-size: 12px; padding: 4px 12px; border-radius: var(--r-pill); background: var(--chip-g-bg); color: var(--ink); }
+  .chip.b { background: var(--chip-b-bg); }
+  .band { background: var(--accent-band); border-radius: var(--r-inner); padding: 16px; font-size: 13px; color: var(--ink); }
+  .field { display: block; width: 100%; font: inherit; font-size: 14px; padding: 10px 12px; border: 1px solid var(--input-line); border-radius: var(--r-input); background: var(--white); color: var(--text); margin: 0 0 12px; }
+
+  pre { margin: 0; background: var(--tint); border-radius: var(--r-inner); padding: 16px; overflow-x: auto; font-size: 12.5px; line-height: 1.7; }
+  pre code { background: none; padding: 0; }
+  ol { padding-left: 1.4em; margin: 0; }
+  ol li { margin: 0 0 6px; }
+
+  footer { background: var(--footer-bg); color: var(--footer-fg); font-size: 12px; padding: 24px 16px; text-align: center; }
+
+  @media (max-width: 768px) {
+    h1 { font-size: 28px; }
+    .sample { grid-template-columns: 1fr; }
+    .header-note { display: none; }
+  }
+</style>
+</head>
+<body>
+<header class="header">
+  <div class="header-inner">
+    <span class="brand">Design Themes</span>
+    <div class="header-right">
+      <span class="header-note">ここで選んだテーマはこのサイトだけで覚えます</span>
+      <div data-theme-switch></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <p class="label">Shared themes</p>
+    <h1>公開ページの見た目を切り替えるテーマ</h1>
+    <p class="lead">research・SAI's Works・asobiji・bcdp・fable-test・shot-pjt-sai の各ページは、右上のパレットボタンで見た目を切り替えられます。テーマの中身はこのサイトの2つのファイルにあり、各ページはそれを読み込むだけです。ここを直して公開すれば、全ページに届きます。</p>
+  </div>
+  <div class="stripe"></div>
+
+  <section>
+    <h2>テーマの一覧</h2>
+<!-- THEMES:CATALOG:START -->
+    <div class="themes">
+    <article class="theme-card" data-id="mint">
+      <div class="theme-head"><span class="theme-name">Mint</span><span class="theme-id">mint.json</span></div>
+      <div class="tags"><span class="tag">最初に出る</span></div>
+      <p class="theme-desc">白と淡いミント・緑のアクセント・黄色のマーカー</p>
+      <div class="swatches" aria-label="パレット"><span class="sw" style="background:#FFFFFF" title="paper #FFFFFF"></span><span class="sw" style="background:#FFFFFF" title="white #FFFFFF"></span><span class="sw" style="background:#16201D" title="ink #16201D"></span><span class="sw" style="background:#33403C" title="text #33403C"></span><span class="sw" style="background:#5B6A65" title="muted #5B6A65"></span><span class="sw" style="background:#DCEAE4" title="rule #DCEAE4"></span><span class="sw" style="background:#A9C9BE" title="rule_strong #A9C9BE"></span><span class="sw" style="background:#EEF7F3" title="tint #EEF7F3"></span><span class="sw" style="background:#277A65" title="accent #277A65"></span><span class="sw" style="background:#62B8A0" title="accent_bright #62B8A0"></span><span class="sw" style="background:#E8F5F1" title="accent_wash #E8F5F1"></span><span class="sw" style="background:#B03A57" title="emphasis #B03A57"></span><span class="sw" style="background:#FCE9EE" title="emphasis_wash #FCE9EE"></span><span class="sw" style="background:#F2C94C" title="highlight #F2C94C"></span><span class="sw" style="background:#3F6E79" title="deep #3F6E79"></span><span class="sw" style="background:#B0363A" title="danger #B0363A"></span></div>
+      <dl class="specs"><dt>欧文</dt><dd>Work Sans</dd><dt>見出しの太さ</dt><dd>800</dd><dt>角丸</dt><dd>12px</dd><dt>枠線</dt><dd>1px / rule</dd><dt>影</dt><dd>none</dd></dl>
+      <button type="button" class="btn use">このテーマで見る</button>
+    </article>
+    <article class="theme-card" data-id="bold">
+      <div class="theme-head"><span class="theme-name">Bold Yellow</span><span class="theme-id">bold.json</span></div>
+      
+      <p class="theme-desc">黒と黄・2pxの枠線・影なし</p>
+      <div class="swatches" aria-label="パレット"><span class="sw" style="background:#FAF9EC" title="paper #FAF9EC"></span><span class="sw" style="background:#FFFFFF" title="white #FFFFFF"></span><span class="sw" style="background:#1B1B1B" title="ink #1B1B1B"></span><span class="sw" style="background:#1B1B1B" title="text #1B1B1B"></span><span class="sw" style="background:#6E6B5E" title="muted #6E6B5E"></span><span class="sw" style="background:#E4E2D2" title="rule #E4E2D2"></span><span class="sw" style="background:#1B1B1B" title="rule_strong #1B1B1B"></span><span class="sw" style="background:#F2F1E2" title="tint #F2F1E2"></span><span class="sw" style="background:#1B1B1B" title="accent #1B1B1B"></span><span class="sw" style="background:#E3E143" title="accent_bright #E3E143"></span><span class="sw" style="background:#E3E143" title="accent_wash #E3E143"></span><span class="sw" style="background:#6E6A12" title="emphasis #6E6A12"></span><span class="sw" style="background:#F6F4C4" title="emphasis_wash #F6F4C4"></span><span class="sw" style="background:#E3E143" title="highlight #E3E143"></span><span class="sw" style="background:#1B1B1B" title="deep #1B1B1B"></span><span class="sw" style="background:#9B2C2C" title="danger #9B2C2C"></span></div>
+      <dl class="specs"><dt>欧文</dt><dd>Noto Sans JP</dd><dt>見出しの太さ</dt><dd>700</dd><dt>角丸</dt><dd>12px</dd><dt>枠線</dt><dd>2px / ink</dd><dt>影</dt><dd>none</dd></dl>
+      <button type="button" class="btn use">このテーマで見る</button>
+    </article>
+    <article class="theme-card" data-id="sai">
+      <div class="theme-head"><span class="theme-name">SAI v2</span><span class="theme-id">sai.json</span></div>
+      <div class="tags"><span class="tag">土台（読めないときもこれ）</span></div>
+      <p class="theme-desc">モノクロ基調・エディトリアル</p>
+      <div class="swatches" aria-label="パレット"><span class="sw" style="background:#FAFAFA" title="paper #FAFAFA"></span><span class="sw" style="background:#FFFFFF" title="white #FFFFFF"></span><span class="sw" style="background:#111111" title="ink #111111"></span><span class="sw" style="background:#333333" title="text #333333"></span><span class="sw" style="background:#808080" title="muted #808080"></span><span class="sw" style="background:#EEEEEE" title="rule #EEEEEE"></span><span class="sw" style="background:#CCCCCC" title="rule_strong #CCCCCC"></span><span class="sw" style="background:#F5F5F5" title="tint #F5F5F5"></span><span class="sw" style="background:#62B8A0" title="accent #62B8A0"></span><span class="sw" style="background:#62B8A0" title="accent_bright #62B8A0"></span><span class="sw" style="background:#E8F5F1" title="accent_wash #E8F5F1"></span><span class="sw" style="background:#EB6584" title="emphasis #EB6584"></span><span class="sw" style="background:#FCE9EE" title="emphasis_wash #FCE9EE"></span><span class="sw" style="background:#F2C94C" title="highlight #F2C94C"></span><span class="sw" style="background:#4F7C87" title="deep #4F7C87"></span><span class="sw" style="background:#C84E6C" title="danger #C84E6C"></span></div>
+      <dl class="specs"><dt>欧文</dt><dd>Work Sans</dd><dt>見出しの太さ</dt><dd>300</dd><dt>角丸</dt><dd>0px</dd><dt>枠線</dt><dd>1px / rule</dd><dt>影</dt><dd>none</dd></dl>
+      <button type="button" class="btn use">このテーマで見る</button>
+    </article>
+    </div>
+<!-- THEMES:CATALOG:END -->
+  </section>
+
+  <section>
+    <h2>見本</h2>
+    <div class="sample">
+      <div class="panel">
+        <p class="label">Sample</p>
+        <p class="big">見出しはこの太さと字間で出ます</p>
+        <p>本文はこの色と行間です。<mark>マーカー線</mark>はテーマの差し色で引かれます。<a href="#">リンク</a>はインクの色です。</p>
+        <div class="chips"><span class="chip">チップ</span><span class="chip b">チップ</span></div>
+        <div class="band">帯（accent band）の色です。記事ページの交互の節にも近い色が出ます。</div>
+      </div>
+      <div class="panel">
+        <p class="label">Form</p>
+        <input class="field" type="text" placeholder="入力欄の枠と角丸">
+        <button type="button" class="btn">ボタン</button>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>ページへの組み込み方</h2>
+    <p>各ページの <code>&lt;head&gt;</code> の中、ページの <code>&lt;style&gt;</code> より前に、この2行が入っています（<code>sync-themes.py</code> が書きます）。</p>
+    <pre><code>&lt;link rel="stylesheet" href="https://design-themes-sai.vercel.app/themes.css"&gt;
+&lt;script src="https://design-themes-sai.vercel.app/themes.js"&gt;&lt;/script&gt;</code></pre>
+    <p style="margin-top:16px">ボタンを置きたい場所に <code>&lt;div data-theme-switch&gt;&lt;/div&gt;</code> を1つ置きます。このサイトが読めないときは、ページは土台の SAI v2 のまま表示されます。</p>
+  </section>
+
+  <section>
+    <h2>テーマを足す・直すとき</h2>
+    <ol>
+      <li><code>80_開発室/projects/design-themes/themes/&lt;id&gt;.json</code> を足す・直す（並びは <code>order</code>、最初に出るテーマは <code>initial</code>）</li>
+      <li><code>python3 80_開発室/projects/design-themes/sync-themes.py</code></li>
+      <li>テーマのサイトのリポジトリ（<code>design-themes</code>）だけ push する。各ページのリポジトリは触らない</li>
+    </ol>
+  </section>
+</main>
+
+<footer>Design Themes — 00_master / 80_開発室 / projects / design-themes</footer>
+
+<script>
+  /* 一覧の「このテーマで見る」と、いま選ばれているカードの印 */
+  function markCurrentTheme(id) {
+    document.querySelectorAll('.theme-card').forEach(function (card) {
+      var on = card.getAttribute('data-id') === id;
+      card.setAttribute('aria-current', String(on));
+      var b = card.querySelector('.use');
+      b.disabled = on;
+      b.textContent = on ? '表示中' : 'このテーマで見る';
+    });
+  }
+  window.onThemeChange = markCurrentTheme;
+  document.querySelectorAll('.theme-card .use').forEach(function (b) {
+    b.addEventListener('click', function () {
+      if (typeof applyTheme === 'function') applyTheme(b.closest('.theme-card').getAttribute('data-id'), true);
+    });
+  });
+  if (typeof activeTheme !== 'undefined') markCurrentTheme(activeTheme);
+</script>
+</body>
+</html>
