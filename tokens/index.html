@@ -1,0 +1,2126 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>意味の名前の一覧</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- このサイト自身のテーマ（同じサイトの themes.css / themes.js を読む） -->
+<link rel="stylesheet" href="/themes.css">
+<script src="/themes.js"></script>
+<style>
+  /* 土台（SAI v2）の値。テーマはこの上に html[data-theme] で重なる */
+  :root {
+    --paper: #FAFAFA; --paper-rgb: 250, 250, 250; --white: #FFFFFF;
+    --ink: #111111; --text: #333333; --muted: #808080;
+    --rule: #EEEEEE; --rule-strong: #CCCCCC; --tint: #F5F5F5;
+    --teal: #62B8A0; --coral: #EB6584; --yellow: #F2C94C; --deep-teal: #4F7C87;
+    --en: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+    --jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    --stripe: repeating-linear-gradient(135deg, var(--yellow) 0 14px, var(--teal) 14px 28px, var(--white) 28px 42px, var(--deep-teal) 42px 56px, var(--white) 56px 70px);
+    --r-card: 0px; --r-pill: 48px; --bw: 1px; --card-line: var(--rule);
+    --fw-display: 300; --ls-display: 0.01em; --ls-label: 0.14em; --label-case: uppercase; --lh-body: 1.9;
+    --sec-alt-bg: #F6F6F6;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--jp); font-size: 15px; line-height: var(--lh-body); letter-spacing: .01em; overflow-x: clip; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  /* ヘッダー */
+  .hd { position: sticky; top: 0; z-index: 50; background: linear-gradient(to bottom, rgba(var(--paper-rgb), .96), rgba(var(--paper-rgb), .86)); }
+  .hd-in { display: flex; align-items: center; gap: 16px; min-height: 60px; }
+  .brand { font-family: var(--en); font-weight: 600; color: var(--ink); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+  .brand span { font-weight: 400; color: var(--muted); margin-left: 6px; }
+  .hd-nav { margin-left: auto; display: flex; gap: 18px; font-family: var(--en); font-size: 11px; letter-spacing: var(--ls-label); text-transform: var(--label-case); }
+  .hd-nav a { color: var(--muted); text-decoration: none; }
+  .hd-nav a:hover { color: var(--ink); }
+  @media (max-width: 560px) { .hd-nav { display: none; } .hd [data-theme-switch] { margin-left: auto; } }
+
+  /* 冒頭 */
+  .hero { padding: 56px 0 40px; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 14px; font-family: var(--en); font-size: 11px; letter-spacing: var(--ls-label); text-transform: var(--label-case); color: var(--muted); }
+  .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+  h1 { margin: 0 0 20px; font-size: 30px; line-height: 1.4; color: var(--ink); font-weight: var(--fw-display); letter-spacing: var(--ls-display); }
+  .lede { max-width: 720px; margin: 0 0 14px; }
+  .rule-box { max-width: 720px; margin: 28px 0 0; padding: 20px 22px; background: var(--white); border: var(--bw) solid var(--card-line); border-radius: var(--r-card); }
+  .rule-box h2 { margin: 0 0 8px; font-size: 15px; color: var(--ink); }
+  .rule-box p { margin: 0 0 8px; font-size: 14px; }
+  .rule-box p:last-child { margin: 0; }
+  .rule-box code, .rel code { background: var(--tint); padding: 1px 6px; border-radius: 4px; font-size: .88em; color: var(--ink); }
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 20px 0 0; padding: 0; list-style: none; font-size: 13px; }
+  .legend li { display: flex; align-items: center; gap: 8px; }
+  .frame-sample { display: inline-block; width: 22px; height: 14px; border: 3px solid #FF4F1F; border-radius: 4px; }
+
+  /* まとまりへ飛ぶ */
+  .jumps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 20px; margin: 32px 0 0; max-width: 720px; }
+  .jump { display: flex; align-items: center; gap: 10px; min-height: 44px; border-top: 1px solid var(--rule); color: var(--ink); text-decoration: none; font-size: 14px; }
+  .jump span { font-family: var(--en); font-size: 11px; color: var(--muted); letter-spacing: .06em; }
+  @media (max-width: 560px) { .jumps { grid-template-columns: 1fr 1fr; } }
+
+  /* まとまり（帯は交互） */
+  .grp { padding: 56px 0; background: var(--white); }
+  .grp:nth-of-type(even) { background: var(--sec-alt-bg); }
+  .grp h2 { margin: 0 0 28px; font-size: 24px; line-height: 1.45; color: var(--ink); }
+
+  /* 1 つの名前 = 1 枚のカード */
+  .tk { background: var(--white); border: var(--bw) solid var(--card-line); border-radius: var(--r-card); padding: 22px; margin: 0 0 20px; scroll-margin-top: 72px; }
+  .tk-head { display: flex; align-items: flex-start; gap: 14px; flex-wrap: wrap; }
+  .tk-no { font-family: var(--en); font-size: 12px; color: var(--muted); padding-top: 6px; letter-spacing: .06em; }
+  .tk-title { flex: 1 1 220px; min-width: 0; }
+  .tk-title h3 { margin: 0; font-size: 18px; line-height: 1.5; }
+  .tk-name { color: var(--ink); font-weight: 600; word-break: break-all; }
+  .tk-label { margin: 2px 0 0; font-size: 14px; color: var(--text); }
+  .chg { flex: none; align-self: center; font-size: 12px; line-height: 1; padding: 7px 12px; border-radius: var(--r-pill); border: var(--bw) solid var(--ink); color: var(--ink); white-space: nowrap; }
+  .chg-ok { background: var(--ink); color: var(--white); }
+  .chg-part { background: transparent; }
+  .chg-no { border-style: dashed; color: var(--muted); border-color: var(--muted); }
+  .rel { margin: 10px 0 0; font-size: 13px; color: var(--muted); }
+
+  .tk-body { display: grid; grid-template-columns: minmax(0, 340px) minmax(0, 1fr); gap: 24px; margin-top: 18px; }
+  figure { margin: 0; }
+  figcaption { font-size: 12px; color: var(--muted); margin: 0 0 6px; display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; }
+  .src { font-size: 11px; }
+  .shot { border: 1px solid var(--rule); background: #FFFFFF; overflow: hidden; }
+  .shot img { display: block; max-width: 100%; height: auto; }
+  .where .shot img { width: 100%; }
+  .themes { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; align-content: start; }
+  .th-name { font-family: var(--en); font-size: 11px; letter-spacing: var(--ls-label); text-transform: var(--label-case); color: var(--ink); font-weight: 600; }
+  .th .shot { display: flex; align-items: center; justify-content: center; min-height: 64px; background: repeating-conic-gradient(#F4F4F4 0 25%, #FFFFFF 0 50%) 0 0 / 12px 12px; }
+  .val { margin: 6px 0 0; font-size: 12px; line-height: 1.7; color: var(--text); word-break: break-word; }
+
+  @media (max-width: 900px) {
+    .tk-body { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px) {
+    .wrap { padding: 0 16px; }
+    h1 { font-size: 24px; }
+    .tk { padding: 16px; }
+    .themes { grid-template-columns: 1fr; gap: 14px; }
+    .grp { padding: 44px 0; }
+  }
+
+  footer { background: var(--rule); color: var(--muted); font-size: 12px; padding: 32px 0; }
+  footer a { color: inherit; }
+</style>
+</head>
+<body>
+<header class="hd">
+  <div class="wrap hd-in">
+    <a class="brand" href="/">Design Themes<span>/ tokens</span></a>
+    <nav class="hd-nav" aria-label="まとまり"><a href="#g-A">強調</a><a href="#g-B">見出し</a><a href="#g-C">部品</a><a href="#g-D">ナビ</a><a href="#g-E">面</a><a href="#g-F">図</a></nav>
+    <div data-theme-switch></div>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Semantic tokens ／ 案</p>
+      <h1>意味の名前の一覧</h1>
+      <p class="lede">記事やページの中で、ふつうの段落の文ではないもの（太字、見出しの番号、注記の箱、章ナビなど）を 41 個の「意味」に分け、それぞれに名前の案を付けました。どの名前もまだ使っていません。</p>
+      <p class="lede">カードごとに、その名前がページのどこを指すか（オレンジの枠）と、3 つのテーマでいまどう見えるかを並べています。写真は 2026-11-22 に、幅 375px（iPhone の幅）で撮った公開中のページです。</p>
+      <div class="rule-box">
+        <h2>名前の付け方の規則</h2>
+        <p>名前は <code>--部品-性質</code> の形にします（いまの <code>--card-line</code> や <code>--footer-bg</code> と同じ並び）。部品は英単語 1 つ（<code>note</code>、<code>badge</code>、<code>chip</code> など）。選んだ状態のものだけ、間に <code>on</code> を挟みます（<code>--chip-on-bg</code>）。</p>
+        <p>性質は次の 7 つに限ります：<code>bg</code> 地の色／<code>fg</code> 文字と線画の色／<code>line</code> 線の色と形／<code>w</code> 太さ／<code>r</code> 角丸／<code>font</code> 書体／<code>show</code> 出す・出さない。いまある 73 個の名前と、どのページの名前とも重ならないことを確かめてあります。</p>
+      </div>
+      <ul class="legend">
+        <li><span class="chg chg-ok">テーマで替わる</span></li>
+        <li><span class="chg chg-part">色だけ替わる</span></li>
+        <li><span class="chg chg-no">テーマで替わらない</span></li>
+        <li><span class="frame-sample"></span>指している場所</li>
+      </ul>
+      <nav class="jumps" aria-label="まとまりへ移動"><a href="#g-A" class="jump"><span>A</span>文字の強調</a><a href="#g-B" class="jump"><span>B</span>見出しまわり</a><a href="#g-C" class="jump"><span>C</span>囲みと部品</a><a href="#g-D" class="jump"><span>D</span>ナビゲーション</a><a href="#g-E" class="jump"><span>E</span>面と区切り</a><a href="#g-F" class="jump"><span>F</span>図・アイコン・データ</a></nav>
+    </div>
+  </section>
+
+  <section class="grp" id="g-A">
+    <div class="wrap">
+      <p class="eyebrow">Group A</p>
+      <h2>文字の強調</h2>
+      
+    <article class="tk" id="strong">
+      <header class="tk-head">
+        <span class="tk-no">01</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--strong-line</code></h3>
+          <p class="tk-label">強調（太字）の線</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--strong-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
+          <div class="shot"><img src="img/strong-where.jpg" width="375" height="244" alt="強調（太字）の線がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/strong-mint.jpg" width="117" height="44" alt="強調（太字）の線：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">#16201D・太さ 700・線なし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/strong-bold.jpg" width="117" height="44" alt="強調（太字）の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">#1B1B1B・太さ 700・線なし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/strong-sai.jpg" width="117" height="44" alt="強調（太字）の線：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">#111111・太さ 700・線なし</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="mark">
+      <header class="tk-head">
+        <span class="tk-no">02</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--mark-line</code></h3>
+          <p class="tk-label">印を付けた語の線</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--mark-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/mark-where.jpg" width="375" height="298" alt="印を付けた語の線がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/mark-mint.jpg" width="339" height="98" alt="印を付けた語の線：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #33403C・下 42% に #62B8A0 34% の線</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/mark-bold.jpg" width="339" height="98" alt="印を付けた語の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #1B1B1B・下 42% に #E3E143 34% の線</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/mark-sai.jpg" width="339" height="98" alt="印を付けた語の線：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #333333・下 42% に #62B8A0 34% の線</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="hl">
+      <header class="tk-head">
+        <span class="tk-no">03</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--hl-fg</code></h3>
+          <p class="tk-label">色で強める語</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
+          <div class="shot"><img src="img/hl-where.jpg" width="375" height="264" alt="色で強める語がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/hl-mint.jpg" width="306" height="64" alt="色で強める語：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #B03A57・太さ 700</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/hl-bold.jpg" width="306" height="64" alt="色で強める語：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #6E6A12・太さ 700</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/hl-sai.jpg" width="306" height="64" alt="色で強める語：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #333333・太さ 700</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="em">
+      <header class="tk-head">
+        <span class="tk-no">04</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--em-font</code></h3>
+          <p class="tk-label">斜体</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
+          <div class="shot"><img src="img/em-where.jpg" width="375" height="242" alt="斜体がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/em-mint.jpg" width="219" height="42" alt="斜体：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">斜体・Noto Sans JP・文字 #33403C</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/em-bold.jpg" width="219" height="42" alt="斜体：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">斜体・Noto Sans JP・文字 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/em-sai.jpg" width="219" height="42" alt="斜体：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">斜体・Noto Sans JP・文字 #333333</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="small">
+      <header class="tk-head">
+        <span class="tk-no">05</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--small-fg</code></h3>
+          <p class="tk-label">小さい注</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/small-where.jpg" width="375" height="239" alt="小さい注がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/small-mint.jpg" width="46" height="39" alt="小さい注：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #33403C・大きさ 13px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/small-bold.jpg" width="47" height="39" alt="小さい注：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #1B1B1B・大きさ 13px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/small-sai.jpg" width="46" height="39" alt="小さい注：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #333333・大きさ 13px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="link">
+      <header class="tk-head">
+        <span class="tk-no">06</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--link-fg</code></h3>
+          <p class="tk-label">リンク</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--link-line</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：Tiny Habits</span></figcaption>
+          <div class="shot"><img src="img/link-where.jpg" width="375" height="276" alt="リンクがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/link-mint.jpg" width="351" height="76" alt="リンク：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #16201D・下線なし・下線 #A9C9BE</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/link-bold.jpg" width="351" height="76" alt="リンク：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #1B1B1B・下線なし・下線 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/link-sai.jpg" width="351" height="76" alt="リンク：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #111111・下線なし・下線 #CCCCCC</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="code">
+      <header class="tk-head">
+        <span class="tk-no">07</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--code-bg</code></h3>
+          <p class="tk-label">コード</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--code-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">shot-pjt-sai：デザインシステム</span></figcaption>
+          <div class="shot"><img src="img/code-where.jpg" width="375" height="238" alt="コードがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/code-mint.jpg" width="62" height="38" alt="コード：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #EEF7F3・文字 #16201D・角丸 3px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/code-bold.jpg" width="64" height="40" alt="コード：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #F2F1E2・文字 #1B1B1B・角丸 3px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/code-sai.jpg" width="62" height="38" alt="コード：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #F5F5F5・文字 #111111・角丸 3px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="grp" id="g-B">
+    <div class="wrap">
+      <p class="eyebrow">Group B</p>
+      <h2>見出しまわり</h2>
+      
+    <article class="tk" id="title">
+      <header class="tk-head">
+        <span class="tk-no">08</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--title-w</code></h3>
+          <p class="tk-label">ページの題名</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--title-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/title-where.jpg" width="375" height="374" alt="ページの題名がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/title-mint.jpg" width="347" height="174" alt="ページの題名：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 28px・文字 #16201D</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/title-bold.jpg" width="347" height="174" alt="ページの題名：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 28px・文字 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/title-sai.jpg" width="347" height="174" alt="ページの題名：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 28px・文字 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="eyebrow">
+      <header class="tk-head">
+        <span class="tk-no">09</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--eyebrow-line</code></h3>
+          <p class="tk-label">題名の上の小ラベル</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--eyebrow-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/eyebrow-where.jpg" width="375" height="241" alt="題名の上の小ラベルがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/eyebrow-mint.jpg" width="347" height="41" alt="題名の上の小ラベル：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #5B6A65・字間 1.32px・大文字</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/eyebrow-bold.jpg" width="347" height="41" alt="題名の上の小ラベル：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #6E6B5E・字間 1.32px・大文字</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/eyebrow-sai.jpg" width="347" height="41" alt="題名の上の小ラベル：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #808080・字間 1.32px・大文字</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="secno">
+      <header class="tk-head">
+        <span class="tk-no">10</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--secno-fg</code></h3>
+          <p class="tk-label">章の番号とラベル</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--secno-bg・--secno-r</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/secno-where.jpg" width="375" height="241" alt="章の番号とラベルがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/secno-mint.jpg" width="347" height="41" alt="章の番号とラベル：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #5B6A65・角丸 0px・大きさ 11px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/secno-bold.jpg" width="347" height="41" alt="章の番号とラベル：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #6E6B5E・角丸 0px・大きさ 11px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/secno-sai.jpg" width="347" height="41" alt="章の番号とラベル：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #808080・角丸 0px・大きさ 11px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="h2">
+      <header class="tk-head">
+        <span class="tk-no">11</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--h2-w</code></h3>
+          <p class="tk-label">章見出し</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--h2-orn-show</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/h2-where.jpg" width="375" height="286" alt="章見出しがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/h2-mint.jpg" width="347" height="86" alt="章見出し：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 22px・文字 #16201D</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/h2-bold.jpg" width="347" height="86" alt="章見出し：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 22px・文字 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/h2-sai.jpg" width="347" height="86" alt="章見出し：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 22px・文字 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="secsub">
+      <header class="tk-head">
+        <span class="tk-no">12</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--secsub-fg</code></h3>
+          <p class="tk-label">章の副題</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/secsub-where.jpg" width="375" height="271" alt="章の副題がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/secsub-mint.jpg" width="347" height="71" alt="章の副題：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #5B6A65・大きさ 13.5px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/secsub-bold.jpg" width="347" height="71" alt="章の副題：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #6E6B5E・大きさ 13.5px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/secsub-sai.jpg" width="347" height="71" alt="章の副題：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #808080・大きさ 13.5px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="h3">
+      <header class="tk-head">
+        <span class="tk-no">13</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--h3-w</code></h3>
+          <p class="tk-label">小見出し</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--h3-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/h3-where.jpg" width="375" height="249" alt="小見出しがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/h3-mint.jpg" width="347" height="49" alt="小見出し：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 18px・文字 #16201D</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/h3-bold.jpg" width="347" height="49" alt="小見出し：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 18px・文字 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/h3-sai.jpg" width="347" height="49" alt="小見出し：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">太さ 700・大きさ 18px・文字 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="lede">
+      <header class="tk-head">
+        <span class="tk-no">14</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--lede-fg</code></h3>
+          <p class="tk-label">リード文</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/lede-where.jpg" width="375" height="460" alt="リード文がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/lede-mint.jpg" width="347" height="200" alt="リード文：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #33403C・大きさ 16px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/lede-bold.jpg" width="347" height="200" alt="リード文：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #1B1B1B・大きさ 16px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/lede-sai.jpg" width="347" height="200" alt="リード文：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #333333・大きさ 16px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="grp" id="g-C">
+    <div class="wrap">
+      <p class="eyebrow">Group C</p>
+      <h2>囲みと部品</h2>
+      
+    <article class="tk" id="note">
+      <header class="tk-head">
+        <span class="tk-no">15</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--note-line</code></h3>
+          <p class="tk-label">注記の箱の左の線</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--note-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/note-where.jpg" width="375" height="460" alt="注記の箱の左の線がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/note-mint.jpg" width="347" height="200" alt="注記の箱の左の線：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #DCEAE4・左線の太さ 1px・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/note-bold.jpg" width="347" height="200" alt="注記の箱の左の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #1B1B1B・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/note-sai.jpg" width="347" height="200" alt="注記の箱の左の線：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #EEEEEE・左線の太さ 1px・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="quote">
+      <header class="tk-head">
+        <span class="tk-no">16</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--quote-line</code></h3>
+          <p class="tk-label">引用の線</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--quote-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/quote-where.jpg" width="375" height="375" alt="引用の線がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/quote-mint.jpg" width="347" height="175" alt="引用の線：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #16201D・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/quote-bold.jpg" width="347" height="177" alt="引用の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #1B1B1B・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/quote-sai.jpg" width="347" height="175" alt="引用の線：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #111111・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="card">
+      <header class="tk-head">
+        <span class="tk-no">17</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--card-bg</code></h3>
+          <p class="tk-label">カード</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>（いまの --card-line・--r-card）</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/card-where.jpg" width="375" height="460" alt="カードがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/card-mint.jpg" width="347" height="220" alt="カード：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #FFFFFF・枠 #DCEAE4・枠の太さ 1px・角丸 0px・影なし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/card-bold.jpg" width="347" height="220" alt="カード：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #FFFFFF・枠 #1B1B1B・枠の太さ 2px・角丸 0px・影なし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/card-sai.jpg" width="347" height="220" alt="カード：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #FFFFFF・枠 #EEEEEE・枠の太さ 1px・角丸 0px・影なし</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="stat">
+      <header class="tk-head">
+        <span class="tk-no">18</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--stat-fg</code></h3>
+          <p class="tk-label">数字のカード</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--stat-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
+          <div class="shot"><img src="img/stat-where.jpg" width="375" height="347" alt="数字のカードがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/stat-mint.jpg" width="182" height="147" alt="数字のカード：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #3F6E79・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/stat-bold.jpg" width="182" height="149" alt="数字のカード：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #1B1B1B・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/stat-sai.jpg" width="182" height="147" alt="数字のカード：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #111111・角丸 0px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="chipon">
+      <header class="tk-head">
+        <span class="tk-no">19</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--chip-on-bg</code></h3>
+          <p class="tk-label">選んだチップ</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--chip-on-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：目次</span></figcaption>
+          <div class="shot"><img src="img/chipon-where.jpg" width="375" height="252" alt="選んだチップがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/chipon-mint.jpg" width="103" height="52" alt="選んだチップ：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #16201D・文字 #FFFFFF・角丸 999px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/chipon-bold.jpg" width="104" height="53" alt="選んだチップ：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #1B1B1B・文字 #FFFFFF・角丸 999px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/chipon-sai.jpg" width="103" height="52" alt="選んだチップ：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #111111・文字 #FFFFFF・角丸 48px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="badge">
+      <header class="tk-head">
+        <span class="tk-no">20</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--badge-bg</code></h3>
+          <p class="tk-label">番号の丸・バッジ</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--badge-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
+          <div class="shot"><img src="img/badge-where.jpg" width="375" height="368" alt="番号の丸・バッジがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/badge-mint.jpg" width="357" height="160" alt="番号の丸・バッジ：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">丸・地 #E8F5F1・数字 #3F6E79</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/badge-bold.jpg" width="357" height="160" alt="番号の丸・バッジ：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">丸・地 #E3E143・数字 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/badge-sai.jpg" width="357" height="160" alt="番号の丸・バッジ：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">丸・地 #F5F5F5・数字 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="btn">
+      <header class="tk-head">
+        <span class="tk-no">21</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--btn-bg</code></h3>
+          <p class="tk-label">主ボタン</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--btn-fg・--btn-r</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">shot-pjt-sai：デザインシステム</span></figcaption>
+          <div class="shot"><img src="img/btn-where.jpg" width="375" height="268" alt="主ボタンがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/btn-mint.jpg" width="154" height="68" alt="主ボタン：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #16201D・文字 #FFFFFF・角丸 48px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/btn-bold.jpg" width="156" height="70" alt="主ボタン：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #1B1B1B・文字 #FFFFFF・角丸 48px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/btn-sai.jpg" width="154" height="68" alt="主ボタン：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #111111・文字 #FFFFFF・角丸 48px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="input">
+      <header class="tk-head">
+        <span class="tk-no">22</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--input-bg</code></h3>
+          <p class="tk-label">入力欄</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>（いまの --input-line）</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：目次</span></figcaption>
+          <div class="shot"><img src="img/input-where.jpg" width="375" height="263" alt="入力欄がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/input-mint.jpg" width="354" height="63" alt="入力欄：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #FFFFFF・枠 #A9C9BE・角丸 12px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/input-bold.jpg" width="354" height="65" alt="入力欄：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #FFFFFF・枠 #1B1B1B・角丸 12px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/input-sai.jpg" width="354" height="63" alt="入力欄：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #FFFFFF・枠 #CCCCCC・角丸 4px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="grp" id="g-D">
+    <div class="wrap">
+      <p class="eyebrow">Group D</p>
+      <h2>ナビゲーション</h2>
+      
+    <article class="tk" id="header">
+      <header class="tk-head">
+        <span class="tk-no">23</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--header-bg</code></h3>
+          <p class="tk-label">ヘッダー</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/header-where.jpg" width="375" height="235" alt="ヘッダーがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/header-mint.jpg" width="375" height="125" alt="ヘッダー：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙の色 #FFFFFF を 96% から透明へ</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/header-bold.jpg" width="375" height="125" alt="ヘッダー：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙の色 #FAF9EC を 96% から透明へ</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/header-sai.jpg" width="375" height="125" alt="ヘッダー：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙の色 #FAFAFA を 96% から透明へ</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="chapnav">
+      <header class="tk-head">
+        <span class="tk-no">24</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--chapnav-on-line</code></h3>
+          <p class="tk-label">章ナビの選んだ章</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--chapnav-on-w</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
+          <div class="shot"><img src="img/chapnav-where.jpg" width="375" height="200" alt="章ナビの選んだ章がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/chapnav-mint.jpg" width="301" height="42" alt="章ナビの選んだ章：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">選んだ章に墨の下線 1px・角丸 12px（線が曲がる）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/chapnav-bold.jpg" width="301" height="42" alt="章ナビの選んだ章：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">墨の下線 1px・角丸 12px（線が曲がる）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/chapnav-sai.jpg" width="301" height="42" alt="章ナビの選んだ章：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">墨の下線 1px・角丸 0</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="tocon">
+      <header class="tk-head">
+        <span class="tk-no">25</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--toc-on-line</code></h3>
+          <p class="tk-label">目次の選んだ行</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>（いまの --sel-line・--sel-w）</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：目次</span></figcaption>
+          <div class="shot"><img src="img/tocon-where.jpg" width="375" height="355" alt="目次の選んだ行がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/tocon-mint.jpg" width="375" height="155" alt="目次の選んだ行：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #277A65・左線の太さ 3px・地 #FFFFFF</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/tocon-bold.jpg" width="375" height="155" alt="目次の選んだ行：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #E3E143・左線の太さ 4px・地 #FFFFFF</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/tocon-sai.jpg" width="375" height="155" alt="目次の選んだ行：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">左線 #111111・左線の太さ 2px・地 #FFFFFF</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="tabon">
+      <header class="tk-head">
+        <span class="tk-no">26</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--tab-on-line</code></h3>
+          <p class="tk-label">選んだタブ</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--tab-on-w</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">SAI&#x27;s Works</span></figcaption>
+          <div class="shot"><img src="img/tabon-where.jpg" width="375" height="246" alt="選んだタブがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/tabon-mint.jpg" width="79" height="46" alt="選んだタブ：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #16201D・下線の太さ 1px・文字 #16201D</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/tabon-bold.jpg" width="77" height="48" alt="選んだタブ：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #1B1B1B・下線の太さ 1px・文字 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/tabon-sai.jpg" width="79" height="46" alt="選んだタブ：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #111111・下線の太さ 1px・文字 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="switch">
+      <header class="tk-head">
+        <span class="tk-no">27</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--switch-fg</code></h3>
+          <p class="tk-label">テーマの切り替えボタン</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/switch-where.jpg" width="375" height="248" alt="テーマの切り替えボタンがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/switch-mint.jpg" width="48" height="48" alt="テーマの切り替えボタン：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">線と絵 #33403C・丸</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/switch-bold.jpg" width="48" height="48" alt="テーマの切り替えボタン：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">線と絵 #1B1B1B・丸</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/switch-sai.jpg" width="48" height="48" alt="テーマの切り替えボタン：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">線と絵 #333333・丸</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="grp" id="g-E">
+    <div class="wrap">
+      <p class="eyebrow">Group E</p>
+      <h2>面と区切り</h2>
+      
+    <article class="tk" id="page">
+      <header class="tk-head">
+        <span class="tk-no">28</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--page-bg</code></h3>
+          <p class="tk-label">紙（ページの地）</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/page-where.jpg" width="375" height="460" alt="紙（ページの地）がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/page-mint.jpg" width="359" height="200" alt="紙（ページの地）：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙 #FFFFFF</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/page-bold.jpg" width="359" height="200" alt="紙（ページの地）：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙 #FAF9EC</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/page-sai.jpg" width="359" height="200" alt="紙（ページの地）：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙 #FAFAFA</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="band">
+      <header class="tk-head">
+        <span class="tk-no">29</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--band-alt-bg</code></h3>
+          <p class="tk-label">節の帯（偶数番目）</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--band-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/band-where.jpg" width="375" height="460" alt="節の帯（偶数番目）がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/band-mint.jpg" width="375" height="220" alt="節の帯（偶数番目）：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #EEF7F3</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/band-bold.jpg" width="375" height="220" alt="節の帯（偶数番目）：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #F9F8DE</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/band-sai.jpg" width="375" height="220" alt="節の帯（偶数番目）：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #F6F6F6</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="stripe">
+      <header class="tk-head">
+        <span class="tk-no">30</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--headstripe-show</code></h3>
+          <p class="tk-label">縞（ヘッダー下のストライプ）</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>（いまの --stripe）</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/stripe-where.jpg" width="375" height="460" alt="縞（ヘッダー下のストライプ）がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/stripe-mint.jpg" width="375" height="90" alt="縞（ヘッダー下のストライプ）：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">なし（透明）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/stripe-bold.jpg" width="375" height="90" alt="縞（ヘッダー下のストライプ）：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">黄 #E3E143 と墨の斜線</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/stripe-sai.jpg" width="375" height="90" alt="縞（ヘッダー下のストライプ）：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">黄・緑・白・青の 4 色の斜線</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="divider">
+      <header class="tk-head">
+        <span class="tk-no">31</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--divider-line</code></h3>
+          <p class="tk-label">区切り線・罫線</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
+          <div class="shot"><img src="img/divider-where.jpg" width="375" height="460" alt="区切り線・罫線がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/divider-mint.jpg" width="355" height="200" alt="区切り線・罫線：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #DCEAE4</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/divider-bold.jpg" width="355" height="200" alt="区切り線・罫線：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #E0DECB</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/divider-sai.jpg" width="355" height="200" alt="区切り線・罫線：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #EEEEEE</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="hero">
+      <header class="tk-head">
+        <span class="tk-no">32</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--hero-area-bg</code></h3>
+          <p class="tk-label">ヒーロー（冒頭の一画面）</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--hero-area-orn-show</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/hero-where.jpg" width="375" height="520" alt="ヒーロー（冒頭の一画面）がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/hero-mint.jpg" width="375" height="320" alt="ヒーロー（冒頭の一画面）：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙のまま・飾りなし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/hero-bold.jpg" width="375" height="320" alt="ヒーロー（冒頭の一画面）：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙のまま・飾りなし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/hero-sai.jpg" width="375" height="320" alt="ヒーロー（冒頭の一画面）：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">紙のまま・飾りなし</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="footer">
+      <header class="tk-head">
+        <span class="tk-no">33</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--pagefoot-bg</code></h3>
+          <p class="tk-label">フッター</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--pagefoot-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/footer-where.jpg" width="375" height="301" alt="フッターがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/footer-mint.jpg" width="375" height="191" alt="フッター：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #EEEEEE・文字 #5B6A65（地はこの記事の独自の色で、テーマで替わらない）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/footer-bold.jpg" width="375" height="191" alt="フッター：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #EEEEEE・文字 #6E6B5E（地はこの記事の独自の色で、テーマで替わらない）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/footer-sai.jpg" width="375" height="191" alt="フッター：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #EEEEEE・文字 #808080（地はこの記事の独自の色で、テーマで替わらない）</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+  <section class="grp" id="g-F">
+    <div class="wrap">
+      <p class="eyebrow">Group F</p>
+      <h2>図・アイコン・データ</h2>
+      
+    <article class="tk" id="icon">
+      <header class="tk-head">
+        <span class="tk-no">34</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--icon-fg</code></h3>
+          <p class="tk-label">アイコン</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--icon-w</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">SAI&#x27;s Works</span></figcaption>
+          <div class="shot"><img src="img/icon-where.jpg" width="375" height="250" alt="アイコンがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/icon-mint.jpg" width="58" height="58" alt="アイコン：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #16201D・線 #16201D・線の太さ 1.5px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/icon-bold.jpg" width="58" height="58" alt="アイコン：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #1B1B1B・線 #1B1B1B・線の太さ 2px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/icon-sai.jpg" width="58" height="58" alt="アイコン：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">文字 #111111・線 #111111・線の太さ 1.25px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="table">
+      <header class="tk-head">
+        <span class="tk-no">35</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--table-head-line</code></h3>
+          <p class="tk-label">表の見出し行</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--table-zebra-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
+          <div class="shot"><img src="img/table-where.jpg" width="375" height="460" alt="表の見出し行がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/table-mint.jpg" width="355" height="200" alt="表の見出し行：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">見出し行の下線 #16201D・文字 #5B6A65・縞なし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/table-bold.jpg" width="355" height="200" alt="表の見出し行：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #1B1B1B・文字 #6E6B5E・縞なし</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/table-sai.jpg" width="355" height="200" alt="表の見出し行：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">下線 #111111・文字 #333333・縞なし</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="listdot">
+      <header class="tk-head">
+        <span class="tk-no">36</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--list-dot-bg</code></h3>
+          <p class="tk-label">箇条書きの印</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：AI 時代のコーチング</span></figcaption>
+          <div class="shot"><img src="img/listdot-where.jpg" width="375" height="413" alt="箇条書きの印がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/listdot-mint.jpg" width="339" height="160" alt="箇条書きの印：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">点 #277A65</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/listdot-bold.jpg" width="339" height="160" alt="箇条書きの印：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">点 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/listdot-sai.jpg" width="339" height="160" alt="箇条書きの印：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">点 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="figure">
+      <header class="tk-head">
+        <span class="tk-no">37</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--figure-line</code></h3>
+          <p class="tk-label">図の枠とキャプション</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--figure-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
+          <div class="shot"><img src="img/figure-where.jpg" width="375" height="460" alt="図の枠とキャプションがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/figure-mint.jpg" width="347" height="260" alt="図の枠とキャプション：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">枠 #DCEAE4・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/figure-bold.jpg" width="347" height="260" alt="図の枠とキャプション：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">枠 #1B1B1B・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/figure-sai.jpg" width="347" height="260" alt="図の枠とキャプション：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">枠 #EEEEEE・地 #FFFFFF・角丸 0px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="meter">
+      <header class="tk-head">
+        <span class="tk-no">38</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--meter-fill-bg</code></h3>
+          <p class="tk-label">進み具合のバー</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--meter-track-bg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：AI 時代のコーチング</span></figcaption>
+          <div class="shot"><img src="img/meter-where.jpg" width="375" height="242" alt="進み具合のバーがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/meter-mint.jpg" width="185" height="102" alt="進み具合のバー：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">中身 #3F6E79</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/meter-bold.jpg" width="183" height="102" alt="進み具合のバー：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">中身 #1B1B1B</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/meter-sai.jpg" width="185" height="102" alt="進み具合のバー：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">中身 #111111</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="lang">
+      <header class="tk-head">
+        <span class="tk-no">39</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--langtag-bg</code></h3>
+          <p class="tk-label">言語バッジ</p>
+        </div>
+        <span class="chg chg-ok">テーマで替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>--langtag-fg</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：自己決定理論</span></figcaption>
+          <div class="shot"><img src="img/lang-where.jpg" width="375" height="237" alt="言語バッジがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/lang-mint.jpg" width="108" height="97" alt="言語バッジ：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #E8F5F1・文字 #3F6E79・角丸 5px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/lang-bold.jpg" width="108" height="99" alt="言語バッジ：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #E3E143・文字 #1B1B1B・角丸 5px</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/lang-sai.jpg" width="108" height="97" alt="言語バッジ：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">地 #F5F5F5・文字 #111111・角丸 5px</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="orn">
+      <header class="tk-head">
+        <span class="tk-no">40</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--orn-show</code></h3>
+          <p class="tk-label">飾りの図形・モザイク</p>
+        </div>
+        <span class="chg chg-part">色だけ替わる</span>
+      </header>
+      <p class="rel">あわせて使う名前：<code>（いまの --mosaic）</code></p>
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">SAI&#x27;s Works</span></figcaption>
+          <div class="shot"><img src="img/orn-where.jpg" width="375" height="408" alt="飾りの図形・モザイクがページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/orn-mint.jpg" width="375" height="208" alt="飾りの図形・モザイク：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">#62B8A0・#F2C94C・#EB6584・#4F7C87・白・#EEF7F3</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/orn-bold.jpg" width="375" height="208" alt="飾りの図形・モザイク：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">#E3E143・#1B1B1B・#F9F8D9・白・#F2F1E2</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/orn-sai.jpg" width="375" height="208" alt="飾りの図形・モザイク：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">#62B8A0・#F2C94C・#EB6584・#4F7C87・白・#F5F5F5</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    <article class="tk" id="motion">
+      <header class="tk-head">
+        <span class="tk-no">41</span>
+        <div class="tk-title">
+          <h3><code class="tk-name">--motion-show</code></h3>
+          <p class="tk-label">動き（ふわっと出る）</p>
+        </div>
+        <span class="chg chg-no">テーマで替わらない</span>
+      </header>
+      
+      <div class="tk-body">
+        <figure class="where">
+          <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
+          <div class="shot"><img src="img/motion-where.jpg" width="375" height="283" alt="動き（ふわっと出る）がページのどこにあるか（オレンジの枠）" loading="lazy"></div>
+        </figure>
+        <div class="themes">
+        <figure class="th">
+          <figcaption><span class="th-name">Mint</span></figcaption>
+          <div class="shot"><img src="img/motion-mint.jpg" width="357" height="83" alt="動き（ふわっと出る）：Mint でのいまの見た目" loading="lazy"></div>
+          <p class="val">止めてある（古い記事の v2 の上書き）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">Bold Yellow</span></figcaption>
+          <div class="shot"><img src="img/motion-bold.jpg" width="357" height="83" alt="動き（ふわっと出る）：Bold Yellow でのいまの見た目" loading="lazy"></div>
+          <p class="val">止めてある（古い記事の v2 の上書き）</p>
+        </figure>
+        <figure class="th">
+          <figcaption><span class="th-name">SAI v2</span></figcaption>
+          <div class="shot"><img src="img/motion-sai.jpg" width="357" height="83" alt="動き（ふわっと出る）：SAI v2 でのいまの見た目" loading="lazy"></div>
+          <p class="val">止めてある（古い記事の v2 の上書き）</p>
+        </figure>
+        </div>
+      </div>
+    </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">依頼 022 の調査。元の表と説明は 00_master の <code>80_開発室/projects/design-themes/outputs/20261122-semantic-token-inventory.md</code>。値はテーマのサイトの <a href="/">一覧</a> と同じ 3 テーマで測った。</div>
+</footer>
+<!-- ===== review mode (rv) : begin — このコメントから下を消せば完全に元へ戻ります ===== -->
+<style id="rv-style">
+#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{
+  --rv-text:#2C2C2B; --rv-border:#E6E5E3; --rv-accent:#2783DE; --rv-pin:#F0A70A;
+  --rv-bg:#FFFFFF; --rv-sub:#8A8A86; --rv-danger:#D24B4B; --rv-radius:10px;
+  font-family:var(--rv-font,system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif);
+  box-sizing:border-box; line-height:1.5; letter-spacing:0;
+}
+#rv-ui *,#rv-pop *,#rv-panel *,#rv-toast *{box-sizing:border-box;font-family:inherit}
+#rv-ui{position:fixed;right:16px;bottom:16px;z-index:2147483600;display:flex;align-items:center;gap:8px}
+#rv-ui button{border:1px solid var(--rv-border);background:var(--rv-bg);color:var(--rv-text);
+  border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.10);
+  display:inline-flex;align-items:center;gap:6px;transition:opacity .15s,background .15s,color .15s}
+#rv-ui kbd{border:1px solid currentColor;border-radius:4px;padding:0 4px;font-size:10px;opacity:.7;font-family:inherit}
+#rv-toggle{opacity:.4}
+#rv-ui:hover #rv-toggle,#rv-toggle:hover,#rv-toggle:focus-visible{opacity:1}
+#rv-ui.rv-on #rv-toggle{opacity:1;background:var(--rv-accent);border-color:var(--rv-accent);color:#fff}
+#rv-ui:not(.rv-on) #rv-list-btn,#rv-ui:not(.rv-on) #rv-copy-btn{display:none}
+#rv-tip{position:absolute;right:0;bottom:100%;margin-bottom:8px;white-space:nowrap;background:var(--rv-text);
+  color:var(--rv-bg);font-size:11px;padding:4px 8px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s}
+#rv-toggle:hover ~ #rv-tip,#rv-toggle:focus-visible ~ #rv-tip{opacity:1}
+#rv-ui.rv-on #rv-tip{display:none}
+#rv-badge{background:var(--rv-accent);color:#fff;border-radius:999px;min-width:18px;height:18px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;padding:0 5px}
+
+#rv-pins{position:fixed;inset:0;z-index:2147483400;pointer-events:none;overflow:hidden}
+.rv-pin{position:absolute;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--rv-pin,#F0A70A);
+  color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 1px 4px rgba(0,0,0,.25);font-family:system-ui,sans-serif}
+
+#rv-pop{position:fixed;z-index:2147483700;width:340px;max-width:calc(100vw - 24px);background:var(--rv-bg);
+  color:var(--rv-text);border:1px solid var(--rv-border);border-radius:var(--rv-radius);
+  box-shadow:0 12px 40px rgba(0,0,0,.18);padding:12px;display:none}
+#rv-pop.rv-open{display:block}
+#rv-pop .rv-sel{font-size:10px;color:var(--rv-sub);word-break:break-all;margin-bottom:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#rv-pop .rv-snip{font-size:12px;background:rgba(127,127,127,.10);border-radius:6px;padding:6px 8px;margin-bottom:8px;max-height:72px;overflow:auto}
+#rv-pop textarea{width:100%;min-height:88px;resize:vertical;border:1px solid var(--rv-border);border-radius:8px;
+  padding:8px;font-size:13px;color:var(--rv-text);background:transparent;outline:none}
+#rv-pop textarea:focus{border-color:var(--rv-accent)}
+#rv-pop .rv-btns{display:flex;align-items:center;gap:8px;margin-top:10px}
+#rv-pop .rv-btns .rv-spacer{flex:1}
+#rv-pop button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-text);border-radius:8px;
+  padding:6px 12px;font-size:12px;cursor:pointer}
+#rv-pop button.rv-primary{background:var(--rv-accent);border-color:var(--rv-accent);color:#fff}
+#rv-pop button.rv-danger{color:var(--rv-danger);border-color:transparent}
+#rv-pop button.rv-danger[hidden]{display:none}
+
+#rv-panel{position:fixed;right:16px;bottom:64px;z-index:2147483500;width:340px;max-width:calc(100vw - 24px);
+  max-height:min(60vh,460px);overflow:auto;background:var(--rv-bg);color:var(--rv-text);
+  border:1px solid var(--rv-border);border-radius:var(--rv-radius);box-shadow:0 12px 40px rgba(0,0,0,.18);padding:10px;display:none}
+#rv-panel.rv-open{display:block}
+#rv-panel .rv-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 4px 8px;border-bottom:1px solid var(--rv-border)}
+#rv-panel .rv-head .rv-title{font-size:11px;color:var(--rv-sub);letter-spacing:.04em}
+#rv-panel .rv-head button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-danger);
+  border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer}
+#rv-panel .rv-item{border-bottom:1px solid var(--rv-border);padding:8px 4px}
+#rv-panel .rv-item:last-child{border-bottom:0}
+#rv-panel .rv-no{font-weight:700;color:var(--rv-pin);font-size:12px;margin-right:6px}
+#rv-panel .rv-note{font-size:13px;white-space:pre-wrap;word-break:break-word}
+#rv-panel .rv-meta{font-size:10px;color:var(--rv-sub);word-break:break-all;margin-top:4px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#rv-panel .rv-acts{margin-top:6px;display:flex;gap:6px}
+#rv-panel .rv-acts button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-text);
+  border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer}
+#rv-panel .rv-acts button.rv-danger{color:var(--rv-danger)}
+#rv-panel .rv-empty{font-size:12px;color:var(--rv-sub);text-align:center;padding:24px 8px}
+#rv-panel .rv-lost{font-size:10px;color:var(--rv-danger);margin-left:6px}
+
+#rv-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);z-index:2147483800;
+  background:var(--rv-text);color:var(--rv-bg);font-size:12px;padding:8px 16px;border-radius:999px;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:80vw;text-align:center}
+#rv-toast.rv-show{opacity:.95;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-color-scheme:dark){
+  #rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{--rv-text:#EDEDEB;--rv-border:#3C3C3A;--rv-bg:#232322;--rv-sub:#9A9A96}
+}
+@media print{#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{display:none !important}}
+</style>
+<style id="rv-dyn"></style>
+<script id="rv-script">
+(function(){
+  "use strict";
+  if (window.__rvBooted) { return; }
+  window.__rvBooted = true;
+
+  var TARGETS = "p,div,span,h1,h2,h3,h4,li,ul,ol,section,header,footer,a,button,table,tr,td,th,img,strong,em,small";
+  var UI_SEL  = "#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast,#rv-style,#rv-dyn,#rv-script";
+  /* 保存先はページのパス全体で分ける。公開サイトはどのページも index.html なので、
+     ファイル名だけだとページどうしの指摘が混ざる（2026-11-21 修正） */
+  var PATH    = (function(){
+    var p = location.pathname || "/";
+    try { p = decodeURIComponent(p); } catch(e) {}
+    if (/\/$/.test(p)) { p += "index.html"; }
+    return p;
+  })();
+  var NAME    = (PATH.split("/").pop() || "index.html");
+  var FILE    = (location.protocol === "file:") ? NAME : (PATH.replace(/^\/+/, "") || "index.html");
+  var KEY     = "review-notes-v1::" + PATH;
+  var OLD_KEY = "review-notes-v1::" + NAME;   // 修正前の保存先（ファイル名だけ）
+
+  var notes = [];
+  var on = false;
+  var editing = null;     // { selector, snippet, tab, el, existing }
+  var hovered = null;
+
+  /* ---------- tokens: 既存ページのCSS変数があれば拾う ---------- */
+  function pick(names, fallback){
+    var cs = getComputedStyle(document.documentElement), v;
+    for (var i=0;i<names.length;i++){
+      v = cs.getPropertyValue(names[i]);
+      if (v && v.trim()) { return v.trim(); }
+    }
+    return fallback;
+  }
+  var TOK = {
+    text:   pick(["--color-text","--text","--color-ink","--ink","--fg","--color-fg"], "#2C2C2B"),
+    border: pick(["--color-border","--border","--color-line","--line","--rule"], "#E6E5E3"),
+    accent: pick(["--color-accent","--accent","--color-primary","--primary","--brand","--color-brand"], "#2783DE"),
+    pin:    pick(["--color-pin","--color-warning","--warning","--color-coral","--coral"], "#F0A70A"),
+    radius: pick(["--radius-md","--radius","--border-radius"], "10px")
+  };
+  function applyTokens(){
+    var els = document.querySelectorAll("#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast");
+    for (var i=0;i<els.length;i++){
+      els[i].style.setProperty("--rv-text", TOK.text);
+      els[i].style.setProperty("--rv-border", TOK.border);
+      els[i].style.setProperty("--rv-accent", TOK.accent);
+      els[i].style.setProperty("--rv-pin", TOK.pin);
+      els[i].style.setProperty("--rv-radius", TOK.radius);
+      els[i].style.setProperty("--rv-font", getComputedStyle(document.body).fontFamily || "system-ui, sans-serif");
+    }
+    document.getElementById("rv-dyn").textContent =
+      ".rv-hover{outline:2px dashed " + TOK.accent + " !important;outline-offset:1px !important;" +
+      "cursor:crosshair !important;background-color:" + hexa(TOK.accent, .07) + " !important}" +
+      ".rv-marked{outline:2px solid " + TOK.pin + " !important;outline-offset:1px !important}" +
+      "@keyframes rvFlash{0%,100%{background-color:transparent}30%{background-color:" + hexa(TOK.accent,.22) + "}}" +
+      ".rv-flash{animation:rvFlash 1s ease}";
+  }
+  function hexa(c, a){
+    var m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(c.trim());
+    if (!m) { return "rgba(39,131,222," + a + ")"; }
+    var h = m[1];
+    if (h.length === 3) { h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2]; }
+    return "rgba(" + parseInt(h.slice(0,2),16) + "," + parseInt(h.slice(2,4),16) + "," + parseInt(h.slice(4,6),16) + "," + a + ")";
+  }
+
+  /* ---------- UI ---------- */
+  var ui = document.createElement("div");
+  ui.id = "rv-ui";
+  ui.innerHTML =
+    '<button id="rv-toggle" type="button" aria-pressed="false"><span id="rv-toggle-label">🖍</span> <kbd>R</kbd></button>' +
+    '<span id="rv-tip">指摘モード（R）</span>' +
+    '<button id="rv-list-btn" type="button">一覧 <span id="rv-badge">0</span></button>' +
+    '<button id="rv-copy-btn" type="button">📋 コピー</button>';
+  document.body.appendChild(ui);
+
+  var pins = document.createElement("div"); pins.id = "rv-pins"; document.body.appendChild(pins);
+
+  var pop = document.createElement("div");
+  pop.id = "rv-pop"; pop.setAttribute("role","dialog");
+  pop.innerHTML =
+    '<div class="rv-sel"></div><div class="rv-snip"></div>' +
+    '<textarea placeholder="気になる点を書く（⌘/Ctrl+Enter で保存）"></textarea>' +
+    '<div class="rv-btns"><button type="button" class="rv-danger" hidden>削除</button><span class="rv-spacer"></span>' +
+    '<button type="button" class="rv-cancel">キャンセル</button>' +
+    '<button type="button" class="rv-primary">保存</button></div>';
+  document.body.appendChild(pop);
+
+  var panel = document.createElement("div"); panel.id = "rv-panel"; document.body.appendChild(panel);
+  var toastEl = document.createElement("div"); toastEl.id = "rv-toast"; document.body.appendChild(toastEl);
+
+  var $toggle = document.getElementById("rv-toggle");
+  var $label  = document.getElementById("rv-toggle-label");
+  var $badge  = document.getElementById("rv-badge");
+  var $ta     = pop.querySelector("textarea");
+  var $sel    = pop.querySelector(".rv-sel");
+  var $snip   = pop.querySelector(".rv-snip");
+  var $del    = pop.querySelector(".rv-danger");
+
+  applyTokens();
+
+  /* ---------- toast ---------- */
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("rv-show");
+    if (toastTimer) { clearTimeout(toastTimer); }
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("rv-show"); }, 1800);
+  }
+
+  /* ---------- storage ---------- */
+  function load(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      // 修正前の保存先に残った指摘を 1 回だけ引き継ぐ。index.html は複数ページで混ざっているおそれがあるので引き継がない
+      if (raw === null && NAME !== "index.html") {
+        raw = localStorage.getItem(OLD_KEY);
+        if (raw !== null) { localStorage.setItem(KEY, raw); localStorage.removeItem(OLD_KEY); }
+      }
+      notes = raw ? JSON.parse(raw) : [];
+      if (!(notes instanceof Array)) { notes = []; }
+    } catch(e) { notes = []; }
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(notes)); }
+    catch(e) { toast("保存できませんでした（localStorage）"); }
+  }
+
+  /* ---------- selector ---------- */
+  var SAFE_CLASS = /^[A-Za-z_][A-Za-z0-9_-]*$/;
+  function classesOf(el){
+    var cn = (typeof el.className === "string") ? el.className : (el.getAttribute("class") || "");
+    return cn.trim().split(/\s+/).filter(function(c){
+      return c && c.indexOf("rv-") !== 0 && SAFE_CLASS.test(c);
+    });
+  }
+  function buildSelector(el){
+    var parts = [], node = el;
+    while (node && node.nodeType === 1 && node !== document.body && node !== document.documentElement) {
+      if (node.id && SAFE_CLASS.test(node.id)) { parts.unshift("#" + node.id); break; }
+      var seg = node.tagName.toLowerCase();
+      var cls = classesOf(node);
+      if (cls.length) { seg += "." + cls.join("."); }
+      var parent = node.parentNode;
+      if (parent && parent.nodeType === 1) {
+        var same = [], i;
+        for (i = 0; i < parent.children.length; i++) {
+          if (parent.children[i].tagName === node.tagName) { same.push(parent.children[i]); }
+        }
+        if (same.length > 1) { seg += ":nth-of-type(" + (same.indexOf(node) + 1) + ")"; }
+      }
+      parts.unshift(seg);
+      node = parent;
+    }
+    return parts.join(" > ");
+  }
+  function resolve(selector){
+    try { return document.querySelector(selector); } catch(e) { return null; }
+  }
+  function snippetOf(el){
+    var t = (el.innerText || el.textContent || "").replace(/\s+/g, " ").trim();
+    if (!t && el.tagName === "IMG") { t = "[img] " + (el.getAttribute("alt") || el.getAttribute("src") || ""); }
+    return t.length > 120 ? t.slice(0, 120) + "…" : t;
+  }
+
+  /* ---------- tabs ---------- */
+  function hasTabs(){ return !!document.querySelector('[role="tab"]'); }
+  function activeTab(){
+    var t = document.querySelector('[role="tab"][aria-selected="true"]');
+    if (!t) {
+      var all = document.querySelectorAll('[role="tab"]');
+      for (var i = 0; i < all.length; i++) {
+        if (/(is-)?active|selected|current/.test(all[i].className)) { t = all[i]; break; }
+      }
+    }
+    return t ? (t.innerText || t.textContent || "").replace(/\s+/g, " ").trim() : "";
+  }
+  function switchToTab(label){
+    if (!label) { return; }
+    var all = document.querySelectorAll('[role="tab"]');
+    for (var i = 0; i < all.length; i++) {
+      var l = (all[i].innerText || all[i].textContent || "").replace(/\s+/g, " ").trim();
+      if (l === label) { all[i].click(); return true; }
+    }
+    return false;
+  }
+
+  /* ---------- pins ---------- */
+  var raf = null;
+  function schedule(){
+    if (raf) { return; }
+    raf = requestAnimationFrame(function(){ raf = null; renderPins(); });
+  }
+  function visible(el){
+    var r = el.getBoundingClientRect();
+    if (r.width === 0 && r.height === 0) { return null; }
+    if (r.bottom < -40 || r.top > innerHeight + 40) { return null; }
+    var cs = getComputedStyle(el);
+    if (cs.display === "none" || cs.visibility === "hidden") { return null; }
+    return r;
+  }
+  function renderPins(){
+    pins.textContent = "";
+    var marked = document.querySelectorAll(".rv-marked");
+    for (var i = 0; i < marked.length; i++) { marked[i].classList.remove("rv-marked"); }
+    notes.forEach(function(n, idx){
+      var el = resolve(n.selector);
+      if (!el) { return; }
+      var r = visible(el);
+      if (!r) { return; }
+      el.classList.add("rv-marked");
+      var p = document.createElement("div");
+      p.className = "rv-pin";
+      p.textContent = String(idx + 1);
+      p.style.left = Math.max(2, r.left - 6) + "px";
+      p.style.top  = Math.max(2, r.top - 8) + "px";
+      pins.appendChild(p);
+    });
+    $badge.textContent = String(notes.length);
+  }
+
+  /* ---------- hover ---------- */
+  function clearHover(){
+    if (hovered) { hovered.classList.remove("rv-hover"); hovered = null; }
+  }
+  document.addEventListener("mouseover", function(e){
+    if (!on) { return; }
+    var el = e.target.closest ? e.target.closest(TARGETS) : null;
+    if (!el || el.closest(UI_SEL)) { clearHover(); return; }
+    if (el === hovered) { return; }
+    clearHover();
+    hovered = el;
+    el.classList.add("rv-hover");
+  }, true);
+  document.addEventListener("mouseout", function(e){
+    if (!on) { return; }
+    if (hovered && !hovered.contains(e.relatedTarget)) { clearHover(); }
+  }, true);
+
+  /* ---------- 指摘の追加 ---------- */
+  document.addEventListener("click", function(e){
+    if (!on) { return; }
+    if (e.target.closest && e.target.closest(UI_SEL)) { return; }
+    var el = e.target.closest ? e.target.closest(TARGETS) : null;
+    if (!el) { return; }
+    e.preventDefault();
+    e.stopPropagation();
+    openPopup(el, e.clientX, e.clientY);
+  }, true);
+
+  function openPopup(el, x, y){
+    clearHover();
+    var selector = buildSelector(el);
+    var found = null;
+    for (var i = 0; i < notes.length; i++) { if (notes[i].selector === selector) { found = notes[i]; break; } }
+    editing = { selector: selector, snippet: snippetOf(el), tab: hasTabs() ? activeTab() : "", tag: el.tagName, existing: found };
+    $sel.textContent = selector;
+    $snip.textContent = editing.snippet || "（テキストなし）";
+    $ta.value = found ? found.note : "";
+    $del.hidden = !found;
+    pop.classList.add("rv-open");
+    var w = pop.offsetWidth, h = pop.offsetHeight;
+    var left = Math.min(Math.max(12, (x || innerWidth / 2) - w / 2), innerWidth - w - 12);
+    var top  = (y || innerHeight / 2) + 16;
+    if (top + h > innerHeight - 12) { top = Math.max(12, (y || innerHeight / 2) - h - 16); }
+    pop.style.left = left + "px";
+    pop.style.top  = top + "px";
+    $ta.focus();
+  }
+  function closePopup(){
+    pop.classList.remove("rv-open");
+    editing = null;
+  }
+  function saveNote(){
+    if (!editing) { return; }
+    var text = $ta.value.trim();
+    if (!text) { toast("指摘を入力してください"); $ta.focus(); return; }
+    if (editing.existing) {
+      editing.existing.note = text;
+    } else {
+      notes.push({
+        id: "rv" + Date.now() + Math.floor(Math.random() * 1000),
+        selector: editing.selector,
+        snippet: editing.snippet,
+        note: text,
+        tab: editing.tab,
+        tag: editing.tag,
+        createdAt: new Date().toISOString()
+      });
+    }
+    save(); closePopup(); renderPins(); renderPanel();
+    toast("指摘を保存しました");
+  }
+  function deleteNote(id){
+    notes = notes.filter(function(n){ return n.id !== id; });
+    save(); renderPins(); renderPanel();
+    toast("指摘を削除しました");
+  }
+  function deleteAll(){
+    if (!notes.length) { return; }
+    if (!window.confirm("指摘 " + notes.length + " 件をすべて削除します。元に戻せません。")) { return; }
+    notes = [];
+    save(); renderPins(); renderPanel();
+    toast("指摘をすべて削除しました");
+  }
+  pop.querySelector(".rv-primary").addEventListener("click", saveNote);
+  pop.querySelector(".rv-cancel").addEventListener("click", closePopup);
+  $del.addEventListener("click", function(){
+    if (editing && editing.existing) { deleteNote(editing.existing.id); closePopup(); }
+  });
+
+  /* ---------- 一覧パネル ---------- */
+  function renderPanel(){
+    panel.textContent = "";
+    if (!notes.length) {
+      var em = document.createElement("div");
+      em.className = "rv-empty";
+      em.textContent = "まだ指摘はありません。気になる箇所をクリックしてください。";
+      panel.appendChild(em);
+      return;
+    }
+    var head0 = document.createElement("div");
+    head0.className = "rv-head";
+    var title = document.createElement("span");
+    title.className = "rv-title"; title.textContent = "指摘一覧（" + notes.length + "件）";
+    var clearBtn = document.createElement("button");
+    clearBtn.type = "button"; clearBtn.textContent = "すべて削除";
+    clearBtn.addEventListener("click", deleteAll);
+    head0.appendChild(title); head0.appendChild(clearBtn);
+    panel.appendChild(head0);
+    notes.forEach(function(n, idx){
+      var el = resolve(n.selector);
+      var item = document.createElement("div");
+      item.className = "rv-item";
+
+      var head = document.createElement("div");
+      var no = document.createElement("span");
+      no.className = "rv-no"; no.textContent = "#" + (idx + 1);
+      head.appendChild(no);
+      var body = document.createElement("span");
+      body.className = "rv-note"; body.textContent = n.note;
+      head.appendChild(body);
+      if (!el) {
+        var lost = document.createElement("span");
+        lost.className = "rv-lost"; lost.textContent = "要素未検出";
+        head.appendChild(lost);
+      }
+      item.appendChild(head);
+
+      var meta = document.createElement("div");
+      meta.className = "rv-meta";
+      meta.textContent = (n.tab ? "[" + n.tab + "] " : "") + n.selector;
+      item.appendChild(meta);
+
+      var acts = document.createElement("div");
+      acts.className = "rv-acts";
+      var go = document.createElement("button");
+      go.type = "button"; go.textContent = "移動";
+      go.addEventListener("click", function(){ jumpTo(n); });
+      var del = document.createElement("button");
+      del.type = "button"; del.className = "rv-danger"; del.textContent = "削除";
+      del.addEventListener("click", function(){ deleteNote(n.id); });
+      acts.appendChild(go); acts.appendChild(del);
+      item.appendChild(acts);
+
+      panel.appendChild(item);
+    });
+  }
+  function jumpTo(n){
+    if (n.tab) { switchToTab(n.tab); }
+    setTimeout(function(){
+      var el = resolve(n.selector);
+      if (!el) { toast("対象の要素が見つかりません"); return; }
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("rv-flash");
+      setTimeout(function(){ el.classList.remove("rv-flash"); renderPins(); }, 1100);
+      schedule();
+    }, n.tab ? 180 : 0);
+  }
+
+  /* ---------- コピー ---------- */
+  function buildMarkdown(){
+    var out = [];
+    out.push("# HTML改善依頼", "");
+    out.push("対象ファイル: " + FILE + "（自己完結の単一HTML）");
+    out.push("以下のレビュー指摘をHTMLに反映してください。各指摘は対象要素のCSSセレクタと表示テキストで特定できます。");
+    out.push("デザインの統一感（余白・フォントサイズ・配色）を保ち、指摘のない箇所は変更しないでください。", "");
+    notes.forEach(function(n, i){
+      var head = "## " + (i + 1) + ". " + (n.tab ? "[タブ: " + n.tab + "] " : "") + (n.tag || "ELEMENT");
+      out.push(head);
+      out.push("- セレクタ: `" + n.selector + "`");
+      out.push("- 対象テキスト: 「" + (n.snippet || "（テキストなし）") + "」");
+      out.push("- 指摘: " + n.note, "");
+    });
+    return out.join("\n");
+  }
+  function copyMarkdown(){
+    if (!notes.length) { toast("指摘がまだありません"); return; }
+    var md = buildMarkdown();
+    var done = function(){ toast("コピーしました（" + notes.length + "件）"); };
+    var fail = function(){
+      try {
+        var t = document.createElement("textarea");
+        t.value = md;
+        t.style.cssText = "position:fixed;left:-9999px;top:0";
+        document.body.appendChild(t);
+        t.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(t);
+        ok ? done() : toast("コピーに失敗しました");
+      } catch(e) { toast("コピーに失敗しました"); }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(md).then(done, fail);
+    } else { fail(); }
+  }
+
+  /* ---------- ON/OFF ---------- */
+  function setMode(next){
+    on = next;
+    ui.classList.toggle("rv-on", on);
+    $toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    $label.textContent = on ? "✓ 指摘モード中" : "🖍";
+    if (!on) { clearHover(); closePopup(); panel.classList.remove("rv-open"); }
+    toast(on ? "指摘モード ON" : "指摘モード OFF");
+  }
+  $toggle.addEventListener("click", function(){ setMode(!on); });
+  document.getElementById("rv-list-btn").addEventListener("click", function(){
+    panel.classList.toggle("rv-open");
+    if (panel.classList.contains("rv-open")) { renderPanel(); }
+  });
+  document.getElementById("rv-copy-btn").addEventListener("click", copyMarkdown);
+
+  /* ---------- キーボード ---------- */
+  function isTyping(el){
+    if (!el) { return false; }
+    var t = el.tagName;
+    return t === "INPUT" || t === "TEXTAREA" || t === "SELECT" || el.isContentEditable;
+  }
+  document.addEventListener("keydown", function(e){
+    var popOpen = pop.classList.contains("rv-open");
+    if (e.key === "Escape" && popOpen) { closePopup(); return; }
+    if (popOpen && (e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); saveNote(); return; }
+    if (e.metaKey || e.ctrlKey || e.altKey) { return; }
+    if (popOpen || isTyping(e.target) || isTyping(document.activeElement)) { return; }
+    if (e.key === "r" || e.key === "R") { e.preventDefault(); setMode(!on); }
+  }, true);
+
+  /* ---------- 再配置 ---------- */
+  addEventListener("scroll", schedule, true);
+  addEventListener("resize", schedule);
+  document.addEventListener("click", function(e){
+    if (e.target.closest && e.target.closest('[role="tab"]')) { setTimeout(function(){ renderPins(); }, 120); }
+  }, false);
+
+  load();
+  renderPins();
+  renderPanel();
+})();
+</script>
+<!-- ===== review mode (rv) : end ===== -->
+
+</body>
+</html>
