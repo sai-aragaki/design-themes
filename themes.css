@@ -187,6 +187,7 @@ html[data-theme="mint"] {
   --pal-deep: #3F6E79;
   --pal-danger: #B0363A;
   --pal-muted-strong: #5B6A65;
+  --pal-panel: #EEF7F3;
   --strong-line-c: var(--pal-highlight);
   --strong-line-a: 55%;
   --strong-line-h: 38%;
@@ -294,6 +295,13 @@ html[data-theme="mint"] {
   --langtag-fg: var(--pal-deep);
   --orn-show: block;
   --motion-show: 0;
+  --part-accent-fg: var(--pal-deep);
+  --part-wash-bg: var(--pal-accent-wash);
+  --part-panel-bg: var(--pal-panel);
+  --alert-fg: var(--pal-danger);
+  --note-alt-bg: var(--pal-emphasis-wash);
+  --note-alt-fg: var(--pal-emphasis);
+  --note-alt-line-c: var(--pal-emphasis);
 }
 
 /* --- 意味の名前: bold（色の名前 --pal-* + 台帳 semantic.json + テーマの "semantic" 欄）--- */
@@ -316,6 +324,7 @@ html[data-theme="bold"] {
   --pal-danger: #9B2C2C;
   --pal-select-line: #E3E143;
   --pal-muted-strong: #6E6B5E;
+  --pal-panel: #F3F1DF;
   --strong-line-c: var(--pal-highlight);
   --strong-line-a: 70%;
   --strong-line-h: 38%;
@@ -423,6 +432,13 @@ html[data-theme="bold"] {
   --langtag-fg: var(--pal-deep);
   --orn-show: block;
   --motion-show: 0;
+  --part-accent-fg: var(--pal-deep);
+  --part-wash-bg: var(--pal-accent-wash);
+  --part-panel-bg: var(--pal-panel);
+  --alert-fg: var(--pal-danger);
+  --note-alt-bg: var(--pal-emphasis-wash);
+  --note-alt-fg: var(--pal-emphasis);
+  --note-alt-line-c: var(--pal-emphasis);
 }
 
 /* --- 意味の名前: sai（土台）（色の名前 --pal-* + 台帳 semantic.json + テーマの "semantic" 欄）--- */
@@ -444,6 +460,7 @@ html[data-theme="bold"] {
   --pal-deep: #4F7C87;
   --pal-danger: #C84E6C;
   --pal-muted-strong: #666666;
+  --pal-panel: #F5F5F5;
   --strong-line-c: var(--pal-highlight);
   --strong-line-a: 0%;
   --strong-line-h: 38%;
@@ -551,6 +568,13 @@ html[data-theme="bold"] {
   --langtag-fg: var(--pal-ink);
   --orn-show: block;
   --motion-show: 0;
+  --part-accent-fg: var(--pal-deep);
+  --part-wash-bg: var(--pal-accent-wash);
+  --part-panel-bg: var(--pal-panel);
+  --alert-fg: var(--pal-danger);
+  --note-alt-bg: var(--pal-emphasis-wash);
+  --note-alt-fg: var(--pal-ink);
+  --note-alt-line-c: var(--pal-emphasis);
 }
 /* THEMES:GENERATED:END */
 

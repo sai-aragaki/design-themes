@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- テーマの切り替えあり（Mint → Bold Yellow → SAI v2）。build.py が themes.css / themes.js に版（?v=）を付ける -->
-<link rel="stylesheet" href="/themes.css?v=b19a727a8a">
+<link rel="stylesheet" href="/themes.css?v=3d7fbbb420">
 <script src="/themes.js?v=2c8d57ecca"></script>
 <style>
   /* 土台（SAI v2）の値。テーマは html[data-theme] で重なる。意味の名前（--strong-line など）は themes.css が持つ */
@@ -141,6 +141,15 @@
   .rise { animation: rise 1.4s ease-in-out alternate; animation-iteration-count: calc(var(--motion-show) * 999); }
   @keyframes rise { from { opacity: .25; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
+  /* 42〜45 記事の部品（研究記事の独自の部品が、古いトークンをつなぎ替えて使う名前） */
+  .p-box { margin: 20px 0; padding: 16px 20px; background: var(--card-bg); border: var(--card-line-w) solid var(--card-line-c); border-radius: var(--card-r); }
+  .p-head { margin: 0 0 4px; font-family: var(--en); font-size: 12px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--part-accent-fg); }
+  .p-val { color: var(--part-accent-fg); font-weight: 700; }
+  .p-tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 16px 0; }
+  .p-tag { font-size: 13px; padding: 3px 10px; border-radius: 4px; background: var(--part-wash-bg); color: var(--ink); }
+  .p-panel { margin: 16px 0; padding: 14px 18px; background: var(--part-panel-bg); font-size: 14.5px; }
+  .p-alert { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--alert-fg); }
+  .p-alt { margin: 20px 0; padding: 14px 18px; background: var(--note-alt-bg); border-left: 3px solid var(--note-alt-line-c); color: var(--note-alt-fg); font-size: 14.5px; }
   /* 33 フッター */
   footer { background: var(--pagefoot-bg); color: var(--pagefoot-fg); font-size: 13px; padding: 40px 0; }
   footer a { color: inherit; }
@@ -153,7 +162,7 @@
   <div class="wrap wide hd-in">
     <a class="brand" href="../#tune" target="_top">Sample</a>
     <nav class="chapnav" aria-label="章">
-      <a href="#s1" class="on">ことば</a><a href="#s2">部品</a><a href="#s3">ナビ</a><a href="#s4">データ</a>
+      <a href="#s1" class="on">ことば</a><a href="#s2">部品</a><a href="#s3">ナビ</a><a href="#s4">データ</a><a href="#s5">部品</a>
     </nav>
     <div data-theme-switch></div>
   </div>
@@ -241,6 +250,19 @@
       </figure>
       <div class="mosaic" aria-hidden="true"></div>
       <p class="rise">この段落は「動き」を出すと、ふわっと浮かび上がります。</p>
+    </div>
+  </section>
+  <section class="sec" id="s5">
+    <div class="wrap">
+      <div class="secno"><span class="n">05</span><span class="l">Parts</span></div>
+      <h2>記事ごとの部品</h2>
+      <p class="secsub">Parts that each article brings</p>
+      <p>研究記事には、記事ごとに作った部品があります。色は、部品の役割ごとの名前で決まります。</p>
+      <div class="p-box"><p class="p-head">Insight 01</p>箱の中の見出しと、<span class="p-val">メーターの値（非常に高い）</span>は、部品の強調文字の色です。</div>
+      <div class="p-tags"><span class="p-tag">卓越論 eudaimonic</span><span class="p-tag">快楽論 hedonic</span></div>
+      <div class="p-panel">弱めの箱やメーターの溝は、部品の面の色です。</div>
+      <div class="p-box"><p class="p-alert">注意</p>注意書きのラベルは、注意の色です。</div>
+      <div class="p-alt">限界：この研究は自己報告に頼っている。注意の箱は、地・文字・左の線の 3 つの色で決まります。</div>
     </div>
   </section>
 </main>
