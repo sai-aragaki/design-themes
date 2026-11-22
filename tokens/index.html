@@ -105,6 +105,90 @@
     .grp { padding: 44px 0; }
   }
 
+  .sp-wrap { margin-top: 16px; }
+  .val-h { display: inline-block; font-size: 11px; color: var(--muted); margin-right: 6px; }
+  .val-h2 { margin: 10px 0 4px; font-size: 11px; color: var(--muted); }
+  .vals { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
+  .v { display: flex; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px solid var(--rule); font-size: 12px; line-height: 1.5; scroll-margin-top: 80px; }
+  .v-k { color: var(--text); }
+  .v-v { display: flex; align-items: center; gap: 6px; text-align: right; min-width: 0; }
+  .v-v code { color: var(--ink); word-break: break-all; font-size: 11px; }
+  .v.own .v-k::after { content: "このテーマだけ"; margin-left: 6px; font-size: 10px; color: var(--muted); border: 1px solid var(--rule-strong); border-radius: 999px; padding: 0 6px; white-space: nowrap; }
+  .sw { flex: none; width: 14px; height: 14px; border: 1px solid rgba(0,0,0,.15); border-radius: 3px; display: inline-block; }
+
+  .sp { margin: 0 0 6px; padding: 18px; border: 1px dashed var(--rule-strong); background: var(--page-bg, var(--paper)); border-radius: 0; }
+  .sp-cap { font-size: 12px; color: var(--muted); margin: 0 0 6px; }
+  .sp-p { margin: 0; font-size: 15px; line-height: 1.9; color: var(--text); }
+  .sp-strong { color: var(--strong-fg); font-weight: 700; background: var(--strong-line); }
+  .sp-mark { color: var(--mark-fg); font-weight: var(--mark-w); background: var(--mark-line); }
+  .sp-hl { color: var(--hl-fg); font-weight: 700; }
+  .sp-em { font-style: var(--em-font); }
+  .sp-small { color: var(--small-fg); font-size: 12px; }
+  .sp-link { color: var(--link-fg); border-bottom: var(--link-line); text-decoration: none; }
+  .sp-code { background: var(--code-bg); color: var(--code-fg); padding: 1px 6px; border-radius: 4px; font-family: ui-monospace, Menlo, monospace; font-size: .9em; }
+  .sp-title { margin: 0; font-size: 24px; line-height: 1.4; font-weight: var(--title-w); color: var(--title-fg); }
+  .sp-eyebrow { margin: 0; display: flex; align-items: center; gap: 10px; font-family: var(--en); font-size: 11px; letter-spacing: var(--ls-label); text-transform: var(--label-case); color: var(--eyebrow-fg); }
+  .sp-eyebrow::before { content: ""; width: 26px; border-top: var(--eyebrow-line); }
+  .sp-secno { display: flex; align-items: center; gap: 12px; font-family: var(--en); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+  .sp-secno-num { background: var(--secno-bg); color: var(--secno-fg); border-radius: var(--secno-r); padding: 3px 12px; font-weight: 600; }
+  .sp-seclabel { color: var(--seclabel-fg); font-weight: 500; }
+  .sp-h2 { margin: 0; font-size: 22px; line-height: 1.45; font-weight: var(--h2-w); color: var(--ink); }
+  .sp-h2 span { position: relative; isolation: isolate; }
+  .sp-h2 span::before { content: ""; display: var(--h2-orn-show); position: absolute; z-index: -1; left: -14px; top: -10px; width: 40px; height: 40px; border-radius: 50%; background: var(--yellow); opacity: .55; }
+  .sp-secsub { margin: 4px 0 0; font-family: var(--en); font-size: 13px; color: var(--secsub-fg); }
+  .sp-h3 { margin: 0; font-size: 18px; font-weight: var(--h3-w); color: var(--h3-fg); }
+  .sp-lede { margin: 0; font-size: 16px; line-height: 2; color: var(--lede-fg); }
+  .sp-note, .sp-quote { padding: 12px 16px; font-size: 14px; border: 1px solid var(--card-line); border-left: var(--note-line); background: var(--note-bg); }
+  .sp-quote { border-left: var(--quote-line); background: var(--quote-bg); }
+  .sp-card { padding: 16px; background: var(--card-bg); border: var(--bw) solid var(--card-line); border-radius: var(--r-card); box-shadow: var(--shadow-card); font-size: 14px; }
+  .sp-stat { display: flex; align-items: baseline; gap: 12px; background: var(--stat-bg); }
+  .sp-stat-n { font-family: var(--en); font-size: 36px; font-weight: 500; color: var(--stat-fg); line-height: 1; }
+  .sp-stat-l { font-size: 12px; color: var(--muted); }
+  .sp-chips, .sp-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .sp-chip { font-size: 13px; padding: 6px 14px; border-radius: var(--r-pill); border: var(--bw) solid var(--ink); color: var(--ink); }
+  .sp-chip-on { background: var(--chip-on-bg); color: var(--chip-on-fg); border-color: var(--chip-on-bg); }
+  .sp-badge { width: 28px; height: 28px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: var(--badge-bg); color: var(--badge-fg); font-family: var(--en); font-size: 12px; font-weight: 700; }
+  .sp-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 26px; background: var(--btn-bg); color: var(--btn-fg); border-radius: var(--btn-r); font-size: 14px; font-weight: 600; }
+  .sp-input { display: block; padding: 10px 14px; background: var(--input-bg); border: var(--bw) solid var(--input-line); border-radius: var(--r-input); color: var(--muted); font-size: 14px; }
+  .sp-header { padding: 14px 16px; background: var(--header-bg); border-bottom: 1px solid var(--rule); font-family: var(--en); font-weight: 600; color: var(--ink); }
+  .sp-nav { display: flex; gap: 20px; font-size: 13px; color: var(--muted); }
+  .sp-nav span { padding: 6px 0; }
+  .sp-chapnav .on { color: var(--ink); font-weight: 600; border-bottom: var(--chapnav-on-w) solid var(--chapnav-on-line); }
+  .sp-tab .on { color: var(--ink); font-weight: 600; border-bottom: var(--tab-on-w) solid var(--tab-on-line); }
+  .sp-toc-row { padding: 10px 14px; font-size: 14px; border-left: 3px solid transparent; background: var(--white); border-bottom: 1px solid var(--rule); }
+  .sp-toc-row.on { border-left-color: var(--toc-on-line); font-weight: 600; color: var(--ink); }
+  .sp-switch { display: inline-flex; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--switch-fg); color: var(--switch-fg); align-items: center; justify-content: center; }
+  .sp-page { padding: 22px 16px; background: var(--page-bg); border: 1px solid var(--rule); font-size: 14px; }
+  .sp-band { padding: 14px 16px; background: var(--band-bg); font-size: 14px; }
+  .sp-band-alt { background: var(--band-alt-bg); }
+  .sp-hero-mini, .sp-after { padding: 10px 16px; font-size: 13px; background: var(--white); }
+  .sp-headstripe { display: var(--headstripe-show); height: 6px; background: var(--stripe); }
+  .sp-divider { padding: 8px 0; border-bottom: var(--divider-line); font-size: 14px; }
+  .sp-hero { position: relative; overflow: hidden; padding: 28px 16px; background: var(--hero-area-bg); border: 1px solid var(--rule); font-size: 18px; font-weight: 700; color: var(--ink); }
+  .sp-hero-orn { display: var(--hero-area-orn-show); position: absolute; right: -10px; top: -10px; width: 70px; height: 70px; border-radius: 50%; background: var(--yellow); opacity: .5; }
+  .sp-foot { padding: 18px 16px; background: var(--pagefoot-bg); color: var(--pagefoot-fg); font-size: 12px; }
+  .sp-icon { stroke: var(--icon-fg); stroke-width: var(--icon-w); display: block; }
+  .sp-table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  .sp-table th { text-align: left; font-weight: 500; color: var(--muted); border-bottom: var(--table-head-line); padding: 6px 8px; }
+  .sp-table td { padding: 6px 8px; border-bottom: 1px solid var(--rule); }
+  .sp-table tbody tr:nth-child(even) td { background: var(--table-zebra-bg); }
+  .sp-list { margin: 0; padding: 0; list-style: none; font-size: 14px; }
+  .sp-list li { position: relative; padding-left: 18px; }
+  .sp-list li::before { content: ""; position: absolute; left: 2px; top: .8em; width: 6px; height: 6px; border-radius: 50%; background: var(--list-dot-bg); }
+  .sp-figure { margin: 0; border: var(--figure-line); background: var(--figure-bg); padding: 12px; }
+  .sp-figure-body { height: 54px; background: var(--tint); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 12px; }
+  .sp-figure figcaption { margin: 8px 0 0; font-size: 12px; color: var(--muted); }
+  .sp-meter { height: 10px; background: var(--meter-track-bg); border-radius: 999px; overflow: hidden; }
+  .sp-meter i { display: block; height: 100%; background: var(--meter-fill-bg); }
+  .sp-lang { display: inline-block; padding: 2px 8px; border-radius: 5px; font-family: var(--en); font-size: 11px; font-weight: 600; background: var(--langtag-bg); color: var(--langtag-fg); }
+  .sp-orn { display: var(--orn-show); grid-template-columns: repeat(4, 28px); }
+  .sp-orn { display: var(--orn-show, block); }
+  .sp-orn i { display: inline-block; width: 28px; height: 28px; }
+  .sp-orn i:nth-child(1) { background: var(--teal); } .sp-orn i:nth-child(2) { background: var(--yellow); }
+  .sp-orn i:nth-child(3) { background: var(--coral); } .sp-orn i:nth-child(4) { background: var(--deep-teal); }
+  .sp-motion { display: inline-block; padding: 8px 14px; border: 1px solid var(--rule-strong); font-size: 13px; animation: sp-rise 1.4s ease-in-out alternate; animation-iteration-count: calc(var(--motion-show) * 999); }
+  @keyframes sp-rise { from { opacity: .2; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
   footer { background: var(--rule); color: var(--muted); font-size: 12px; padding: 32px 0; }
   footer a { color: inherit; }
 </style>
@@ -123,8 +207,13 @@
     <div class="wrap">
       <p class="eyebrow">Semantic tokens ／ 案</p>
       <h1>意味の名前の一覧</h1>
-      <p class="lede">記事やページの中で、ふつうの段落の文ではないもの（太字、見出しの番号、注記の箱、章ナビなど）を 41 個の「意味」に分け、それぞれに名前の案を付けました。どの名前もまだ使っていません。</p>
+      <p class="lede">記事やページの中で、ふつうの段落の文ではないもの（太字、見出しの番号、注記の箱、章ナビなど）を 41 個の「意味」に分け、70 個の名前を付けました。名前と値はテーマのサイトに入っていますが、記事やほかのページはまだ使っていません。</p>
       <p class="lede">カードごとに、その名前がページのどこを指すか（オレンジの枠）と、3 つのテーマでいまどう見えるかを並べています。写真は 2026-11-22 に、幅 375px（iPhone の幅）で撮った公開中のページです。</p>
+      <div class="rule-box">
+        <h2>値を直したいとき</h2>
+        <p>各カードの「案の値」の行を、指摘モード（右下のペン、または R キー）で押して「8px に」「もう少し薄く」と書き、📋 でコピーして HQ に貼ってください。行には名前とテーマが入っているので、どのファイルのどこを直せばよいかが一度で決まります。</p>
+        <p>写真は「いま」の記事の見た目、見本は「案」の値で描いたものです。記事はまだ案の値を使っていません。</p>
+      </div>
       <div class="rule-box">
         <h2>名前の付け方の規則</h2>
         <p>名前は <code>--部品-性質</code> の形にします（いまの <code>--card-line</code> や <code>--footer-bg</code> と同じ並び）。部品は英単語 1 つ（<code>note</code>、<code>badge</code>、<code>chip</code> など）。選んだ状態のものだけ、間に <code>on</code> を挟みます（<code>--chip-on-bg</code>）。</p>
@@ -155,6 +244,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--strong-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">本文の中で<strong class="sp-strong">ここが大事</strong>という形になる。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
@@ -164,17 +254,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/strong-mint.jpg" width="117" height="44" alt="強調（太字）の線：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">#16201D・太さ 700・線なし</p>
+          <p class="val"><span class="val-h">いま</span>#16201D・太さ 700・線なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-strong-line-mint" data-token="--strong-line" data-theme="mint"><span class="v-k">強調（太字）の線</span><span class="v-v"><code>linear-gradient(transparent 62%, rgba(242, 201, 76, 0.55) 62%)</code></span></li><li class="v" id="v-strong-fg-mint" data-token="--strong-fg" data-theme="mint"><span class="v-k">強調（太字）の文字色</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/strong-bold.jpg" width="117" height="44" alt="強調（太字）の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">#1B1B1B・太さ 700・線なし</p>
+          <p class="val"><span class="val-h">いま</span>#1B1B1B・太さ 700・線なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-strong-line-bold" data-token="--strong-line" data-theme="bold"><span class="v-k">強調（太字）の線</span><span class="v-v"><code>linear-gradient(transparent 62%, rgba(227, 225, 67, 0.7) 62%)</code></span></li><li class="v" id="v-strong-fg-bold" data-token="--strong-fg" data-theme="bold"><span class="v-k">強調（太字）の文字色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/strong-sai.jpg" width="117" height="44" alt="強調（太字）の線：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">#111111・太さ 700・線なし</p>
+          <p class="val"><span class="val-h">いま</span>#111111・太さ 700・線なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-strong-line-sai" data-token="--strong-line" data-theme="sai"><span class="v-k">強調（太字）の線</span><span class="v-v"><code>none</code></span></li><li class="v" id="v-strong-fg-sai" data-token="--strong-fg" data-theme="sai"><span class="v-k">強調（太字）の文字色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -189,6 +285,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--mark-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">読み手に<mark class="sp-mark">印を付けたい語</mark>はこう見える。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -198,17 +295,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/mark-mint.jpg" width="339" height="98" alt="印を付けた語の線：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #33403C・下 42% に #62B8A0 34% の線</p>
+          <p class="val"><span class="val-h">いま</span>文字 #33403C・下 42% に #62B8A0 34% の線</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-mark-line-mint" data-token="--mark-line" data-theme="mint"><span class="v-k">印を付けた語の線</span><span class="v-v"><code>var(--strong-line)</code></span></li><li class="v" id="v-mark-fg-mint" data-token="--mark-fg" data-theme="mint"><span class="v-k">印を付けた語の文字色</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li><li class="v" id="v-mark-w-mint" data-token="--mark-w" data-theme="mint"><span class="v-k">印を付けた語の太さ</span><span class="v-v"><code>700</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/mark-bold.jpg" width="339" height="98" alt="印を付けた語の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #1B1B1B・下 42% に #E3E143 34% の線</p>
+          <p class="val"><span class="val-h">いま</span>文字 #1B1B1B・下 42% に #E3E143 34% の線</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-mark-line-bold" data-token="--mark-line" data-theme="bold"><span class="v-k">印を付けた語の線</span><span class="v-v"><code>var(--strong-line)</code></span></li><li class="v" id="v-mark-fg-bold" data-token="--mark-fg" data-theme="bold"><span class="v-k">印を付けた語の文字色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v" id="v-mark-w-bold" data-token="--mark-w" data-theme="bold"><span class="v-k">印を付けた語の太さ</span><span class="v-v"><code>700</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/mark-sai.jpg" width="339" height="98" alt="印を付けた語の線：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #333333・下 42% に #62B8A0 34% の線</p>
+          <p class="val"><span class="val-h">いま</span>文字 #333333・下 42% に #62B8A0 34% の線</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-mark-line-sai" data-token="--mark-line" data-theme="sai"><span class="v-k">印を付けた語の線</span><span class="v-v"><code>var(--strong-line)</code></span></li><li class="v" id="v-mark-fg-sai" data-token="--mark-fg" data-theme="sai"><span class="v-k">印を付けた語の文字色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-mark-w-sai" data-token="--mark-w" data-theme="sai"><span class="v-k">印を付けた語の太さ</span><span class="v-v"><code>700</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -223,6 +326,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">ここは<span class="sp-hl">色で強める語</span>の例。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
@@ -232,17 +336,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/hl-mint.jpg" width="306" height="64" alt="色で強める語：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #B03A57・太さ 700</p>
+          <p class="val"><span class="val-h">いま</span>文字 #B03A57・太さ 700</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-hl-fg-mint" data-token="--hl-fg" data-theme="mint"><span class="v-k">色で強める語</span><span class="v-v"><i class="sw" style="background:#B03A57"></i><code>#B03A57</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/hl-bold.jpg" width="306" height="64" alt="色で強める語：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #6E6A12・太さ 700</p>
+          <p class="val"><span class="val-h">いま</span>文字 #6E6A12・太さ 700</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-hl-fg-bold" data-token="--hl-fg" data-theme="bold"><span class="v-k">色で強める語</span><span class="v-v"><i class="sw" style="background:#6E6A12"></i><code>#6E6A12</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/hl-sai.jpg" width="306" height="64" alt="色で強める語：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #333333・太さ 700</p>
+          <p class="val"><span class="val-h">いま</span>文字 #333333・太さ 700</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-hl-fg-sai" data-token="--hl-fg" data-theme="sai"><span class="v-k">色で強める語</span><span class="v-v"><i class="sw" style="background:#EB6584"></i><code>#EB6584</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -257,6 +367,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">書名の <span class="sp-em">General Hospital Psychiatry</span> など。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
@@ -266,17 +377,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/em-mint.jpg" width="219" height="42" alt="斜体：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">斜体・Noto Sans JP・文字 #33403C</p>
+          <p class="val"><span class="val-h">いま</span>斜体・Noto Sans JP・文字 #33403C</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-em-font-mint" data-token="--em-font" data-theme="mint"><span class="v-k">斜体</span><span class="v-v"><code>italic</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/em-bold.jpg" width="219" height="42" alt="斜体：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">斜体・Noto Sans JP・文字 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>斜体・Noto Sans JP・文字 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-em-font-bold" data-token="--em-font" data-theme="bold"><span class="v-k">斜体</span><span class="v-v"><code>italic</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/em-sai.jpg" width="219" height="42" alt="斜体：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">斜体・Noto Sans JP・文字 #333333</p>
+          <p class="val"><span class="val-h">いま</span>斜体・Noto Sans JP・文字 #333333</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-em-font-sai" data-token="--em-font" data-theme="sai"><span class="v-k">斜体</span><span class="v-v"><code>italic</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -291,6 +408,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">本文<span class="sp-small">（注：小さい注はこう）</span></p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -300,17 +418,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/small-mint.jpg" width="46" height="39" alt="小さい注：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #33403C・大きさ 13px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #33403C・大きさ 13px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-small-fg-mint" data-token="--small-fg" data-theme="mint"><span class="v-k">小さい注</span><span class="v-v"><i class="sw" style="background:#5B6A65"></i><code>#5B6A65</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/small-bold.jpg" width="47" height="39" alt="小さい注：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #1B1B1B・大きさ 13px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #1B1B1B・大きさ 13px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-small-fg-bold" data-token="--small-fg" data-theme="bold"><span class="v-k">小さい注</span><span class="v-v"><i class="sw" style="background:#6E6B5E"></i><code>#6E6B5E</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/small-sai.jpg" width="46" height="39" alt="小さい注：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #333333・大きさ 13px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #333333・大きさ 13px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-small-fg-sai" data-token="--small-fg" data-theme="sai"><span class="v-k">小さい注</span><span class="v-v"><i class="sw" style="background:#808080"></i><code>#808080</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -325,6 +449,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--link-line</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">詳しくは<a class="sp-link" href="#link">こちらのリンク</a>から。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：Tiny Habits</span></figcaption>
@@ -334,17 +459,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/link-mint.jpg" width="351" height="76" alt="リンク：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #16201D・下線なし・下線 #A9C9BE</p>
+          <p class="val"><span class="val-h">いま</span>文字 #16201D・下線なし・下線 #A9C9BE</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-link-fg-mint" data-token="--link-fg" data-theme="mint"><span class="v-k">リンクの文字色</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li><li class="v own" id="v-link-line-mint" data-token="--link-line" data-theme="mint"><span class="v-k">リンクの下線</span><span class="v-v"><code>1px solid #277A65</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/link-bold.jpg" width="351" height="76" alt="リンク：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #1B1B1B・下線なし・下線 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>文字 #1B1B1B・下線なし・下線 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-link-fg-bold" data-token="--link-fg" data-theme="bold"><span class="v-k">リンクの文字色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v own" id="v-link-line-bold" data-token="--link-line" data-theme="bold"><span class="v-k">リンクの下線</span><span class="v-v"><code>2px solid #1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/link-sai.jpg" width="351" height="76" alt="リンク：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #111111・下線なし・下線 #CCCCCC</p>
+          <p class="val"><span class="val-h">いま</span>文字 #111111・下線なし・下線 #CCCCCC</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-link-fg-sai" data-token="--link-fg" data-theme="sai"><span class="v-k">リンクの文字色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-link-line-sai" data-token="--link-line" data-theme="sai"><span class="v-k">リンクの下線</span><span class="v-v"><code>1px solid #CCCCCC</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -359,6 +490,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--code-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">値は <code class="sp-code">--badge-bg</code> に書く。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">shot-pjt-sai：デザインシステム</span></figcaption>
@@ -368,17 +500,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/code-mint.jpg" width="62" height="38" alt="コード：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #EEF7F3・文字 #16201D・角丸 3px</p>
+          <p class="val"><span class="val-h">いま</span>地 #EEF7F3・文字 #16201D・角丸 3px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-code-bg-mint" data-token="--code-bg" data-theme="mint"><span class="v-k">コードの地</span><span class="v-v"><i class="sw" style="background:#EEF7F3"></i><code>#EEF7F3</code></span></li><li class="v" id="v-code-fg-mint" data-token="--code-fg" data-theme="mint"><span class="v-k">コードの文字色</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/code-bold.jpg" width="64" height="40" alt="コード：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #F2F1E2・文字 #1B1B1B・角丸 3px</p>
+          <p class="val"><span class="val-h">いま</span>地 #F2F1E2・文字 #1B1B1B・角丸 3px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-code-bg-bold" data-token="--code-bg" data-theme="bold"><span class="v-k">コードの地</span><span class="v-v"><i class="sw" style="background:#F2F1E2"></i><code>#F2F1E2</code></span></li><li class="v" id="v-code-fg-bold" data-token="--code-fg" data-theme="bold"><span class="v-k">コードの文字色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/code-sai.jpg" width="62" height="38" alt="コード：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #F5F5F5・文字 #111111・角丸 3px</p>
+          <p class="val"><span class="val-h">いま</span>地 #F5F5F5・文字 #111111・角丸 3px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-code-bg-sai" data-token="--code-bg" data-theme="sai"><span class="v-k">コードの地</span><span class="v-v"><i class="sw" style="background:#F5F5F5"></i><code>#F5F5F5</code></span></li><li class="v" id="v-code-fg-sai" data-token="--code-fg" data-theme="sai"><span class="v-k">コードの文字色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -400,6 +538,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--title-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-title">ページの題名の見本</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -409,17 +548,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/title-mint.jpg" width="347" height="174" alt="ページの題名：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 28px・文字 #16201D</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 28px・文字 #16201D</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-title-w-mint" data-token="--title-w" data-theme="mint"><span class="v-k">ページの題名の太さ</span><span class="v-v"><code>800</code></span></li><li class="v" id="v-title-fg-mint" data-token="--title-fg" data-theme="mint"><span class="v-k">ページの題名の色</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/title-bold.jpg" width="347" height="174" alt="ページの題名：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 28px・文字 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 28px・文字 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-title-w-bold" data-token="--title-w" data-theme="bold"><span class="v-k">ページの題名の太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-title-fg-bold" data-token="--title-fg" data-theme="bold"><span class="v-k">ページの題名の色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/title-sai.jpg" width="347" height="174" alt="ページの題名：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 28px・文字 #111111</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 28px・文字 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-title-w-sai" data-token="--title-w" data-theme="sai"><span class="v-k">ページの題名の太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-title-fg-sai" data-token="--title-fg" data-theme="sai"><span class="v-k">ページの題名の色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -434,6 +579,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--eyebrow-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-eyebrow">Deep Research ／ 概念探究</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -443,17 +589,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/eyebrow-mint.jpg" width="347" height="41" alt="題名の上の小ラベル：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #5B6A65・字間 1.32px・大文字</p>
+          <p class="val"><span class="val-h">いま</span>文字 #5B6A65・字間 1.32px・大文字</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-eyebrow-line-mint" data-token="--eyebrow-line" data-theme="mint"><span class="v-k">小ラベルの前の横線</span><span class="v-v"><code>1px solid currentColor</code></span></li><li class="v" id="v-eyebrow-fg-mint" data-token="--eyebrow-fg" data-theme="mint"><span class="v-k">小ラベルの色</span><span class="v-v"><i class="sw" style="background:#5B6A65"></i><code>#5B6A65</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/eyebrow-bold.jpg" width="347" height="41" alt="題名の上の小ラベル：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #6E6B5E・字間 1.32px・大文字</p>
+          <p class="val"><span class="val-h">いま</span>文字 #6E6B5E・字間 1.32px・大文字</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-eyebrow-line-bold" data-token="--eyebrow-line" data-theme="bold"><span class="v-k">小ラベルの前の横線</span><span class="v-v"><code>2px solid #1B1B1B</code></span></li><li class="v" id="v-eyebrow-fg-bold" data-token="--eyebrow-fg" data-theme="bold"><span class="v-k">小ラベルの色</span><span class="v-v"><i class="sw" style="background:#6E6B5E"></i><code>#6E6B5E</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/eyebrow-sai.jpg" width="347" height="41" alt="題名の上の小ラベル：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #808080・字間 1.32px・大文字</p>
+          <p class="val"><span class="val-h">いま</span>文字 #808080・字間 1.32px・大文字</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-eyebrow-line-sai" data-token="--eyebrow-line" data-theme="sai"><span class="v-k">小ラベルの前の横線</span><span class="v-v"><code>1px solid currentColor</code></span></li><li class="v" id="v-eyebrow-fg-sai" data-token="--eyebrow-fg" data-theme="sai"><span class="v-k">小ラベルの色</span><span class="v-v"><i class="sw" style="background:#808080"></i><code>#808080</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -468,6 +620,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--secno-bg・--secno-r</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-secno"><span class="sp-secno-num">01</span><span class="sp-seclabel">Seven</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -477,17 +630,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/secno-mint.jpg" width="347" height="41" alt="章の番号とラベル：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #5B6A65・角丸 0px・大きさ 11px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #5B6A65・角丸 0px・大きさ 11px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-secno-bg-mint" data-token="--secno-bg" data-theme="mint"><span class="v-k">章の番号の地</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li><li class="v own" id="v-secno-fg-mint" data-token="--secno-fg" data-theme="mint"><span class="v-k">章の番号の文字色</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li><li class="v own" id="v-secno-r-mint" data-token="--secno-r" data-theme="mint"><span class="v-k">章の番号の角丸</span><span class="v-v"><code>999px</code></span></li><li class="v own" id="v-seclabel-fg-mint" data-token="--seclabel-fg" data-theme="mint"><span class="v-k">章のラベルの色</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/secno-bold.jpg" width="347" height="41" alt="章の番号とラベル：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #6E6B5E・角丸 0px・大きさ 11px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #6E6B5E・角丸 0px・大きさ 11px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-secno-bg-bold" data-token="--secno-bg" data-theme="bold"><span class="v-k">章の番号の地</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v own" id="v-secno-fg-bold" data-token="--secno-fg" data-theme="bold"><span class="v-k">章の番号の文字色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v own" id="v-secno-r-bold" data-token="--secno-r" data-theme="bold"><span class="v-k">章の番号の角丸</span><span class="v-v"><code>999px</code></span></li><li class="v own" id="v-seclabel-fg-bold" data-token="--seclabel-fg" data-theme="bold"><span class="v-k">章のラベルの色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/secno-sai.jpg" width="347" height="41" alt="章の番号とラベル：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #808080・角丸 0px・大きさ 11px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #808080・角丸 0px・大きさ 11px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-secno-bg-sai" data-token="--secno-bg" data-theme="sai"><span class="v-k">章の番号の地</span><span class="v-v"><code>transparent</code></span></li><li class="v" id="v-secno-fg-sai" data-token="--secno-fg" data-theme="sai"><span class="v-k">章の番号の文字色</span><span class="v-v"><i class="sw" style="background:#808080"></i><code>#808080</code></span></li><li class="v" id="v-secno-r-sai" data-token="--secno-r" data-theme="sai"><span class="v-k">章の番号の角丸</span><span class="v-v"><code>0</code></span></li><li class="v" id="v-seclabel-fg-sai" data-token="--seclabel-fg" data-theme="sai"><span class="v-k">章のラベルの色</span><span class="v-v"><i class="sw" style="background:#808080"></i><code>#808080</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -502,6 +661,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--h2-orn-show</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-h2"><span>章見出しの見本</span></p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -511,17 +671,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/h2-mint.jpg" width="347" height="86" alt="章見出し：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 22px・文字 #16201D</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 22px・文字 #16201D</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-h2-w-mint" data-token="--h2-w" data-theme="mint"><span class="v-k">章見出しの太さ</span><span class="v-v"><code>800</code></span></li><li class="v" id="v-h2-orn-show-mint" data-token="--h2-orn-show" data-theme="mint"><span class="v-k">章見出しの飾り</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/h2-bold.jpg" width="347" height="86" alt="章見出し：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 22px・文字 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 22px・文字 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-h2-w-bold" data-token="--h2-w" data-theme="bold"><span class="v-k">章見出しの太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-h2-orn-show-bold" data-token="--h2-orn-show" data-theme="bold"><span class="v-k">章見出しの飾り</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/h2-sai.jpg" width="347" height="86" alt="章見出し：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 22px・文字 #111111</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 22px・文字 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-h2-w-sai" data-token="--h2-w" data-theme="sai"><span class="v-k">章見出しの太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-h2-orn-show-sai" data-token="--h2-orn-show" data-theme="sai"><span class="v-k">章見出しの飾り</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -536,6 +702,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-h2" style="margin:0"><span>章見出し</span></p><p class="sp-secsub">What the chapter is about</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -545,17 +712,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/secsub-mint.jpg" width="347" height="71" alt="章の副題：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #5B6A65・大きさ 13.5px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #5B6A65・大きさ 13.5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-secsub-fg-mint" data-token="--secsub-fg" data-theme="mint"><span class="v-k">章の副題の色</span><span class="v-v"><i class="sw" style="background:#5B6A65"></i><code>#5B6A65</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/secsub-bold.jpg" width="347" height="71" alt="章の副題：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #6E6B5E・大きさ 13.5px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #6E6B5E・大きさ 13.5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-secsub-fg-bold" data-token="--secsub-fg" data-theme="bold"><span class="v-k">章の副題の色</span><span class="v-v"><i class="sw" style="background:#6E6B5E"></i><code>#6E6B5E</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/secsub-sai.jpg" width="347" height="71" alt="章の副題：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #808080・大きさ 13.5px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #808080・大きさ 13.5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-secsub-fg-sai" data-token="--secsub-fg" data-theme="sai"><span class="v-k">章の副題の色</span><span class="v-v"><i class="sw" style="background:#808080"></i><code>#808080</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -570,6 +743,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--h3-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-h3">小見出しの見本</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -579,17 +753,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/h3-mint.jpg" width="347" height="49" alt="小見出し：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 18px・文字 #16201D</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 18px・文字 #16201D</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-h3-w-mint" data-token="--h3-w" data-theme="mint"><span class="v-k">小見出しの太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-h3-fg-mint" data-token="--h3-fg" data-theme="mint"><span class="v-k">小見出しの色</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/h3-bold.jpg" width="347" height="49" alt="小見出し：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 18px・文字 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 18px・文字 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-h3-w-bold" data-token="--h3-w" data-theme="bold"><span class="v-k">小見出しの太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-h3-fg-bold" data-token="--h3-fg" data-theme="bold"><span class="v-k">小見出しの色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/h3-sai.jpg" width="347" height="49" alt="小見出し：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">太さ 700・大きさ 18px・文字 #111111</p>
+          <p class="val"><span class="val-h">いま</span>太さ 700・大きさ 18px・文字 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-h3-w-sai" data-token="--h3-w" data-theme="sai"><span class="v-k">小見出しの太さ</span><span class="v-v"><code>700</code></span></li><li class="v" id="v-h3-fg-sai" data-token="--h3-fg" data-theme="sai"><span class="v-k">小見出しの色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -604,6 +784,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-lede">リード文は、題名の下で記事の入口になる文章。</p></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -613,17 +794,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/lede-mint.jpg" width="347" height="200" alt="リード文：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #33403C・大きさ 16px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #33403C・大きさ 16px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-lede-fg-mint" data-token="--lede-fg" data-theme="mint"><span class="v-k">リード文の色</span><span class="v-v"><i class="sw" style="background:#33403C"></i><code>#33403C</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/lede-bold.jpg" width="347" height="200" alt="リード文：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #1B1B1B・大きさ 16px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #1B1B1B・大きさ 16px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-lede-fg-bold" data-token="--lede-fg" data-theme="bold"><span class="v-k">リード文の色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/lede-sai.jpg" width="347" height="200" alt="リード文：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #333333・大きさ 16px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #333333・大きさ 16px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-lede-fg-sai" data-token="--lede-fg" data-theme="sai"><span class="v-k">リード文の色</span><span class="v-v"><i class="sw" style="background:#333333"></i><code>#333333</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -645,6 +832,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--note-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-note"><b>注記</b>：左の線と地の色がここで決まる。</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -654,17 +842,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/note-mint.jpg" width="347" height="200" alt="注記の箱の左の線：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #DCEAE4・左線の太さ 1px・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>左線 #DCEAE4・左線の太さ 1px・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-note-line-mint" data-token="--note-line" data-theme="mint"><span class="v-k">注記の箱の左の線</span><span class="v-v"><code>2px solid #16201D</code></span></li><li class="v" id="v-note-bg-mint" data-token="--note-bg" data-theme="mint"><span class="v-k">注記の箱の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/note-bold.jpg" width="347" height="200" alt="注記の箱の左の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #1B1B1B・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>左線 #1B1B1B・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-note-line-bold" data-token="--note-line" data-theme="bold"><span class="v-k">注記の箱の左の線</span><span class="v-v"><code>2px solid #1B1B1B</code></span></li><li class="v" id="v-note-bg-bold" data-token="--note-bg" data-theme="bold"><span class="v-k">注記の箱の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/note-sai.jpg" width="347" height="200" alt="注記の箱の左の線：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #EEEEEE・左線の太さ 1px・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>左線 #EEEEEE・左線の太さ 1px・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-note-line-sai" data-token="--note-line" data-theme="sai"><span class="v-k">注記の箱の左の線</span><span class="v-v"><code>2px solid #111111</code></span></li><li class="v" id="v-note-bg-sai" data-token="--note-bg" data-theme="sai"><span class="v-k">注記の箱の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -679,6 +873,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--quote-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-quote">引用の見本。左の線と地。</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -688,17 +883,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/quote-mint.jpg" width="347" height="175" alt="引用の線：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #16201D・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>左線 #16201D・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-quote-line-mint" data-token="--quote-line" data-theme="mint"><span class="v-k">引用の線</span><span class="v-v"><code>2px solid #16201D</code></span></li><li class="v" id="v-quote-bg-mint" data-token="--quote-bg" data-theme="mint"><span class="v-k">引用の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/quote-bold.jpg" width="347" height="177" alt="引用の線：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #1B1B1B・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>左線 #1B1B1B・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-quote-line-bold" data-token="--quote-line" data-theme="bold"><span class="v-k">引用の線</span><span class="v-v"><code>2px solid #1B1B1B</code></span></li><li class="v" id="v-quote-bg-bold" data-token="--quote-bg" data-theme="bold"><span class="v-k">引用の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/quote-sai.jpg" width="347" height="175" alt="引用の線：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #111111・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>左線 #111111・左線の太さ 2px・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-quote-line-sai" data-token="--quote-line" data-theme="sai"><span class="v-k">引用の線</span><span class="v-v"><code>2px solid #111111</code></span></li><li class="v" id="v-quote-bg-sai" data-token="--quote-bg" data-theme="sai"><span class="v-k">引用の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -713,6 +914,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --card-line・--r-card）</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-card">カードの見本</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -722,17 +924,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/card-mint.jpg" width="347" height="220" alt="カード：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #FFFFFF・枠 #DCEAE4・枠の太さ 1px・角丸 0px・影なし</p>
+          <p class="val"><span class="val-h">いま</span>地 #FFFFFF・枠 #DCEAE4・枠の太さ 1px・角丸 0px・影なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-card-bg-mint" data-token="--card-bg" data-theme="mint"><span class="v-k">カードの地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/card-bold.jpg" width="347" height="220" alt="カード：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #FFFFFF・枠 #1B1B1B・枠の太さ 2px・角丸 0px・影なし</p>
+          <p class="val"><span class="val-h">いま</span>地 #FFFFFF・枠 #1B1B1B・枠の太さ 2px・角丸 0px・影なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-card-bg-bold" data-token="--card-bg" data-theme="bold"><span class="v-k">カードの地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/card-sai.jpg" width="347" height="220" alt="カード：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #FFFFFF・枠 #EEEEEE・枠の太さ 1px・角丸 0px・影なし</p>
+          <p class="val"><span class="val-h">いま</span>地 #FFFFFF・枠 #EEEEEE・枠の太さ 1px・角丸 0px・影なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-card-bg-sai" data-token="--card-bg" data-theme="sai"><span class="v-k">カードの地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -747,6 +955,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--stat-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-stat"><span class="sp-stat-n">47</span><span class="sp-stat-l">試験の数</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
@@ -756,17 +965,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/stat-mint.jpg" width="182" height="147" alt="数字のカード：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #3F6E79・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #3F6E79・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-stat-fg-mint" data-token="--stat-fg" data-theme="mint"><span class="v-k">数字のカードの数字</span><span class="v-v"><i class="sw" style="background:#3F6E79"></i><code>#3F6E79</code></span></li><li class="v" id="v-stat-bg-mint" data-token="--stat-bg" data-theme="mint"><span class="v-k">数字のカードの地</span><span class="v-v"><code>transparent</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/stat-bold.jpg" width="182" height="149" alt="数字のカード：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #1B1B1B・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #1B1B1B・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-stat-fg-bold" data-token="--stat-fg" data-theme="bold"><span class="v-k">数字のカードの数字</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v" id="v-stat-bg-bold" data-token="--stat-bg" data-theme="bold"><span class="v-k">数字のカードの地</span><span class="v-v"><code>transparent</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/stat-sai.jpg" width="182" height="147" alt="数字のカード：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #111111・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #111111・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-stat-fg-sai" data-token="--stat-fg" data-theme="sai"><span class="v-k">数字のカードの数字</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-stat-bg-sai" data-token="--stat-bg" data-theme="sai"><span class="v-k">数字のカードの地</span><span class="v-v"><code>transparent</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -781,6 +996,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--chip-on-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-chips"><span class="sp-chip sp-chip-on">選んだチップ</span><span class="sp-chip">ほか</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：目次</span></figcaption>
@@ -790,17 +1006,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/chipon-mint.jpg" width="103" height="52" alt="選んだチップ：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #16201D・文字 #FFFFFF・角丸 999px</p>
+          <p class="val"><span class="val-h">いま</span>地 #16201D・文字 #FFFFFF・角丸 999px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-chip-on-bg-mint" data-token="--chip-on-bg" data-theme="mint"><span class="v-k">選んだチップの地</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li><li class="v" id="v-chip-on-fg-mint" data-token="--chip-on-fg" data-theme="mint"><span class="v-k">選んだチップの文字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/chipon-bold.jpg" width="104" height="53" alt="選んだチップ：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #1B1B1B・文字 #FFFFFF・角丸 999px</p>
+          <p class="val"><span class="val-h">いま</span>地 #1B1B1B・文字 #FFFFFF・角丸 999px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-chip-on-bg-bold" data-token="--chip-on-bg" data-theme="bold"><span class="v-k">選んだチップの地</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v" id="v-chip-on-fg-bold" data-token="--chip-on-fg" data-theme="bold"><span class="v-k">選んだチップの文字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/chipon-sai.jpg" width="103" height="52" alt="選んだチップ：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #111111・文字 #FFFFFF・角丸 48px</p>
+          <p class="val"><span class="val-h">いま</span>地 #111111・文字 #FFFFFF・角丸 48px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-chip-on-bg-sai" data-token="--chip-on-bg" data-theme="sai"><span class="v-k">選んだチップの地</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-chip-on-fg-sai" data-token="--chip-on-fg" data-theme="sai"><span class="v-k">選んだチップの文字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -815,6 +1037,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--badge-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-badges"><span class="sp-badge">1</span><span class="sp-badge">2</span><span class="sp-badge">3</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
@@ -824,17 +1047,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/badge-mint.jpg" width="357" height="160" alt="番号の丸・バッジ：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">丸・地 #E8F5F1・数字 #3F6E79</p>
+          <p class="val"><span class="val-h">いま</span>丸・地 #E8F5F1・数字 #3F6E79</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-badge-bg-mint" data-token="--badge-bg" data-theme="mint"><span class="v-k">番号の丸の地</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li><li class="v" id="v-badge-fg-mint" data-token="--badge-fg" data-theme="mint"><span class="v-k">番号の丸の数字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/badge-bold.jpg" width="357" height="160" alt="番号の丸・バッジ：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">丸・地 #E3E143・数字 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>丸・地 #E3E143・数字 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-badge-bg-bold" data-token="--badge-bg" data-theme="bold"><span class="v-k">番号の丸の地</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v own" id="v-badge-fg-bold" data-token="--badge-fg" data-theme="bold"><span class="v-k">番号の丸の数字</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/badge-sai.jpg" width="357" height="160" alt="番号の丸・バッジ：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">丸・地 #F5F5F5・数字 #111111</p>
+          <p class="val"><span class="val-h">いま</span>丸・地 #F5F5F5・数字 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-badge-bg-sai" data-token="--badge-bg" data-theme="sai"><span class="v-k">番号の丸の地</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-badge-fg-sai" data-token="--badge-fg" data-theme="sai"><span class="v-k">番号の丸の数字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -849,6 +1078,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--btn-fg・--btn-r</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-btn">はじめる →</span></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">shot-pjt-sai：デザインシステム</span></figcaption>
@@ -858,17 +1088,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/btn-mint.jpg" width="154" height="68" alt="主ボタン：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #16201D・文字 #FFFFFF・角丸 48px</p>
+          <p class="val"><span class="val-h">いま</span>地 #16201D・文字 #FFFFFF・角丸 48px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-btn-bg-mint" data-token="--btn-bg" data-theme="mint"><span class="v-k">主ボタンの地</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li><li class="v" id="v-btn-fg-mint" data-token="--btn-fg" data-theme="mint"><span class="v-k">主ボタンの文字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li><li class="v" id="v-btn-r-mint" data-token="--btn-r" data-theme="mint"><span class="v-k">主ボタンの角丸</span><span class="v-v"><code>999px</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/btn-bold.jpg" width="156" height="70" alt="主ボタン：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #1B1B1B・文字 #FFFFFF・角丸 48px</p>
+          <p class="val"><span class="val-h">いま</span>地 #1B1B1B・文字 #FFFFFF・角丸 48px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-btn-bg-bold" data-token="--btn-bg" data-theme="bold"><span class="v-k">主ボタンの地</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v own" id="v-btn-fg-bold" data-token="--btn-fg" data-theme="bold"><span class="v-k">主ボタンの文字</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v" id="v-btn-r-bold" data-token="--btn-r" data-theme="bold"><span class="v-k">主ボタンの角丸</span><span class="v-v"><code>999px</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/btn-sai.jpg" width="154" height="68" alt="主ボタン：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #111111・文字 #FFFFFF・角丸 48px</p>
+          <p class="val"><span class="val-h">いま</span>地 #111111・文字 #FFFFFF・角丸 48px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-btn-bg-sai" data-token="--btn-bg" data-theme="sai"><span class="v-k">主ボタンの地</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-btn-fg-sai" data-token="--btn-fg" data-theme="sai"><span class="v-k">主ボタンの文字</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li><li class="v" id="v-btn-r-sai" data-token="--btn-r" data-theme="sai"><span class="v-k">主ボタンの角丸</span><span class="v-v"><code>48px</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -883,6 +1119,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --input-line）</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-input">検索する</span></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：目次</span></figcaption>
@@ -892,17 +1129,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/input-mint.jpg" width="354" height="63" alt="入力欄：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #FFFFFF・枠 #A9C9BE・角丸 12px</p>
+          <p class="val"><span class="val-h">いま</span>地 #FFFFFF・枠 #A9C9BE・角丸 12px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-input-bg-mint" data-token="--input-bg" data-theme="mint"><span class="v-k">入力欄の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/input-bold.jpg" width="354" height="65" alt="入力欄：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #FFFFFF・枠 #1B1B1B・角丸 12px</p>
+          <p class="val"><span class="val-h">いま</span>地 #FFFFFF・枠 #1B1B1B・角丸 12px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-input-bg-bold" data-token="--input-bg" data-theme="bold"><span class="v-k">入力欄の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/input-sai.jpg" width="354" height="63" alt="入力欄：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #FFFFFF・枠 #CCCCCC・角丸 4px</p>
+          <p class="val"><span class="val-h">いま</span>地 #FFFFFF・枠 #CCCCCC・角丸 4px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-input-bg-sai" data-token="--input-bg" data-theme="sai"><span class="v-k">入力欄の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -924,6 +1167,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-header">ヘッダー</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -933,17 +1177,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/header-mint.jpg" width="375" height="125" alt="ヘッダー：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙の色 #FFFFFF を 96% から透明へ</p>
+          <p class="val"><span class="val-h">いま</span>紙の色 #FFFFFF を 96% から透明へ</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-header-bg-mint" data-token="--header-bg" data-theme="mint"><span class="v-k">ヘッダーの地</span><span class="v-v"><i class="sw" style="background:rgba(255, 255, 255, 0.96)"></i><code>rgba(255, 255, 255, 0.96)</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/header-bold.jpg" width="375" height="125" alt="ヘッダー：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙の色 #FAF9EC を 96% から透明へ</p>
+          <p class="val"><span class="val-h">いま</span>紙の色 #FAF9EC を 96% から透明へ</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-header-bg-bold" data-token="--header-bg" data-theme="bold"><span class="v-k">ヘッダーの地</span><span class="v-v"><i class="sw" style="background:rgba(250, 249, 236, 0.96)"></i><code>rgba(250, 249, 236, 0.96)</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/header-sai.jpg" width="375" height="125" alt="ヘッダー：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙の色 #FAFAFA を 96% から透明へ</p>
+          <p class="val"><span class="val-h">いま</span>紙の色 #FAFAFA を 96% から透明へ</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-header-bg-sai" data-token="--header-bg" data-theme="sai"><span class="v-k">ヘッダーの地</span><span class="v-v"><i class="sw" style="background:rgba(250, 250, 250, 0.96)"></i><code>rgba(250, 250, 250, 0.96)</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -958,6 +1208,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--chapnav-on-w</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-nav sp-chapnav"><span class="on">地図</span><span>人物</span><span>持続</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
@@ -967,17 +1218,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/chapnav-mint.jpg" width="301" height="42" alt="章ナビの選んだ章：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">選んだ章に墨の下線 1px・角丸 12px（線が曲がる）</p>
+          <p class="val"><span class="val-h">いま</span>選んだ章に墨の下線 1px・角丸 12px（線が曲がる）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-chapnav-on-line-mint" data-token="--chapnav-on-line" data-theme="mint"><span class="v-k">章ナビの選んだ章の下線の色</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li><li class="v own" id="v-chapnav-on-w-mint" data-token="--chapnav-on-w" data-theme="mint"><span class="v-k">章ナビの選んだ章の下線の太さ</span><span class="v-v"><code>2px</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/chapnav-bold.jpg" width="301" height="42" alt="章ナビの選んだ章：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">墨の下線 1px・角丸 12px（線が曲がる）</p>
+          <p class="val"><span class="val-h">いま</span>墨の下線 1px・角丸 12px（線が曲がる）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-chapnav-on-line-bold" data-token="--chapnav-on-line" data-theme="bold"><span class="v-k">章ナビの選んだ章の下線の色</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v own" id="v-chapnav-on-w-bold" data-token="--chapnav-on-w" data-theme="bold"><span class="v-k">章ナビの選んだ章の下線の太さ</span><span class="v-v"><code>3px</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/chapnav-sai.jpg" width="301" height="42" alt="章ナビの選んだ章：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">墨の下線 1px・角丸 0</p>
+          <p class="val"><span class="val-h">いま</span>墨の下線 1px・角丸 0</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-chapnav-on-line-sai" data-token="--chapnav-on-line" data-theme="sai"><span class="v-k">章ナビの選んだ章の下線の色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-chapnav-on-w-sai" data-token="--chapnav-on-w" data-theme="sai"><span class="v-k">章ナビの選んだ章の下線の太さ</span><span class="v-v"><code>1px</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -992,6 +1249,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --sel-line・--sel-w）</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-toc"><div class="sp-toc-row on">選んだ記事</div><div class="sp-toc-row">ほかの記事</div></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：目次</span></figcaption>
@@ -1001,17 +1259,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/tocon-mint.jpg" width="375" height="155" alt="目次の選んだ行：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #277A65・左線の太さ 3px・地 #FFFFFF</p>
+          <p class="val"><span class="val-h">いま</span>左線 #277A65・左線の太さ 3px・地 #FFFFFF</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-toc-on-line-mint" data-token="--toc-on-line" data-theme="mint"><span class="v-k">目次の選んだ行の線の色</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/tocon-bold.jpg" width="375" height="155" alt="目次の選んだ行：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #E3E143・左線の太さ 4px・地 #FFFFFF</p>
+          <p class="val"><span class="val-h">いま</span>左線 #E3E143・左線の太さ 4px・地 #FFFFFF</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-toc-on-line-bold" data-token="--toc-on-line" data-theme="bold"><span class="v-k">目次の選んだ行の線の色</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/tocon-sai.jpg" width="375" height="155" alt="目次の選んだ行：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">左線 #111111・左線の太さ 2px・地 #FFFFFF</p>
+          <p class="val"><span class="val-h">いま</span>左線 #111111・左線の太さ 2px・地 #FFFFFF</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-toc-on-line-sai" data-token="--toc-on-line" data-theme="sai"><span class="v-k">目次の選んだ行の線の色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1026,6 +1290,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--tab-on-w</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-nav sp-tab"><span class="on">Projects</span><span>Skills</span><span>About</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">SAI&#x27;s Works</span></figcaption>
@@ -1035,17 +1300,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/tabon-mint.jpg" width="79" height="46" alt="選んだタブ：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #16201D・下線の太さ 1px・文字 #16201D</p>
+          <p class="val"><span class="val-h">いま</span>下線 #16201D・下線の太さ 1px・文字 #16201D</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-tab-on-line-mint" data-token="--tab-on-line" data-theme="mint"><span class="v-k">選んだタブの下線の色</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li><li class="v own" id="v-tab-on-w-mint" data-token="--tab-on-w" data-theme="mint"><span class="v-k">選んだタブの下線の太さ</span><span class="v-v"><code>2px</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/tabon-bold.jpg" width="77" height="48" alt="選んだタブ：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #1B1B1B・下線の太さ 1px・文字 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>下線 #1B1B1B・下線の太さ 1px・文字 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-tab-on-line-bold" data-token="--tab-on-line" data-theme="bold"><span class="v-k">選んだタブの下線の色</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v own" id="v-tab-on-w-bold" data-token="--tab-on-w" data-theme="bold"><span class="v-k">選んだタブの下線の太さ</span><span class="v-v"><code>3px</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/tabon-sai.jpg" width="79" height="46" alt="選んだタブ：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #111111・下線の太さ 1px・文字 #111111</p>
+          <p class="val"><span class="val-h">いま</span>下線 #111111・下線の太さ 1px・文字 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-tab-on-line-sai" data-token="--tab-on-line" data-theme="sai"><span class="v-k">選んだタブの下線の色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-tab-on-w-sai" data-token="--tab-on-w" data-theme="sai"><span class="v-k">選んだタブの下線の太さ</span><span class="v-v"><code>1px</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1060,6 +1331,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-switch"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 4-4.5 4H16a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22z"/></svg></span></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1069,17 +1341,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/switch-mint.jpg" width="48" height="48" alt="テーマの切り替えボタン：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">線と絵 #33403C・丸</p>
+          <p class="val"><span class="val-h">いま</span>線と絵 #33403C・丸</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-switch-fg-mint" data-token="--switch-fg" data-theme="mint"><span class="v-k">テーマの切り替えボタンの色</span><span class="v-v"><i class="sw" style="background:#33403C"></i><code>#33403C</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/switch-bold.jpg" width="48" height="48" alt="テーマの切り替えボタン：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">線と絵 #1B1B1B・丸</p>
+          <p class="val"><span class="val-h">いま</span>線と絵 #1B1B1B・丸</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-switch-fg-bold" data-token="--switch-fg" data-theme="bold"><span class="v-k">テーマの切り替えボタンの色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/switch-sai.jpg" width="48" height="48" alt="テーマの切り替えボタン：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">線と絵 #333333・丸</p>
+          <p class="val"><span class="val-h">いま</span>線と絵 #333333・丸</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-switch-fg-sai" data-token="--switch-fg" data-theme="sai"><span class="v-k">テーマの切り替えボタンの色</span><span class="v-v"><i class="sw" style="background:#333333"></i><code>#333333</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1101,6 +1379,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-page">紙（ページの地）</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1110,17 +1389,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/page-mint.jpg" width="359" height="200" alt="紙（ページの地）：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙 #FFFFFF</p>
+          <p class="val"><span class="val-h">いま</span>紙 #FFFFFF</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-page-bg-mint" data-token="--page-bg" data-theme="mint"><span class="v-k">紙（ページの地）</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/page-bold.jpg" width="359" height="200" alt="紙（ページの地）：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙 #FAF9EC</p>
+          <p class="val"><span class="val-h">いま</span>紙 #FAF9EC</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-page-bg-bold" data-token="--page-bg" data-theme="bold"><span class="v-k">紙（ページの地）</span><span class="v-v"><i class="sw" style="background:#FAF9EC"></i><code>#FAF9EC</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/page-sai.jpg" width="359" height="200" alt="紙（ページの地）：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙 #FAFAFA</p>
+          <p class="val"><span class="val-h">いま</span>紙 #FAFAFA</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-page-bg-sai" data-token="--page-bg" data-theme="sai"><span class="v-k">紙（ページの地）</span><span class="v-v"><i class="sw" style="background:#FAFAFA"></i><code>#FAFAFA</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1135,6 +1420,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--band-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-band">奇数番目の節</div><div class="sp-band sp-band-alt">偶数番目の節</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1144,17 +1430,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/band-mint.jpg" width="375" height="220" alt="節の帯（偶数番目）：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #EEF7F3</p>
+          <p class="val"><span class="val-h">いま</span>地 #EEF7F3</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-band-bg-mint" data-token="--band-bg" data-theme="mint"><span class="v-k">節の帯（奇数番目）</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li><li class="v" id="v-band-alt-bg-mint" data-token="--band-alt-bg" data-theme="mint"><span class="v-k">節の帯（偶数番目）</span><span class="v-v"><i class="sw" style="background:#EEF7F3"></i><code>#EEF7F3</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/band-bold.jpg" width="375" height="220" alt="節の帯（偶数番目）：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #F9F8DE</p>
+          <p class="val"><span class="val-h">いま</span>地 #F9F8DE</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-band-bg-bold" data-token="--band-bg" data-theme="bold"><span class="v-k">節の帯（奇数番目）</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li><li class="v own" id="v-band-alt-bg-bold" data-token="--band-alt-bg" data-theme="bold"><span class="v-k">節の帯（偶数番目）</span><span class="v-v"><i class="sw" style="background:#F9F8DE"></i><code>#F9F8DE</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/band-sai.jpg" width="375" height="220" alt="節の帯（偶数番目）：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #F6F6F6</p>
+          <p class="val"><span class="val-h">いま</span>地 #F6F6F6</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-band-bg-sai" data-token="--band-bg" data-theme="sai"><span class="v-k">節の帯（奇数番目）</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li><li class="v" id="v-band-alt-bg-sai" data-token="--band-alt-bg" data-theme="sai"><span class="v-k">節の帯（偶数番目）</span><span class="v-v"><i class="sw" style="background:#F6F6F6"></i><code>#F6F6F6</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1169,6 +1461,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --stripe）</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-hero-mini">ヘッダー</div><div class="sp-headstripe"></div><div class="sp-after">最初の節</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1178,17 +1471,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/stripe-mint.jpg" width="375" height="90" alt="縞（ヘッダー下のストライプ）：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">なし（透明）</p>
+          <p class="val"><span class="val-h">いま</span>なし（透明）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-headstripe-show-mint" data-token="--headstripe-show" data-theme="mint"><span class="v-k">ヘッダー下の縞</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/stripe-bold.jpg" width="375" height="90" alt="縞（ヘッダー下のストライプ）：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">黄 #E3E143 と墨の斜線</p>
+          <p class="val"><span class="val-h">いま</span>黄 #E3E143 と墨の斜線</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-headstripe-show-bold" data-token="--headstripe-show" data-theme="bold"><span class="v-k">ヘッダー下の縞</span><span class="v-v"><code>block</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/stripe-sai.jpg" width="375" height="90" alt="縞（ヘッダー下のストライプ）：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">黄・緑・白・青の 4 色の斜線</p>
+          <p class="val"><span class="val-h">いま</span>黄・緑・白・青の 4 色の斜線</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-headstripe-show-sai" data-token="--headstripe-show" data-theme="sai"><span class="v-k">ヘッダー下の縞</span><span class="v-v"><code>block</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1203,6 +1502,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-divider">一行目</div><div class="sp-divider">二行目</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
@@ -1212,17 +1512,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/divider-mint.jpg" width="355" height="200" alt="区切り線・罫線：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #DCEAE4</p>
+          <p class="val"><span class="val-h">いま</span>下線 #DCEAE4</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-divider-line-mint" data-token="--divider-line" data-theme="mint"><span class="v-k">区切り線・罫線</span><span class="v-v"><code>1px solid #DCEAE4</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/divider-bold.jpg" width="355" height="200" alt="区切り線・罫線：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #E0DECB</p>
+          <p class="val"><span class="val-h">いま</span>下線 #E0DECB</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-divider-line-bold" data-token="--divider-line" data-theme="bold"><span class="v-k">区切り線・罫線</span><span class="v-v"><code>1px solid #E4E2D2</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/divider-sai.jpg" width="355" height="200" alt="区切り線・罫線：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #EEEEEE</p>
+          <p class="val"><span class="val-h">いま</span>下線 #EEEEEE</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-divider-line-sai" data-token="--divider-line" data-theme="sai"><span class="v-k">区切り線・罫線</span><span class="v-v"><code>1px solid #EEEEEE</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1237,6 +1543,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--hero-area-orn-show</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-hero"><span class="sp-hero-orn"></span>ヒーローの見本</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1246,17 +1553,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/hero-mint.jpg" width="375" height="320" alt="ヒーロー（冒頭の一画面）：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙のまま・飾りなし</p>
+          <p class="val"><span class="val-h">いま</span>紙のまま・飾りなし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-hero-area-bg-mint" data-token="--hero-area-bg" data-theme="mint"><span class="v-k">ヒーローの地</span><span class="v-v"><code>transparent</code></span></li><li class="v" id="v-hero-area-orn-show-mint" data-token="--hero-area-orn-show" data-theme="mint"><span class="v-k">ヒーローの飾り</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/hero-bold.jpg" width="375" height="320" alt="ヒーロー（冒頭の一画面）：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙のまま・飾りなし</p>
+          <p class="val"><span class="val-h">いま</span>紙のまま・飾りなし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-hero-area-bg-bold" data-token="--hero-area-bg" data-theme="bold"><span class="v-k">ヒーローの地</span><span class="v-v"><code>transparent</code></span></li><li class="v" id="v-hero-area-orn-show-bold" data-token="--hero-area-orn-show" data-theme="bold"><span class="v-k">ヒーローの飾り</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/hero-sai.jpg" width="375" height="320" alt="ヒーロー（冒頭の一画面）：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">紙のまま・飾りなし</p>
+          <p class="val"><span class="val-h">いま</span>紙のまま・飾りなし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-hero-area-bg-sai" data-token="--hero-area-bg" data-theme="sai"><span class="v-k">ヒーローの地</span><span class="v-v"><code>transparent</code></span></li><li class="v" id="v-hero-area-orn-show-sai" data-token="--hero-area-orn-show" data-theme="sai"><span class="v-k">ヒーローの飾り</span><span class="v-v"><code>none</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1271,6 +1584,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--pagefoot-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-foot">© 2026 フッターの見本</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1280,17 +1594,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/footer-mint.jpg" width="375" height="191" alt="フッター：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #EEEEEE・文字 #5B6A65（地はこの記事の独自の色で、テーマで替わらない）</p>
+          <p class="val"><span class="val-h">いま</span>地 #EEEEEE・文字 #5B6A65（地はこの記事の独自の色で、テーマで替わらない）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-pagefoot-bg-mint" data-token="--pagefoot-bg" data-theme="mint"><span class="v-k">フッターの地</span><span class="v-v"><i class="sw" style="background:#EEF7F3"></i><code>#EEF7F3</code></span></li><li class="v" id="v-pagefoot-fg-mint" data-token="--pagefoot-fg" data-theme="mint"><span class="v-k">フッターの文字</span><span class="v-v"><i class="sw" style="background:#16201D"></i><code>#16201D</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/footer-bold.jpg" width="375" height="191" alt="フッター：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #EEEEEE・文字 #6E6B5E（地はこの記事の独自の色で、テーマで替わらない）</p>
+          <p class="val"><span class="val-h">いま</span>地 #EEEEEE・文字 #6E6B5E（地はこの記事の独自の色で、テーマで替わらない）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-pagefoot-bg-bold" data-token="--pagefoot-bg" data-theme="bold"><span class="v-k">フッターの地</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v" id="v-pagefoot-fg-bold" data-token="--pagefoot-fg" data-theme="bold"><span class="v-k">フッターの文字</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/footer-sai.jpg" width="375" height="191" alt="フッター：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #EEEEEE・文字 #808080（地はこの記事の独自の色で、テーマで替わらない）</p>
+          <p class="val"><span class="val-h">いま</span>地 #EEEEEE・文字 #808080（地はこの記事の独自の色で、テーマで替わらない）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-pagefoot-bg-sai" data-token="--pagefoot-bg" data-theme="sai"><span class="v-k">フッターの地</span><span class="v-v"><i class="sw" style="background:#EEEEEE"></i><code>#EEEEEE</code></span></li><li class="v" id="v-pagefoot-fg-sai" data-token="--pagefoot-fg" data-theme="sai"><span class="v-k">フッターの文字</span><span class="v-v"><i class="sw" style="background:#666666"></i><code>#666666</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1312,6 +1632,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--icon-w</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><svg class="sp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">SAI&#x27;s Works</span></figcaption>
@@ -1321,17 +1642,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/icon-mint.jpg" width="58" height="58" alt="アイコン：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #16201D・線 #16201D・線の太さ 1.5px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #16201D・線 #16201D・線の太さ 1.5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-icon-fg-mint" data-token="--icon-fg" data-theme="mint"><span class="v-k">アイコンの色</span><span class="v-v"><i class="sw" style="background:#277A65"></i><code>#277A65</code></span></li><li class="v" id="v-icon-w-mint" data-token="--icon-w" data-theme="mint"><span class="v-k">アイコンの線の太さ</span><span class="v-v"><code>1.75</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/icon-bold.jpg" width="58" height="58" alt="アイコン：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #1B1B1B・線 #1B1B1B・線の太さ 2px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #1B1B1B・線 #1B1B1B・線の太さ 2px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-icon-fg-bold" data-token="--icon-fg" data-theme="bold"><span class="v-k">アイコンの色</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v own" id="v-icon-w-bold" data-token="--icon-w" data-theme="bold"><span class="v-k">アイコンの線の太さ</span><span class="v-v"><code>2</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/icon-sai.jpg" width="58" height="58" alt="アイコン：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">文字 #111111・線 #111111・線の太さ 1.25px</p>
+          <p class="val"><span class="val-h">いま</span>文字 #111111・線 #111111・線の太さ 1.25px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-icon-fg-sai" data-token="--icon-fg" data-theme="sai"><span class="v-k">アイコンの色</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-icon-w-sai" data-token="--icon-w" data-theme="sai"><span class="v-k">アイコンの線の太さ</span><span class="v-v"><code>1.5</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1346,6 +1673,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--table-zebra-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><table class="sp-table"><thead><tr><th>項目</th><th>値</th></tr></thead><tbody><tr><td>一行目</td><td>12</td></tr><tr><td>二行目</td><td>34</td></tr><tr><td>三行目</td><td>56</td></tr></tbody></table></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：マインドフルネス</span></figcaption>
@@ -1355,17 +1683,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/table-mint.jpg" width="355" height="200" alt="表の見出し行：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">見出し行の下線 #16201D・文字 #5B6A65・縞なし</p>
+          <p class="val"><span class="val-h">いま</span>見出し行の下線 #16201D・文字 #5B6A65・縞なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-table-head-line-mint" data-token="--table-head-line" data-theme="mint"><span class="v-k">表の見出し行の線</span><span class="v-v"><code>1px solid #16201D</code></span></li><li class="v own" id="v-table-zebra-bg-mint" data-token="--table-zebra-bg" data-theme="mint"><span class="v-k">表の縞</span><span class="v-v"><i class="sw" style="background:#F5FAF8"></i><code>#F5FAF8</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/table-bold.jpg" width="355" height="200" alt="表の見出し行：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #1B1B1B・文字 #6E6B5E・縞なし</p>
+          <p class="val"><span class="val-h">いま</span>下線 #1B1B1B・文字 #6E6B5E・縞なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-table-head-line-bold" data-token="--table-head-line" data-theme="bold"><span class="v-k">表の見出し行の線</span><span class="v-v"><code>2px solid #1B1B1B</code></span></li><li class="v" id="v-table-zebra-bg-bold" data-token="--table-zebra-bg" data-theme="bold"><span class="v-k">表の縞</span><span class="v-v"><i class="sw" style="background:#F2F1E2"></i><code>#F2F1E2</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/table-sai.jpg" width="355" height="200" alt="表の見出し行：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">下線 #111111・文字 #333333・縞なし</p>
+          <p class="val"><span class="val-h">いま</span>下線 #111111・文字 #333333・縞なし</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-table-head-line-sai" data-token="--table-head-line" data-theme="sai"><span class="v-k">表の見出し行の線</span><span class="v-v"><code>1px solid #111111</code></span></li><li class="v" id="v-table-zebra-bg-sai" data-token="--table-zebra-bg" data-theme="sai"><span class="v-k">表の縞</span><span class="v-v"><code>transparent</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1380,6 +1714,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><ul class="sp-list"><li>箇条書きの一つめ</li><li>二つめ</li></ul></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：AI 時代のコーチング</span></figcaption>
@@ -1389,17 +1724,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/listdot-mint.jpg" width="339" height="160" alt="箇条書きの印：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">点 #277A65</p>
+          <p class="val"><span class="val-h">いま</span>点 #277A65</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-list-dot-bg-mint" data-token="--list-dot-bg" data-theme="mint"><span class="v-k">箇条書きの印</span><span class="v-v"><i class="sw" style="background:#A9D6C8"></i><code>#A9D6C8</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/listdot-bold.jpg" width="339" height="160" alt="箇条書きの印：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">点 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>点 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-list-dot-bg-bold" data-token="--list-dot-bg" data-theme="bold"><span class="v-k">箇条書きの印</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/listdot-sai.jpg" width="339" height="160" alt="箇条書きの印：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">点 #111111</p>
+          <p class="val"><span class="val-h">いま</span>点 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-list-dot-bg-sai" data-token="--list-dot-bg" data-theme="sai"><span class="v-k">箇条書きの印</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1414,6 +1755,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--figure-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><figure class="sp-figure"><div class="sp-figure-body">図</div><figcaption>図のキャプション</figcaption></figure></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：情報設計 02</span></figcaption>
@@ -1423,17 +1765,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/figure-mint.jpg" width="347" height="260" alt="図の枠とキャプション：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">枠 #DCEAE4・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>枠 #DCEAE4・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-figure-line-mint" data-token="--figure-line" data-theme="mint"><span class="v-k">図の枠</span><span class="v-v"><code>1px solid #DCEAE4</code></span></li><li class="v" id="v-figure-bg-mint" data-token="--figure-bg" data-theme="mint"><span class="v-k">図の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/figure-bold.jpg" width="347" height="260" alt="図の枠とキャプション：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">枠 #1B1B1B・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>枠 #1B1B1B・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v own" id="v-figure-line-bold" data-token="--figure-line" data-theme="bold"><span class="v-k">図の枠</span><span class="v-v"><code>2px solid #1B1B1B</code></span></li><li class="v" id="v-figure-bg-bold" data-token="--figure-bg" data-theme="bold"><span class="v-k">図の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/figure-sai.jpg" width="347" height="260" alt="図の枠とキャプション：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">枠 #EEEEEE・地 #FFFFFF・角丸 0px</p>
+          <p class="val"><span class="val-h">いま</span>枠 #EEEEEE・地 #FFFFFF・角丸 0px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-figure-line-sai" data-token="--figure-line" data-theme="sai"><span class="v-k">図の枠</span><span class="v-v"><code>1px solid #EEEEEE</code></span></li><li class="v" id="v-figure-bg-sai" data-token="--figure-bg" data-theme="sai"><span class="v-k">図の地</span><span class="v-v"><i class="sw" style="background:#FFFFFF"></i><code>#FFFFFF</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1448,6 +1796,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--meter-track-bg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-meter"><i style="width:62%"></i></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：AI 時代のコーチング</span></figcaption>
@@ -1457,17 +1806,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/meter-mint.jpg" width="185" height="102" alt="進み具合のバー：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">中身 #3F6E79</p>
+          <p class="val"><span class="val-h">いま</span>中身 #3F6E79</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-meter-fill-bg-mint" data-token="--meter-fill-bg" data-theme="mint"><span class="v-k">バーの中身</span><span class="v-v"><i class="sw" style="background:#3F6E79"></i><code>#3F6E79</code></span></li><li class="v" id="v-meter-track-bg-mint" data-token="--meter-track-bg" data-theme="mint"><span class="v-k">バーの溝</span><span class="v-v"><i class="sw" style="background:#DCEAE4"></i><code>#DCEAE4</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/meter-bold.jpg" width="183" height="102" alt="進み具合のバー：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">中身 #1B1B1B</p>
+          <p class="val"><span class="val-h">いま</span>中身 #1B1B1B</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-meter-fill-bg-bold" data-token="--meter-fill-bg" data-theme="bold"><span class="v-k">バーの中身</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li><li class="v" id="v-meter-track-bg-bold" data-token="--meter-track-bg" data-theme="bold"><span class="v-k">バーの溝</span><span class="v-v"><i class="sw" style="background:#E4E2D2"></i><code>#E4E2D2</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/meter-sai.jpg" width="185" height="102" alt="進み具合のバー：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">中身 #111111</p>
+          <p class="val"><span class="val-h">いま</span>中身 #111111</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-meter-fill-bg-sai" data-token="--meter-fill-bg" data-theme="sai"><span class="v-k">バーの中身</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li><li class="v" id="v-meter-track-bg-sai" data-token="--meter-track-bg" data-theme="sai"><span class="v-k">バーの溝</span><span class="v-v"><i class="sw" style="background:#DDE5E1"></i><code>#DDE5E1</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1482,6 +1837,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--langtag-fg</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-lang">JP</span> <span class="sp-lang">EN</span></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：自己決定理論</span></figcaption>
@@ -1491,17 +1847,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/lang-mint.jpg" width="108" height="97" alt="言語バッジ：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #E8F5F1・文字 #3F6E79・角丸 5px</p>
+          <p class="val"><span class="val-h">いま</span>地 #E8F5F1・文字 #3F6E79・角丸 5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-langtag-bg-mint" data-token="--langtag-bg" data-theme="mint"><span class="v-k">言語バッジの地</span><span class="v-v"><i class="sw" style="background:#E8F5F1"></i><code>#E8F5F1</code></span></li><li class="v" id="v-langtag-fg-mint" data-token="--langtag-fg" data-theme="mint"><span class="v-k">言語バッジの文字</span><span class="v-v"><i class="sw" style="background:#3F6E79"></i><code>#3F6E79</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/lang-bold.jpg" width="108" height="99" alt="言語バッジ：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #E3E143・文字 #1B1B1B・角丸 5px</p>
+          <p class="val"><span class="val-h">いま</span>地 #E3E143・文字 #1B1B1B・角丸 5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-langtag-bg-bold" data-token="--langtag-bg" data-theme="bold"><span class="v-k">言語バッジの地</span><span class="v-v"><i class="sw" style="background:#E3E143"></i><code>#E3E143</code></span></li><li class="v" id="v-langtag-fg-bold" data-token="--langtag-fg" data-theme="bold"><span class="v-k">言語バッジの文字</span><span class="v-v"><i class="sw" style="background:#1B1B1B"></i><code>#1B1B1B</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/lang-sai.jpg" width="108" height="97" alt="言語バッジ：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">地 #F5F5F5・文字 #111111・角丸 5px</p>
+          <p class="val"><span class="val-h">いま</span>地 #F5F5F5・文字 #111111・角丸 5px</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-langtag-bg-sai" data-token="--langtag-bg" data-theme="sai"><span class="v-k">言語バッジの地</span><span class="v-v"><i class="sw" style="background:#F5F5F5"></i><code>#F5F5F5</code></span></li><li class="v" id="v-langtag-fg-sai" data-token="--langtag-fg" data-theme="sai"><span class="v-k">言語バッジの文字</span><span class="v-v"><i class="sw" style="background:#111111"></i><code>#111111</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1516,6 +1878,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --mosaic）</code></p>
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-orn"><i></i><i></i><i></i><i></i></div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">SAI&#x27;s Works</span></figcaption>
@@ -1525,17 +1888,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/orn-mint.jpg" width="375" height="208" alt="飾りの図形・モザイク：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">#62B8A0・#F2C94C・#EB6584・#4F7C87・白・#EEF7F3</p>
+          <p class="val"><span class="val-h">いま</span>#62B8A0・#F2C94C・#EB6584・#4F7C87・白・#EEF7F3</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-orn-show-mint" data-token="--orn-show" data-theme="mint"><span class="v-k">飾りの図形・モザイク</span><span class="v-v"><code>block</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/orn-bold.jpg" width="375" height="208" alt="飾りの図形・モザイク：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">#E3E143・#1B1B1B・#F9F8D9・白・#F2F1E2</p>
+          <p class="val"><span class="val-h">いま</span>#E3E143・#1B1B1B・#F9F8D9・白・#F2F1E2</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-orn-show-bold" data-token="--orn-show" data-theme="bold"><span class="v-k">飾りの図形・モザイク</span><span class="v-v"><code>block</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/orn-sai.jpg" width="375" height="208" alt="飾りの図形・モザイク：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">#62B8A0・#F2C94C・#EB6584・#4F7C87・白・#F5F5F5</p>
+          <p class="val"><span class="val-h">いま</span>#62B8A0・#F2C94C・#EB6584・#4F7C87・白・#F5F5F5</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-orn-show-sai" data-token="--orn-show" data-theme="sai"><span class="v-k">飾りの図形・モザイク</span><span class="v-v"><code>block</code></span></li></ul>
         </figure>
         </div>
       </div>
@@ -1550,6 +1919,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       
+      <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-motion">ふわっと出る</div></div></div>
       <div class="tk-body">
         <figure class="where">
           <figcaption>どこを指すか <span class="src">research：ベルクソンの哲学</span></figcaption>
@@ -1559,17 +1929,23 @@
         <figure class="th">
           <figcaption><span class="th-name">Mint</span></figcaption>
           <div class="shot"><img src="img/motion-mint.jpg" width="357" height="83" alt="動き（ふわっと出る）：Mint でのいまの見た目" loading="lazy"></div>
-          <p class="val">止めてある（古い記事の v2 の上書き）</p>
+          <p class="val"><span class="val-h">いま</span>止めてある（古い記事の v2 の上書き）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-motion-show-mint" data-token="--motion-show" data-theme="mint"><span class="v-k">動き（ふわっと出る）</span><span class="v-v"><code>0</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">Bold Yellow</span></figcaption>
           <div class="shot"><img src="img/motion-bold.jpg" width="357" height="83" alt="動き（ふわっと出る）：Bold Yellow でのいまの見た目" loading="lazy"></div>
-          <p class="val">止めてある（古い記事の v2 の上書き）</p>
+          <p class="val"><span class="val-h">いま</span>止めてある（古い記事の v2 の上書き）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-motion-show-bold" data-token="--motion-show" data-theme="bold"><span class="v-k">動き（ふわっと出る）</span><span class="v-v"><code>0</code></span></li></ul>
         </figure>
         <figure class="th">
           <figcaption><span class="th-name">SAI v2</span></figcaption>
           <div class="shot"><img src="img/motion-sai.jpg" width="357" height="83" alt="動き（ふわっと出る）：SAI v2 でのいまの見た目" loading="lazy"></div>
-          <p class="val">止めてある（古い記事の v2 の上書き）</p>
+          <p class="val"><span class="val-h">いま</span>止めてある（古い記事の v2 の上書き）</p>
+          <p class="val-h2">案の値（台帳）</p>
+          <ul class="vals"><li class="v" id="v-motion-show-sai" data-token="--motion-show" data-theme="sai"><span class="v-k">動き（ふわっと出る）</span><span class="v-v"><code>0</code></span></li></ul>
         </figure>
         </div>
       </div>
