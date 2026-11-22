@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>テーマごとの設定の表</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- 調整ページ（/tokens/）と同じく、テーマの切り替えの対象外。台帳とテーマの json から build.py が作る -->
+<style>
+  :root { --paper: #FAFAFA; --ink: #111111; --text: #333333; --muted: #808080; --rule: #EEEEEE; --tint: #F5F5F5;
+    --en: "Work Sans", "Helvetica Neue", Arial, sans-serif; --jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--jp); font-size: 14px; line-height: 1.8; overflow-x: clip; }
+  code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 12px; color: var(--ink); }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  .hd { position: sticky; top: 0; z-index: 50; background: rgba(250, 250, 250, .94); border-bottom: 1px solid var(--rule); }
+  .hd-in { display: flex; align-items: center; gap: 16px; min-height: 56px; }
+  .brand { font-family: var(--en); font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .brand span { font-weight: 400; color: var(--muted); margin-left: 6px; }
+  .hd-nav { margin-left: auto; display: flex; gap: 16px; font-size: 12px; }
+  .hd-nav a { color: var(--muted); text-decoration: none; }
+  .hero { padding: 40px 0 16px; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-family: var(--en); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+  h1 { margin: 0 0 14px; font-size: 26px; line-height: 1.4; color: var(--ink); }
+  .lede { max-width: 760px; margin: 0 0 10px; }
+  .jumps { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 0; }
+  .jump { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--ink); border-radius: 48px; color: var(--ink); text-decoration: none; font-weight: 600; background: #FFFFFF; }
+  .grp { padding: 40px 0; }
+  .grp:nth-of-type(even) { background: #F3F3F3; }
+  .grp h2 { margin: 0 0 8px; font-size: 22px; color: var(--ink); }
+  .grp h3 { margin: 28px 0 6px; font-size: 16px; color: var(--ink); }
+  .note { margin: 0 0 10px; font-size: 13px; color: var(--muted); }
+  .tw { overflow-x: auto; background: #FFFFFF; border: 1px solid var(--rule); }
+  table { border-collapse: collapse; width: 100%; min-width: 620px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--rule); }
+  th { font-size: 11px; font-weight: 500; color: var(--muted); letter-spacing: .06em; white-space: nowrap; }
+  td:first-child { white-space: nowrap; }
+  .lab { font-size: 12px; color: var(--text); }
+  .res { font-size: 11px; color: var(--muted); }
+  .sw { display: inline-block; width: 12px; height: 12px; border: 1px solid rgba(0,0,0,.15); border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+  @media (max-width: 560px) { .wrap { padding: 0 16px; } .hd-nav { display: none; } }
+  footer { color: var(--muted); font-size: 12px; padding: 32px 0; }
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap hd-in"><a class="brand" href="../">Design Themes<span>/ tokens / table</span></a>
+  <nav class="hd-nav"><a href="../">調整ページ</a><a href="../sample/">サンプル記事</a></nav></div></header>
+<main>
+  <section class="hero"><div class="wrap">
+    <p class="eyebrow">Settings</p>
+    <h1>テーマごとの設定の表</h1>
+    <p class="lede">各テーマで、意味の名前にどの値を当てているか、その値がどこから来たか（台帳のふだんの値か、そのテーマだけの値か）の表です。色は「色の名前」（主色・墨など 16 色）を指しているものが多く、色の名前ごとに、それを使っている名前の一覧も付けました。</p>
+    <p class="lede">値は、台帳 <code>semantic.json</code> とテーマの json から組み立てたもので、調整ページで試しただけの値は入っていません。</p>
+    <nav class="jumps"><a href="#th-mint" class="jump">Mint</a><a href="#th-bold" class="jump">Bold Yellow</a><a href="#th-sai" class="jump">SAI v2</a></nav>
+  </div></section>
+
+  <section class="grp" id="th-mint">
+    <div class="wrap">
+      <p class="eyebrow">Mint</p>
+      <h2>Mint の設定</h2>
+      <h3>色の名前と、使っている意味の名前</h3>
+      <p class="note">色の名前は themes/mint.json の "palette"（と "colors"）。1 つ変えると、右の名前がまとめて変わる。</p>
+      <div class="tw"><table><thead><tr><th>色の名前</th><th>値</th><th>数</th><th>使っている名前</th></tr></thead><tbody><tr id="u-paper-mint"><td><i class="sw" style="background:#FFFFFF"></i><code>paper</code><br><span class="lab">紙</span></td><td><code>#FFFFFF</code></td><td>2</td><td><code>--header-bg-c</code> <code>--page-bg</code></td></tr><tr id="u-white-mint"><td><i class="sw" style="background:#FFFFFF"></i><code>white</code><br><span class="lab">白</span></td><td><code>#FFFFFF</code></td><td>10</td><td><code>--secno-fg</code> <code>--note-bg</code> <code>--quote-bg</code> <code>--card-bg</code> <code>--chip-on-fg</code> <code>--badge-fg</code> <code>--btn-fg</code> <code>--input-bg</code> <code>--band-bg</code> <code>--figure-bg</code></td></tr><tr id="u-ink-mint"><td><i class="sw" style="background:#16201D"></i><code>ink</code><br><span class="lab">墨（いちばん濃い文字）</span></td><td><code>#16201D</code></td><td>13</td><td><code>--strong-fg</code> <code>--link-fg</code> <code>--code-fg</code> <code>--title-fg</code> <code>--h2-fg</code> <code>--h3-fg</code> <code>--note-line-c</code> <code>--quote-line-c</code> <code>--chip-on-bg</code> <code>--btn-bg</code> <code>--chapnav-on-c</code> <code>--tab-on-c</code> <code>--table-head-line-c</code></td></tr><tr id="u-text-mint"><td><i class="sw" style="background:#33403C"></i><code>text</code><br><span class="lab">本文の文字</span></td><td><code>#33403C</code></td><td>2</td><td><code>--lede-fg</code> <code>--switch-fg</code></td></tr><tr id="u-muted-mint"><td><i class="sw" style="background:#5B6A65"></i><code>muted</code><br><span class="lab">弱い文字</span></td><td><code>#5B6A65</code></td><td>4</td><td><code>--small-fg</code> <code>--secsub-fg</code> <code>--pagefoot-fg</code> <code>--list-dot-bg</code></td></tr><tr id="u-rule-mint"><td><i class="sw" style="background:#DCEAE4"></i><code>rule</code><br><span class="lab">罫線</span></td><td><code>#DCEAE4</code></td><td>4</td><td><code>--card-line-c</code> <code>--divider-line-c</code> <code>--figure-line-c</code> <code>--meter-track-bg</code></td></tr><tr id="u-rule_strong-mint"><td><i class="sw" style="background:#A9C9BE"></i><code>rule_strong</code><br><span class="lab">濃い罫線</span></td><td><code>#A9C9BE</code></td><td>1</td><td><code>--input-line-c</code></td></tr><tr id="u-tint-mint"><td><i class="sw" style="background:#EEF7F3"></i><code>tint</code><br><span class="lab">淡い面</span></td><td><code>#EEF7F3</code></td><td>3</td><td><code>--code-bg</code> <code>--band-alt-bg</code> <code>--pagefoot-bg</code></td></tr><tr id="u-accent-mint"><td><i class="sw" style="background:#277A65"></i><code>accent</code><br><span class="lab">主色</span></td><td><code>#277A65</code></td><td>5</td><td><code>--eyebrow-fg</code> <code>--secno-bg</code> <code>--seclabel-fg</code> <code>--badge-bg</code> <code>--toc-on-c</code></td></tr><tr id="u-accent_bright-mint"><td><i class="sw" style="background:#62B8A0"></i><code>accent_bright</code><br><span class="lab">明るい主色</span></td><td><code>#62B8A0</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-accent_wash-mint"><td><i class="sw" style="background:#E8F5F1"></i><code>accent_wash</code><br><span class="lab">主色の淡い面</span></td><td><code>#E8F5F1</code></td><td>1</td><td><code>--langtag-bg</code></td></tr><tr id="u-emphasis-mint"><td><i class="sw" style="background:#B03A57"></i><code>emphasis</code><br><span class="lab">強調色</span></td><td><code>#B03A57</code></td><td>1</td><td><code>--hl-fg</code></td></tr><tr id="u-emphasis_wash-mint"><td><i class="sw" style="background:#FCE9EE"></i><code>emphasis_wash</code><br><span class="lab">強調色の淡い面</span></td><td><code>#FCE9EE</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-highlight-mint"><td><i class="sw" style="background:#F2C94C"></i><code>highlight</code><br><span class="lab">マーカー色</span></td><td><code>#F2C94C</code></td><td>1</td><td><code>--strong-line-c</code></td></tr><tr id="u-deep-mint"><td><i class="sw" style="background:#3F6E79"></i><code>deep</code><br><span class="lab">深い色</span></td><td><code>#3F6E79</code></td><td>3</td><td><code>--stat-fg</code> <code>--meter-fill-bg</code> <code>--langtag-fg</code></td></tr><tr id="u-danger-mint"><td><i class="sw" style="background:#B0363A"></i><code>danger</code><br><span class="lab">注意の色</span></td><td><code>#B0363A</code></td><td>0</td><td>（使っていない）</td></tr></tbody></table></div>
+      <h3>色の名前を使わず、16 進で直接書いている名前（2 個）</h3>
+      <p class="note">この色は、色の名前を変えても追いかけない。いちばん近い色の名前を右に書いた。</p>
+      <div class="tw"><table><thead><tr><th>名前</th><th>値</th><th>近い色の名前</th></tr></thead><tbody><tr><td><code>--icon-fg</code><br><span class="lab">アイコンの色</span></td><td><i class="sw" style="background:#2F8B73"></i><code>#2F8B73</code></td><td><i class="sw" style="background:#277A65"></i><code>accent</code> #277A65（差 23）</td></tr><tr><td><code>--table-zebra-bg</code><br><span class="lab">表の縞</span></td><td><i class="sw" style="background:#F5FAF8"></i><code>#F5FAF8</code></td><td><i class="sw" style="background:#EEF7F3"></i><code>tint</code> #EEF7F3（差 9）</td></tr></tbody></table></div>
+      <h3>名前ごとの値（106 個）</h3>
+      <div class="tw"><table><thead><tr><th>番号</th><th>名前</th><th>値（{…} は色の名前）</th><th>どこから来たか</th></tr></thead><tbody><tr id="t-strong-line-c-mint"><td>01</td><td><code>--strong-line-c</code><br><span class="lab">強調の線の色</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#F2C94C"></i>#F2C94C</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-line-a-mint"><td>01</td><td><code>--strong-line-a</code><br><span class="lab">強調の線の濃さ</span></td><td><code>55%</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-line-h-mint"><td>01</td><td><code>--strong-line-h</code><br><span class="lab">強調の線の高さ</span></td><td><code>38%</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-line-mint"><td>01</td><td><code>--strong-line</code><br><span class="lab">強調の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-strong-fg-mint"><td>01</td><td><code>--strong-fg</code><br><span class="lab">強調の文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-w-mint"><td>01</td><td><code>--strong-w</code><br><span class="lab">強調の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-c-mint"><td>02</td><td><code>--mark-line-c</code><br><span class="lab">印の線の色</span></td><td><code>var(--strong-line-c)</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-a-mint"><td>02</td><td><code>--mark-line-a</code><br><span class="lab">印の線の濃さ</span></td><td><code>var(--strong-line-a)</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-h-mint"><td>02</td><td><code>--mark-line-h</code><br><span class="lab">印の線の高さ</span></td><td><code>var(--strong-line-h)</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-mint"><td>02</td><td><code>--mark-line</code><br><span class="lab">印の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-hl-fg-mint"><td>03</td><td><code>--hl-fg</code><br><span class="lab">色で強める語の色</span></td><td><code>{emphasis}</code><br><span class="res"><i class="sw" style="background:#B03A57"></i>#B03A57</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-hl-w-mint"><td>03</td><td><code>--hl-w</code><br><span class="lab">色で強める語の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-em-font-mint"><td>04</td><td><code>--em-font</code><br><span class="lab">斜体</span></td><td><code>italic</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-small-fg-mint"><td>05</td><td><code>--small-fg</code><br><span class="lab">小さい注の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#5B6A65"></i>#5B6A65</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-small-size-mint"><td>05</td><td><code>--small-size</code><br><span class="lab">小さい注の大きさ</span></td><td><code>13px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-link-fg-mint"><td>06</td><td><code>--link-fg</code><br><span class="lab">リンクの文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-link-line-c-mint"><td>06</td><td><code>--link-line-c</code><br><span class="lab">リンクの下線の色</span></td><td><code>currentColor</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-link-line-w-mint"><td>06</td><td><code>--link-line-w</code><br><span class="lab">リンクの下線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-link-line-mint"><td>06</td><td><code>--link-line</code><br><span class="lab">リンクの下線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-code-bg-mint"><td>07</td><td><code>--code-bg</code><br><span class="lab">コードの地</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#EEF7F3"></i>#EEF7F3</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-code-fg-mint"><td>07</td><td><code>--code-fg</code><br><span class="lab">コードの文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-code-r-mint"><td>07</td><td><code>--code-r</code><br><span class="lab">コードの角丸</span></td><td><code>4px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-title-fg-mint"><td>08</td><td><code>--title-fg</code><br><span class="lab">ページの題名の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-title-w-mint"><td>08</td><td><code>--title-w</code><br><span class="lab">ページの題名の太さ</span></td><td><code>800</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-title-size-mint"><td>08</td><td><code>--title-size</code><br><span class="lab">ページの題名の大きさ</span></td><td><code>28px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-eyebrow-fg-mint"><td>09</td><td><code>--eyebrow-fg</code><br><span class="lab">小ラベルの色</span></td><td><code>{accent}</code><br><span class="res"><i class="sw" style="background:#277A65"></i>#277A65</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-eyebrow-line-c-mint"><td>09</td><td><code>--eyebrow-line-c</code><br><span class="lab">小ラベルの前の横線の色</span></td><td><code>currentColor</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-eyebrow-line-w-mint"><td>09</td><td><code>--eyebrow-line-w</code><br><span class="lab">小ラベルの前の横線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-eyebrow-line-mint"><td>09</td><td><code>--eyebrow-line</code><br><span class="lab">小ラベルの前の横線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-secno-bg-mint"><td>10</td><td><code>--secno-bg</code><br><span class="lab">章の番号の地</span></td><td><code>{accent}</code><br><span class="res"><i class="sw" style="background:#277A65"></i>#277A65</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-secno-fg-mint"><td>10</td><td><code>--secno-fg</code><br><span class="lab">章の番号の文字色</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-secno-r-mint"><td>10</td><td><code>--secno-r</code><br><span class="lab">章の番号の角丸</span></td><td><code>999px</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-seclabel-fg-mint"><td>10</td><td><code>--seclabel-fg</code><br><span class="lab">章のラベルの色</span></td><td><code>{accent}</code><br><span class="res"><i class="sw" style="background:#277A65"></i>#277A65</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-h2-fg-mint"><td>11</td><td><code>--h2-fg</code><br><span class="lab">章見出しの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h2-w-mint"><td>11</td><td><code>--h2-w</code><br><span class="lab">章見出しの太さ</span></td><td><code>800</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-h2-size-mint"><td>11</td><td><code>--h2-size</code><br><span class="lab">章見出しの大きさ</span></td><td><code>22px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h2-orn-show-mint"><td>11</td><td><code>--h2-orn-show</code><br><span class="lab">章見出しの飾り</span></td><td><code>none</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-secsub-fg-mint"><td>12</td><td><code>--secsub-fg</code><br><span class="lab">章の副題の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#5B6A65"></i>#5B6A65</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h3-fg-mint"><td>13</td><td><code>--h3-fg</code><br><span class="lab">小見出しの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h3-w-mint"><td>13</td><td><code>--h3-w</code><br><span class="lab">小見出しの太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h3-size-mint"><td>13</td><td><code>--h3-size</code><br><span class="lab">小見出しの大きさ</span></td><td><code>18px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-lede-fg-mint"><td>14</td><td><code>--lede-fg</code><br><span class="lab">リード文の色</span></td><td><code>{text}</code><br><span class="res"><i class="sw" style="background:#33403C"></i>#33403C</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-bg-mint"><td>15</td><td><code>--note-bg</code><br><span class="lab">注記の箱の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-line-c-mint"><td>15</td><td><code>--note-line-c</code><br><span class="lab">注記の箱の左の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-line-w-mint"><td>15</td><td><code>--note-line-w</code><br><span class="lab">注記の箱の左の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-line-mint"><td>15</td><td><code>--note-line</code><br><span class="lab">注記の箱の左の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-quote-bg-mint"><td>16</td><td><code>--quote-bg</code><br><span class="lab">引用の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-quote-line-c-mint"><td>16</td><td><code>--quote-line-c</code><br><span class="lab">引用の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-quote-line-w-mint"><td>16</td><td><code>--quote-line-w</code><br><span class="lab">引用の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-quote-line-mint"><td>16</td><td><code>--quote-line</code><br><span class="lab">引用の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-card-bg-mint"><td>17</td><td><code>--card-bg</code><br><span class="lab">カードの地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-card-line-c-mint"><td>17</td><td><code>--card-line-c</code><br><span class="lab">カードの枠の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#DCEAE4"></i>#DCEAE4</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-card-line-w-mint"><td>17</td><td><code>--card-line-w</code><br><span class="lab">カードの枠の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-card-r-mint"><td>17</td><td><code>--card-r</code><br><span class="lab">カードの角丸</span></td><td><code>12px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-stat-fg-mint"><td>18</td><td><code>--stat-fg</code><br><span class="lab">数字のカードの数字の色</span></td><td><code>{deep}</code><br><span class="res"><i class="sw" style="background:#3F6E79"></i>#3F6E79</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-stat-bg-mint"><td>18</td><td><code>--stat-bg</code><br><span class="lab">数字のカードの地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-chip-on-bg-mint"><td>19</td><td><code>--chip-on-bg</code><br><span class="lab">選んだチップの地</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-chip-on-fg-mint"><td>19</td><td><code>--chip-on-fg</code><br><span class="lab">選んだチップの文字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-chip-r-mint"><td>19</td><td><code>--chip-r</code><br><span class="lab">チップの角丸</span></td><td><code>999px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-badge-bg-mint"><td>20</td><td><code>--badge-bg</code><br><span class="lab">番号の丸の地</span></td><td><code>{accent}</code><br><span class="res"><i class="sw" style="background:#277A65"></i>#277A65</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-badge-fg-mint"><td>20</td><td><code>--badge-fg</code><br><span class="lab">番号の丸の数字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-badge-r-mint"><td>20</td><td><code>--badge-r</code><br><span class="lab">番号の丸の角丸</span></td><td><code>50%</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-btn-bg-mint"><td>21</td><td><code>--btn-bg</code><br><span class="lab">主ボタンの地</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-btn-fg-mint"><td>21</td><td><code>--btn-fg</code><br><span class="lab">主ボタンの文字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-btn-r-mint"><td>21</td><td><code>--btn-r</code><br><span class="lab">主ボタンの角丸</span></td><td><code>48px</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-input-bg-mint"><td>22</td><td><code>--input-bg</code><br><span class="lab">入力欄の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-input-line-c-mint"><td>22</td><td><code>--input-line-c</code><br><span class="lab">入力欄の枠の色</span></td><td><code>{rule_strong}</code><br><span class="res"><i class="sw" style="background:#A9C9BE"></i>#A9C9BE</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-input-r-mint"><td>22</td><td><code>--input-r</code><br><span class="lab">入力欄の角丸</span></td><td><code>12px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-header-bg-c-mint"><td>23</td><td><code>--header-bg-c</code><br><span class="lab">ヘッダーの地の色</span></td><td><code>{paper}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-header-bg-a-mint"><td>23</td><td><code>--header-bg-a</code><br><span class="lab">ヘッダーの地の濃さ</span></td><td><code>88%</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-header-bg-mint"><td>23</td><td><code>--header-bg</code><br><span class="lab">ヘッダーの地（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-chapnav-on-c-mint"><td>24</td><td><code>--chapnav-on-c</code><br><span class="lab">章ナビの選んだ章の下線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-chapnav-on-w-mint"><td>24</td><td><code>--chapnav-on-w</code><br><span class="lab">章ナビの選んだ章の下線の太さ</span></td><td><code>1.5px</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-toc-on-c-mint"><td>25</td><td><code>--toc-on-c</code><br><span class="lab">目次の選んだ行の線の色</span></td><td><code>{accent}</code><br><span class="res"><i class="sw" style="background:#277A65"></i>#277A65</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-toc-on-w-mint"><td>25</td><td><code>--toc-on-w</code><br><span class="lab">目次の選んだ行の線の太さ</span></td><td><code>3px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-tab-on-c-mint"><td>26</td><td><code>--tab-on-c</code><br><span class="lab">選んだタブの下線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-tab-on-w-mint"><td>26</td><td><code>--tab-on-w</code><br><span class="lab">選んだタブの下線の太さ</span></td><td><code>1.5px</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-switch-fg-mint"><td>27</td><td><code>--switch-fg</code><br><span class="lab">テーマの切り替えボタンの色</span></td><td><code>{text}</code><br><span class="res"><i class="sw" style="background:#33403C"></i>#33403C</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-page-bg-mint"><td>28</td><td><code>--page-bg</code><br><span class="lab">紙（ページの地）</span></td><td><code>{paper}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-band-bg-mint"><td>29</td><td><code>--band-bg</code><br><span class="lab">節の帯（奇数番目）</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-band-alt-bg-mint"><td>29</td><td><code>--band-alt-bg</code><br><span class="lab">節の帯（偶数番目）</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#EEF7F3"></i>#EEF7F3</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-headstripe-show-mint"><td>30</td><td><code>--headstripe-show</code><br><span class="lab">ヘッダー下の縞</span></td><td><code>none</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-divider-line-c-mint"><td>31</td><td><code>--divider-line-c</code><br><span class="lab">区切り線の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#DCEAE4"></i>#DCEAE4</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-divider-line-w-mint"><td>31</td><td><code>--divider-line-w</code><br><span class="lab">区切り線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-divider-line-mint"><td>31</td><td><code>--divider-line</code><br><span class="lab">区切り線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-hero-area-bg-mint"><td>32</td><td><code>--hero-area-bg</code><br><span class="lab">ヒーローの地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-hero-area-orn-show-mint"><td>32</td><td><code>--hero-area-orn-show</code><br><span class="lab">ヒーローの飾り</span></td><td><code>none</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-pagefoot-bg-mint"><td>33</td><td><code>--pagefoot-bg</code><br><span class="lab">フッターの地</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#EEF7F3"></i>#EEF7F3</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-pagefoot-fg-mint"><td>33</td><td><code>--pagefoot-fg</code><br><span class="lab">フッターの文字</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#5B6A65"></i>#5B6A65</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-icon-fg-mint"><td>34</td><td><code>--icon-fg</code><br><span class="lab">アイコンの色</span></td><td><code>#2F8B73</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-icon-w-mint"><td>34</td><td><code>--icon-w</code><br><span class="lab">アイコンの線の太さ</span></td><td><code>1.75</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-table-head-line-c-mint"><td>35</td><td><code>--table-head-line-c</code><br><span class="lab">表の見出し行の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#16201D"></i>#16201D</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-table-head-line-w-mint"><td>35</td><td><code>--table-head-line-w</code><br><span class="lab">表の見出し行の線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-table-head-line-mint"><td>35</td><td><code>--table-head-line</code><br><span class="lab">表の見出し行の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-table-zebra-bg-mint"><td>35</td><td><code>--table-zebra-bg</code><br><span class="lab">表の縞</span></td><td><code>#F5FAF8</code></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-list-dot-bg-mint"><td>36</td><td><code>--list-dot-bg</code><br><span class="lab">箇条書きの印の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#5B6A65"></i>#5B6A65</span></td><td><b>Mint だけの値</b>（themes/mint.json の "semantic"）</td></tr><tr id="t-figure-bg-mint"><td>37</td><td><code>--figure-bg</code><br><span class="lab">図の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-figure-line-c-mint"><td>37</td><td><code>--figure-line-c</code><br><span class="lab">図の枠の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#DCEAE4"></i>#DCEAE4</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-figure-line-w-mint"><td>37</td><td><code>--figure-line-w</code><br><span class="lab">図の枠の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-figure-line-mint"><td>37</td><td><code>--figure-line</code><br><span class="lab">図の枠（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-meter-fill-bg-mint"><td>38</td><td><code>--meter-fill-bg</code><br><span class="lab">バーの中身</span></td><td><code>{deep}</code><br><span class="res"><i class="sw" style="background:#3F6E79"></i>#3F6E79</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-meter-track-bg-mint"><td>38</td><td><code>--meter-track-bg</code><br><span class="lab">バーの溝</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#DCEAE4"></i>#DCEAE4</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-langtag-bg-mint"><td>39</td><td><code>--langtag-bg</code><br><span class="lab">言語バッジの地</span></td><td><code>{accent_wash}</code><br><span class="res"><i class="sw" style="background:#E8F5F1"></i>#E8F5F1</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-langtag-fg-mint"><td>39</td><td><code>--langtag-fg</code><br><span class="lab">言語バッジの文字</span></td><td><code>{deep}</code><br><span class="res"><i class="sw" style="background:#3F6E79"></i>#3F6E79</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-orn-show-mint"><td>40</td><td><code>--orn-show</code><br><span class="lab">飾りの図形・モザイク</span></td><td><code>block</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-motion-show-mint"><td>41</td><td><code>--motion-show</code><br><span class="lab">動き（ふわっと出る）</span></td><td><code>0</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr></tbody></table></div>
+    </div>
+  </section>
+  <section class="grp" id="th-bold">
+    <div class="wrap">
+      <p class="eyebrow">Bold Yellow</p>
+      <h2>Bold Yellow の設定</h2>
+      <h3>色の名前と、使っている意味の名前</h3>
+      <p class="note">色の名前は themes/bold.json の "palette"（と "colors"）。1 つ変えると、右の名前がまとめて変わる。</p>
+      <div class="tw"><table><thead><tr><th>色の名前</th><th>値</th><th>数</th><th>使っている名前</th></tr></thead><tbody><tr id="u-paper-bold"><td><i class="sw" style="background:#FAF9EC"></i><code>paper</code><br><span class="lab">紙</span></td><td><code>#FAF9EC</code></td><td>2</td><td><code>--header-bg-c</code> <code>--page-bg</code></td></tr><tr id="u-white-bold"><td><i class="sw" style="background:#FFFFFF"></i><code>white</code><br><span class="lab">白</span></td><td><code>#FFFFFF</code></td><td>7</td><td><code>--note-bg</code> <code>--quote-bg</code> <code>--card-bg</code> <code>--chip-on-fg</code> <code>--input-bg</code> <code>--band-bg</code> <code>--figure-bg</code></td></tr><tr id="u-ink-bold"><td><i class="sw" style="background:#1B1B1B"></i><code>ink</code><br><span class="lab">墨（いちばん濃い文字）</span></td><td><code>#1B1B1B</code></td><td>22</td><td><code>--strong-fg</code> <code>--link-fg</code> <code>--link-line-c</code> <code>--code-fg</code> <code>--title-fg</code> <code>--eyebrow-line-c</code> <code>--secno-fg</code> <code>--seclabel-fg</code> <code>--h2-fg</code> <code>--h3-fg</code> <code>--note-line-c</code> <code>--quote-line-c</code> <code>--card-line-c</code> <code>--chip-on-bg</code> <code>--badge-fg</code> <code>--btn-fg</code> <code>--input-line-c</code> <code>--pagefoot-fg</code> <code>--icon-fg</code> <code>--table-head-line-c</code> <code>--list-dot-bg</code> <code>--figure-line-c</code></td></tr><tr id="u-text-bold"><td><i class="sw" style="background:#1B1B1B"></i><code>text</code><br><span class="lab">本文の文字</span></td><td><code>#1B1B1B</code></td><td>2</td><td><code>--lede-fg</code> <code>--switch-fg</code></td></tr><tr id="u-muted-bold"><td><i class="sw" style="background:#6E6B5E"></i><code>muted</code><br><span class="lab">弱い文字</span></td><td><code>#6E6B5E</code></td><td>3</td><td><code>--small-fg</code> <code>--eyebrow-fg</code> <code>--secsub-fg</code></td></tr><tr id="u-rule-bold"><td><i class="sw" style="background:#E4E2D2"></i><code>rule</code><br><span class="lab">罫線</span></td><td><code>#E4E2D2</code></td><td>2</td><td><code>--divider-line-c</code> <code>--meter-track-bg</code></td></tr><tr id="u-rule_strong-bold"><td><i class="sw" style="background:#1B1B1B"></i><code>rule_strong</code><br><span class="lab">濃い罫線</span></td><td><code>#1B1B1B</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-tint-bold"><td><i class="sw" style="background:#F2F1E2"></i><code>tint</code><br><span class="lab">淡い面</span></td><td><code>#F2F1E2</code></td><td>2</td><td><code>--code-bg</code> <code>--table-zebra-bg</code></td></tr><tr id="u-accent-bold"><td><i class="sw" style="background:#1B1B1B"></i><code>accent</code><br><span class="lab">主色</span></td><td><code>#1B1B1B</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-accent_bright-bold"><td><i class="sw" style="background:#E3E143"></i><code>accent_bright</code><br><span class="lab">明るい主色</span></td><td><code>#E3E143</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-accent_wash-bold"><td><i class="sw" style="background:#E3E143"></i><code>accent_wash</code><br><span class="lab">主色の淡い面</span></td><td><code>#E3E143</code></td><td>1</td><td><code>--langtag-bg</code></td></tr><tr id="u-emphasis-bold"><td><i class="sw" style="background:#6E6A12"></i><code>emphasis</code><br><span class="lab">強調色</span></td><td><code>#6E6A12</code></td><td>1</td><td><code>--hl-fg</code></td></tr><tr id="u-emphasis_wash-bold"><td><i class="sw" style="background:#F6F4C4"></i><code>emphasis_wash</code><br><span class="lab">強調色の淡い面</span></td><td><code>#F6F4C4</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-highlight-bold"><td><i class="sw" style="background:#E3E143"></i><code>highlight</code><br><span class="lab">マーカー色</span></td><td><code>#E3E143</code></td><td>8</td><td><code>--strong-line-c</code> <code>--secno-bg</code> <code>--badge-bg</code> <code>--btn-bg</code> <code>--chapnav-on-c</code> <code>--toc-on-c</code> <code>--tab-on-c</code> <code>--pagefoot-bg</code></td></tr><tr id="u-deep-bold"><td><i class="sw" style="background:#1B1B1B"></i><code>deep</code><br><span class="lab">深い色</span></td><td><code>#1B1B1B</code></td><td>3</td><td><code>--stat-fg</code> <code>--meter-fill-bg</code> <code>--langtag-fg</code></td></tr><tr id="u-danger-bold"><td><i class="sw" style="background:#9B2C2C"></i><code>danger</code><br><span class="lab">注意の色</span></td><td><code>#9B2C2C</code></td><td>0</td><td>（使っていない）</td></tr></tbody></table></div>
+      <h3>色の名前を使わず、16 進で直接書いている名前（1 個）</h3>
+      <p class="note">この色は、色の名前を変えても追いかけない。いちばん近い色の名前を右に書いた。</p>
+      <div class="tw"><table><thead><tr><th>名前</th><th>値</th><th>近い色の名前</th></tr></thead><tbody><tr><td><code>--band-alt-bg</code><br><span class="lab">節の帯（偶数番目）</span></td><td><i class="sw" style="background:#F9F8DE"></i><code>#F9F8DE</code></td><td><i class="sw" style="background:#F2F1E2"></i><code>tint</code> #F2F1E2（差 11）</td></tr></tbody></table></div>
+      <h3>名前ごとの値（106 個）</h3>
+      <div class="tw"><table><thead><tr><th>番号</th><th>名前</th><th>値（{…} は色の名前）</th><th>どこから来たか</th></tr></thead><tbody><tr id="t-strong-line-c-bold"><td>01</td><td><code>--strong-line-c</code><br><span class="lab">強調の線の色</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-line-a-bold"><td>01</td><td><code>--strong-line-a</code><br><span class="lab">強調の線の濃さ</span></td><td><code>70%</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-strong-line-h-bold"><td>01</td><td><code>--strong-line-h</code><br><span class="lab">強調の線の高さ</span></td><td><code>38%</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-line-bold"><td>01</td><td><code>--strong-line</code><br><span class="lab">強調の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-strong-fg-bold"><td>01</td><td><code>--strong-fg</code><br><span class="lab">強調の文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-strong-w-bold"><td>01</td><td><code>--strong-w</code><br><span class="lab">強調の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-c-bold"><td>02</td><td><code>--mark-line-c</code><br><span class="lab">印の線の色</span></td><td><code>var(--strong-line-c)</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-a-bold"><td>02</td><td><code>--mark-line-a</code><br><span class="lab">印の線の濃さ</span></td><td><code>var(--strong-line-a)</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-h-bold"><td>02</td><td><code>--mark-line-h</code><br><span class="lab">印の線の高さ</span></td><td><code>var(--strong-line-h)</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-mark-line-bold"><td>02</td><td><code>--mark-line</code><br><span class="lab">印の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-hl-fg-bold"><td>03</td><td><code>--hl-fg</code><br><span class="lab">色で強める語の色</span></td><td><code>{emphasis}</code><br><span class="res"><i class="sw" style="background:#6E6A12"></i>#6E6A12</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-hl-w-bold"><td>03</td><td><code>--hl-w</code><br><span class="lab">色で強める語の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-em-font-bold"><td>04</td><td><code>--em-font</code><br><span class="lab">斜体</span></td><td><code>italic</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-small-fg-bold"><td>05</td><td><code>--small-fg</code><br><span class="lab">小さい注の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#6E6B5E"></i>#6E6B5E</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-small-size-bold"><td>05</td><td><code>--small-size</code><br><span class="lab">小さい注の大きさ</span></td><td><code>13px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-link-fg-bold"><td>06</td><td><code>--link-fg</code><br><span class="lab">リンクの文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-link-line-c-bold"><td>06</td><td><code>--link-line-c</code><br><span class="lab">リンクの下線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-link-line-w-bold"><td>06</td><td><code>--link-line-w</code><br><span class="lab">リンクの下線の太さ</span></td><td><code>2px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-link-line-bold"><td>06</td><td><code>--link-line</code><br><span class="lab">リンクの下線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-code-bg-bold"><td>07</td><td><code>--code-bg</code><br><span class="lab">コードの地</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#F2F1E2"></i>#F2F1E2</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-code-fg-bold"><td>07</td><td><code>--code-fg</code><br><span class="lab">コードの文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-code-r-bold"><td>07</td><td><code>--code-r</code><br><span class="lab">コードの角丸</span></td><td><code>4px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-title-fg-bold"><td>08</td><td><code>--title-fg</code><br><span class="lab">ページの題名の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-title-w-bold"><td>08</td><td><code>--title-w</code><br><span class="lab">ページの題名の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-title-size-bold"><td>08</td><td><code>--title-size</code><br><span class="lab">ページの題名の大きさ</span></td><td><code>28px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-eyebrow-fg-bold"><td>09</td><td><code>--eyebrow-fg</code><br><span class="lab">小ラベルの色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#6E6B5E"></i>#6E6B5E</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-eyebrow-line-c-bold"><td>09</td><td><code>--eyebrow-line-c</code><br><span class="lab">小ラベルの前の横線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-eyebrow-line-w-bold"><td>09</td><td><code>--eyebrow-line-w</code><br><span class="lab">小ラベルの前の横線の太さ</span></td><td><code>2px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-eyebrow-line-bold"><td>09</td><td><code>--eyebrow-line</code><br><span class="lab">小ラベルの前の横線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-secno-bg-bold"><td>10</td><td><code>--secno-bg</code><br><span class="lab">章の番号の地</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-secno-fg-bold"><td>10</td><td><code>--secno-fg</code><br><span class="lab">章の番号の文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-secno-r-bold"><td>10</td><td><code>--secno-r</code><br><span class="lab">章の番号の角丸</span></td><td><code>999px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-seclabel-fg-bold"><td>10</td><td><code>--seclabel-fg</code><br><span class="lab">章のラベルの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-h2-fg-bold"><td>11</td><td><code>--h2-fg</code><br><span class="lab">章見出しの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h2-w-bold"><td>11</td><td><code>--h2-w</code><br><span class="lab">章見出しの太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h2-size-bold"><td>11</td><td><code>--h2-size</code><br><span class="lab">章見出しの大きさ</span></td><td><code>22px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h2-orn-show-bold"><td>11</td><td><code>--h2-orn-show</code><br><span class="lab">章見出しの飾り</span></td><td><code>none</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-secsub-fg-bold"><td>12</td><td><code>--secsub-fg</code><br><span class="lab">章の副題の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#6E6B5E"></i>#6E6B5E</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h3-fg-bold"><td>13</td><td><code>--h3-fg</code><br><span class="lab">小見出しの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h3-w-bold"><td>13</td><td><code>--h3-w</code><br><span class="lab">小見出しの太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-h3-size-bold"><td>13</td><td><code>--h3-size</code><br><span class="lab">小見出しの大きさ</span></td><td><code>18px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-lede-fg-bold"><td>14</td><td><code>--lede-fg</code><br><span class="lab">リード文の色</span></td><td><code>{text}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-bg-bold"><td>15</td><td><code>--note-bg</code><br><span class="lab">注記の箱の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-line-c-bold"><td>15</td><td><code>--note-line-c</code><br><span class="lab">注記の箱の左の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-line-w-bold"><td>15</td><td><code>--note-line-w</code><br><span class="lab">注記の箱の左の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-note-line-bold"><td>15</td><td><code>--note-line</code><br><span class="lab">注記の箱の左の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-quote-bg-bold"><td>16</td><td><code>--quote-bg</code><br><span class="lab">引用の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-quote-line-c-bold"><td>16</td><td><code>--quote-line-c</code><br><span class="lab">引用の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-quote-line-w-bold"><td>16</td><td><code>--quote-line-w</code><br><span class="lab">引用の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-quote-line-bold"><td>16</td><td><code>--quote-line</code><br><span class="lab">引用の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-card-bg-bold"><td>17</td><td><code>--card-bg</code><br><span class="lab">カードの地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-card-line-c-bold"><td>17</td><td><code>--card-line-c</code><br><span class="lab">カードの枠の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-card-line-w-bold"><td>17</td><td><code>--card-line-w</code><br><span class="lab">カードの枠の太さ</span></td><td><code>2px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-card-r-bold"><td>17</td><td><code>--card-r</code><br><span class="lab">カードの角丸</span></td><td><code>12px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-stat-fg-bold"><td>18</td><td><code>--stat-fg</code><br><span class="lab">数字のカードの数字の色</span></td><td><code>{deep}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-stat-bg-bold"><td>18</td><td><code>--stat-bg</code><br><span class="lab">数字のカードの地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-chip-on-bg-bold"><td>19</td><td><code>--chip-on-bg</code><br><span class="lab">選んだチップの地</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-chip-on-fg-bold"><td>19</td><td><code>--chip-on-fg</code><br><span class="lab">選んだチップの文字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-chip-r-bold"><td>19</td><td><code>--chip-r</code><br><span class="lab">チップの角丸</span></td><td><code>999px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-badge-bg-bold"><td>20</td><td><code>--badge-bg</code><br><span class="lab">番号の丸の地</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-badge-fg-bold"><td>20</td><td><code>--badge-fg</code><br><span class="lab">番号の丸の数字</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-badge-r-bold"><td>20</td><td><code>--badge-r</code><br><span class="lab">番号の丸の角丸</span></td><td><code>50%</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-btn-bg-bold"><td>21</td><td><code>--btn-bg</code><br><span class="lab">主ボタンの地</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-btn-fg-bold"><td>21</td><td><code>--btn-fg</code><br><span class="lab">主ボタンの文字</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-btn-r-bold"><td>21</td><td><code>--btn-r</code><br><span class="lab">主ボタンの角丸</span></td><td><code>999px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-input-bg-bold"><td>22</td><td><code>--input-bg</code><br><span class="lab">入力欄の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-input-line-c-bold"><td>22</td><td><code>--input-line-c</code><br><span class="lab">入力欄の枠の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-input-r-bold"><td>22</td><td><code>--input-r</code><br><span class="lab">入力欄の角丸</span></td><td><code>12px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-header-bg-c-bold"><td>23</td><td><code>--header-bg-c</code><br><span class="lab">ヘッダーの地の色</span></td><td><code>{paper}</code><br><span class="res"><i class="sw" style="background:#FAF9EC"></i>#FAF9EC</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-header-bg-a-bold"><td>23</td><td><code>--header-bg-a</code><br><span class="lab">ヘッダーの地の濃さ</span></td><td><code>96%</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-header-bg-bold"><td>23</td><td><code>--header-bg</code><br><span class="lab">ヘッダーの地（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-chapnav-on-c-bold"><td>24</td><td><code>--chapnav-on-c</code><br><span class="lab">章ナビの選んだ章の下線の色</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-chapnav-on-w-bold"><td>24</td><td><code>--chapnav-on-w</code><br><span class="lab">章ナビの選んだ章の下線の太さ</span></td><td><code>3px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-toc-on-c-bold"><td>25</td><td><code>--toc-on-c</code><br><span class="lab">目次の選んだ行の線の色</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-toc-on-w-bold"><td>25</td><td><code>--toc-on-w</code><br><span class="lab">目次の選んだ行の線の太さ</span></td><td><code>4px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-tab-on-c-bold"><td>26</td><td><code>--tab-on-c</code><br><span class="lab">選んだタブの下線の色</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-tab-on-w-bold"><td>26</td><td><code>--tab-on-w</code><br><span class="lab">選んだタブの下線の太さ</span></td><td><code>3px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-switch-fg-bold"><td>27</td><td><code>--switch-fg</code><br><span class="lab">テーマの切り替えボタンの色</span></td><td><code>{text}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-page-bg-bold"><td>28</td><td><code>--page-bg</code><br><span class="lab">紙（ページの地）</span></td><td><code>{paper}</code><br><span class="res"><i class="sw" style="background:#FAF9EC"></i>#FAF9EC</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-band-bg-bold"><td>29</td><td><code>--band-bg</code><br><span class="lab">節の帯（奇数番目）</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-band-alt-bg-bold"><td>29</td><td><code>--band-alt-bg</code><br><span class="lab">節の帯（偶数番目）</span></td><td><code>#F9F8DE</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-headstripe-show-bold"><td>30</td><td><code>--headstripe-show</code><br><span class="lab">ヘッダー下の縞</span></td><td><code>block</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-divider-line-c-bold"><td>31</td><td><code>--divider-line-c</code><br><span class="lab">区切り線の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#E4E2D2"></i>#E4E2D2</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-divider-line-w-bold"><td>31</td><td><code>--divider-line-w</code><br><span class="lab">区切り線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-divider-line-bold"><td>31</td><td><code>--divider-line</code><br><span class="lab">区切り線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-hero-area-bg-bold"><td>32</td><td><code>--hero-area-bg</code><br><span class="lab">ヒーローの地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-hero-area-orn-show-bold"><td>32</td><td><code>--hero-area-orn-show</code><br><span class="lab">ヒーローの飾り</span></td><td><code>none</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-pagefoot-bg-bold"><td>33</td><td><code>--pagefoot-bg</code><br><span class="lab">フッターの地</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-pagefoot-fg-bold"><td>33</td><td><code>--pagefoot-fg</code><br><span class="lab">フッターの文字</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-icon-fg-bold"><td>34</td><td><code>--icon-fg</code><br><span class="lab">アイコンの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-icon-w-bold"><td>34</td><td><code>--icon-w</code><br><span class="lab">アイコンの線の太さ</span></td><td><code>2</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-table-head-line-c-bold"><td>35</td><td><code>--table-head-line-c</code><br><span class="lab">表の見出し行の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-table-head-line-w-bold"><td>35</td><td><code>--table-head-line-w</code><br><span class="lab">表の見出し行の線の太さ</span></td><td><code>2px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-table-head-line-bold"><td>35</td><td><code>--table-head-line</code><br><span class="lab">表の見出し行の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-table-zebra-bg-bold"><td>35</td><td><code>--table-zebra-bg</code><br><span class="lab">表の縞</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#F2F1E2"></i>#F2F1E2</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-list-dot-bg-bold"><td>36</td><td><code>--list-dot-bg</code><br><span class="lab">箇条書きの印の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-figure-bg-bold"><td>37</td><td><code>--figure-bg</code><br><span class="lab">図の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-figure-line-c-bold"><td>37</td><td><code>--figure-line-c</code><br><span class="lab">図の枠の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-figure-line-w-bold"><td>37</td><td><code>--figure-line-w</code><br><span class="lab">図の枠の太さ</span></td><td><code>2px</code></td><td><b>Bold Yellow だけの値</b>（themes/bold.json の "semantic"）</td></tr><tr id="t-figure-line-bold"><td>37</td><td><code>--figure-line</code><br><span class="lab">図の枠（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-meter-fill-bg-bold"><td>38</td><td><code>--meter-fill-bg</code><br><span class="lab">バーの中身</span></td><td><code>{deep}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-meter-track-bg-bold"><td>38</td><td><code>--meter-track-bg</code><br><span class="lab">バーの溝</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#E4E2D2"></i>#E4E2D2</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-langtag-bg-bold"><td>39</td><td><code>--langtag-bg</code><br><span class="lab">言語バッジの地</span></td><td><code>{accent_wash}</code><br><span class="res"><i class="sw" style="background:#E3E143"></i>#E3E143</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-langtag-fg-bold"><td>39</td><td><code>--langtag-fg</code><br><span class="lab">言語バッジの文字</span></td><td><code>{deep}</code><br><span class="res"><i class="sw" style="background:#1B1B1B"></i>#1B1B1B</span></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-orn-show-bold"><td>40</td><td><code>--orn-show</code><br><span class="lab">飾りの図形・モザイク</span></td><td><code>block</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr><tr id="t-motion-show-bold"><td>41</td><td><code>--motion-show</code><br><span class="lab">動き（ふわっと出る）</span></td><td><code>0</code></td><td>台帳のふだんの値（semantic.json の default）</td></tr></tbody></table></div>
+    </div>
+  </section>
+  <section class="grp" id="th-sai">
+    <div class="wrap">
+      <p class="eyebrow">SAI v2</p>
+      <h2>SAI v2 の設定</h2>
+      <h3>色の名前と、使っている意味の名前</h3>
+      <p class="note">色の名前は themes/sai.json の "colors"。1 つ変えると、右の名前がまとめて変わる。</p>
+      <div class="tw"><table><thead><tr><th>色の名前</th><th>値</th><th>数</th><th>使っている名前</th></tr></thead><tbody><tr id="u-paper-sai"><td><i class="sw" style="background:#FAFAFA"></i><code>paper</code><br><span class="lab">紙</span></td><td><code>#FAFAFA</code></td><td>2</td><td><code>--header-bg-c</code> <code>--page-bg</code></td></tr><tr id="u-white-sai"><td><i class="sw" style="background:#FFFFFF"></i><code>white</code><br><span class="lab">白</span></td><td><code>#FFFFFF</code></td><td>9</td><td><code>--note-bg</code> <code>--quote-bg</code> <code>--card-bg</code> <code>--chip-on-fg</code> <code>--badge-fg</code> <code>--btn-fg</code> <code>--input-bg</code> <code>--band-bg</code> <code>--figure-bg</code></td></tr><tr id="u-ink-sai"><td><i class="sw" style="background:#111111"></i><code>ink</code><br><span class="lab">墨（いちばん濃い文字）</span></td><td><code>#111111</code></td><td>20</td><td><code>--strong-fg</code> <code>--link-fg</code> <code>--code-fg</code> <code>--title-fg</code> <code>--h2-fg</code> <code>--h3-fg</code> <code>--note-line-c</code> <code>--quote-line-c</code> <code>--stat-fg</code> <code>--chip-on-bg</code> <code>--badge-bg</code> <code>--btn-bg</code> <code>--chapnav-on-c</code> <code>--toc-on-c</code> <code>--tab-on-c</code> <code>--icon-fg</code> <code>--table-head-line-c</code> <code>--list-dot-bg</code> <code>--meter-fill-bg</code> <code>--langtag-fg</code></td></tr><tr id="u-text-sai"><td><i class="sw" style="background:#333333"></i><code>text</code><br><span class="lab">本文の文字</span></td><td><code>#333333</code></td><td>2</td><td><code>--lede-fg</code> <code>--switch-fg</code></td></tr><tr id="u-muted-sai"><td><i class="sw" style="background:#808080"></i><code>muted</code><br><span class="lab">弱い文字</span></td><td><code>#808080</code></td><td>5</td><td><code>--small-fg</code> <code>--eyebrow-fg</code> <code>--secno-fg</code> <code>--seclabel-fg</code> <code>--secsub-fg</code></td></tr><tr id="u-rule-sai"><td><i class="sw" style="background:#EEEEEE"></i><code>rule</code><br><span class="lab">罫線</span></td><td><code>#EEEEEE</code></td><td>4</td><td><code>--card-line-c</code> <code>--divider-line-c</code> <code>--pagefoot-bg</code> <code>--figure-line-c</code></td></tr><tr id="u-rule_strong-sai"><td><i class="sw" style="background:#CCCCCC"></i><code>rule_strong</code><br><span class="lab">濃い罫線</span></td><td><code>#CCCCCC</code></td><td>2</td><td><code>--link-line-c</code> <code>--input-line-c</code></td></tr><tr id="u-tint-sai"><td><i class="sw" style="background:#F5F5F5"></i><code>tint</code><br><span class="lab">淡い面</span></td><td><code>#F5F5F5</code></td><td>2</td><td><code>--code-bg</code> <code>--langtag-bg</code></td></tr><tr id="u-accent-sai"><td><i class="sw" style="background:#62B8A0"></i><code>accent</code><br><span class="lab">主色</span></td><td><code>#62B8A0</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-accent_bright-sai"><td><i class="sw" style="background:#62B8A0"></i><code>accent_bright</code><br><span class="lab">明るい主色</span></td><td><code>#62B8A0</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-accent_wash-sai"><td><i class="sw" style="background:#E8F5F1"></i><code>accent_wash</code><br><span class="lab">主色の淡い面</span></td><td><code>#E8F5F1</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-emphasis-sai"><td><i class="sw" style="background:#EB6584"></i><code>emphasis</code><br><span class="lab">強調色</span></td><td><code>#EB6584</code></td><td>1</td><td><code>--hl-fg</code></td></tr><tr id="u-emphasis_wash-sai"><td><i class="sw" style="background:#FCE9EE"></i><code>emphasis_wash</code><br><span class="lab">強調色の淡い面</span></td><td><code>#FCE9EE</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-highlight-sai"><td><i class="sw" style="background:#F2C94C"></i><code>highlight</code><br><span class="lab">マーカー色</span></td><td><code>#F2C94C</code></td><td>1</td><td><code>--strong-line-c</code></td></tr><tr id="u-deep-sai"><td><i class="sw" style="background:#4F7C87"></i><code>deep</code><br><span class="lab">深い色</span></td><td><code>#4F7C87</code></td><td>0</td><td>（使っていない）</td></tr><tr id="u-danger-sai"><td><i class="sw" style="background:#C84E6C"></i><code>danger</code><br><span class="lab">注意の色</span></td><td><code>#C84E6C</code></td><td>0</td><td>（使っていない）</td></tr></tbody></table></div>
+      <h3>色の名前を使わず、16 進で直接書いている名前（3 個）</h3>
+      <p class="note">この色は、色の名前を変えても追いかけない。いちばん近い色の名前を右に書いた。</p>
+      <div class="tw"><table><thead><tr><th>名前</th><th>値</th><th>近い色の名前</th></tr></thead><tbody><tr><td><code>--band-alt-bg</code><br><span class="lab">節の帯（偶数番目）</span></td><td><i class="sw" style="background:#F6F6F6"></i><code>#F6F6F6</code></td><td><i class="sw" style="background:#F5F5F5"></i><code>tint</code> #F5F5F5（差 2）</td></tr><tr><td><code>--pagefoot-fg</code><br><span class="lab">フッターの文字</span></td><td><i class="sw" style="background:#666666"></i><code>#666666</code></td><td><i class="sw" style="background:#808080"></i><code>muted</code> #808080（差 45）</td></tr><tr><td><code>--meter-track-bg</code><br><span class="lab">バーの溝</span></td><td><i class="sw" style="background:#DDE5E1"></i><code>#DDE5E1</code></td><td><i class="sw" style="background:#EEEEEE"></i><code>rule</code> #EEEEEE（差 23）</td></tr></tbody></table></div>
+      <h3>名前ごとの値（106 個）</h3>
+      <div class="tw"><table><thead><tr><th>番号</th><th>名前</th><th>値（{…} は色の名前）</th><th>どこから来たか</th></tr></thead><tbody><tr id="t-strong-line-c-sai"><td>01</td><td><code>--strong-line-c</code><br><span class="lab">強調の線の色</span></td><td><code>{highlight}</code><br><span class="res"><i class="sw" style="background:#F2C94C"></i>#F2C94C</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-strong-line-a-sai"><td>01</td><td><code>--strong-line-a</code><br><span class="lab">強調の線の濃さ</span></td><td><code>0%</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-strong-line-h-sai"><td>01</td><td><code>--strong-line-h</code><br><span class="lab">強調の線の高さ</span></td><td><code>38%</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-strong-line-sai"><td>01</td><td><code>--strong-line</code><br><span class="lab">強調の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-strong-fg-sai"><td>01</td><td><code>--strong-fg</code><br><span class="lab">強調の文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-strong-w-sai"><td>01</td><td><code>--strong-w</code><br><span class="lab">強調の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-mark-line-c-sai"><td>02</td><td><code>--mark-line-c</code><br><span class="lab">印の線の色</span></td><td><code>var(--strong-line-c)</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-mark-line-a-sai"><td>02</td><td><code>--mark-line-a</code><br><span class="lab">印の線の濃さ</span></td><td><code>var(--strong-line-a)</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-mark-line-h-sai"><td>02</td><td><code>--mark-line-h</code><br><span class="lab">印の線の高さ</span></td><td><code>var(--strong-line-h)</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-mark-line-sai"><td>02</td><td><code>--mark-line</code><br><span class="lab">印の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-hl-fg-sai"><td>03</td><td><code>--hl-fg</code><br><span class="lab">色で強める語の色</span></td><td><code>{emphasis}</code><br><span class="res"><i class="sw" style="background:#EB6584"></i>#EB6584</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-hl-w-sai"><td>03</td><td><code>--hl-w</code><br><span class="lab">色で強める語の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-em-font-sai"><td>04</td><td><code>--em-font</code><br><span class="lab">斜体</span></td><td><code>italic</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-small-fg-sai"><td>05</td><td><code>--small-fg</code><br><span class="lab">小さい注の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#808080"></i>#808080</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-small-size-sai"><td>05</td><td><code>--small-size</code><br><span class="lab">小さい注の大きさ</span></td><td><code>13px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-link-fg-sai"><td>06</td><td><code>--link-fg</code><br><span class="lab">リンクの文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-link-line-c-sai"><td>06</td><td><code>--link-line-c</code><br><span class="lab">リンクの下線の色</span></td><td><code>{rule_strong}</code><br><span class="res"><i class="sw" style="background:#CCCCCC"></i>#CCCCCC</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-link-line-w-sai"><td>06</td><td><code>--link-line-w</code><br><span class="lab">リンクの下線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-link-line-sai"><td>06</td><td><code>--link-line</code><br><span class="lab">リンクの下線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-code-bg-sai"><td>07</td><td><code>--code-bg</code><br><span class="lab">コードの地</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#F5F5F5"></i>#F5F5F5</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-code-fg-sai"><td>07</td><td><code>--code-fg</code><br><span class="lab">コードの文字色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-code-r-sai"><td>07</td><td><code>--code-r</code><br><span class="lab">コードの角丸</span></td><td><code>4px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-title-fg-sai"><td>08</td><td><code>--title-fg</code><br><span class="lab">ページの題名の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-title-w-sai"><td>08</td><td><code>--title-w</code><br><span class="lab">ページの題名の太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-title-size-sai"><td>08</td><td><code>--title-size</code><br><span class="lab">ページの題名の大きさ</span></td><td><code>28px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-eyebrow-fg-sai"><td>09</td><td><code>--eyebrow-fg</code><br><span class="lab">小ラベルの色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#808080"></i>#808080</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-eyebrow-line-c-sai"><td>09</td><td><code>--eyebrow-line-c</code><br><span class="lab">小ラベルの前の横線の色</span></td><td><code>currentColor</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-eyebrow-line-w-sai"><td>09</td><td><code>--eyebrow-line-w</code><br><span class="lab">小ラベルの前の横線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-eyebrow-line-sai"><td>09</td><td><code>--eyebrow-line</code><br><span class="lab">小ラベルの前の横線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-secno-bg-sai"><td>10</td><td><code>--secno-bg</code><br><span class="lab">章の番号の地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-secno-fg-sai"><td>10</td><td><code>--secno-fg</code><br><span class="lab">章の番号の文字色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#808080"></i>#808080</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-secno-r-sai"><td>10</td><td><code>--secno-r</code><br><span class="lab">章の番号の角丸</span></td><td><code>0</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-seclabel-fg-sai"><td>10</td><td><code>--seclabel-fg</code><br><span class="lab">章のラベルの色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#808080"></i>#808080</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h2-fg-sai"><td>11</td><td><code>--h2-fg</code><br><span class="lab">章見出しの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h2-w-sai"><td>11</td><td><code>--h2-w</code><br><span class="lab">章見出しの太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h2-size-sai"><td>11</td><td><code>--h2-size</code><br><span class="lab">章見出しの大きさ</span></td><td><code>22px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h2-orn-show-sai"><td>11</td><td><code>--h2-orn-show</code><br><span class="lab">章見出しの飾り</span></td><td><code>none</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-secsub-fg-sai"><td>12</td><td><code>--secsub-fg</code><br><span class="lab">章の副題の色</span></td><td><code>{muted}</code><br><span class="res"><i class="sw" style="background:#808080"></i>#808080</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h3-fg-sai"><td>13</td><td><code>--h3-fg</code><br><span class="lab">小見出しの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h3-w-sai"><td>13</td><td><code>--h3-w</code><br><span class="lab">小見出しの太さ</span></td><td><code>700</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-h3-size-sai"><td>13</td><td><code>--h3-size</code><br><span class="lab">小見出しの大きさ</span></td><td><code>18px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-lede-fg-sai"><td>14</td><td><code>--lede-fg</code><br><span class="lab">リード文の色</span></td><td><code>{text}</code><br><span class="res"><i class="sw" style="background:#333333"></i>#333333</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-note-bg-sai"><td>15</td><td><code>--note-bg</code><br><span class="lab">注記の箱の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-note-line-c-sai"><td>15</td><td><code>--note-line-c</code><br><span class="lab">注記の箱の左の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-note-line-w-sai"><td>15</td><td><code>--note-line-w</code><br><span class="lab">注記の箱の左の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-note-line-sai"><td>15</td><td><code>--note-line</code><br><span class="lab">注記の箱の左の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-quote-bg-sai"><td>16</td><td><code>--quote-bg</code><br><span class="lab">引用の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-quote-line-c-sai"><td>16</td><td><code>--quote-line-c</code><br><span class="lab">引用の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-quote-line-w-sai"><td>16</td><td><code>--quote-line-w</code><br><span class="lab">引用の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-quote-line-sai"><td>16</td><td><code>--quote-line</code><br><span class="lab">引用の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-card-bg-sai"><td>17</td><td><code>--card-bg</code><br><span class="lab">カードの地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-card-line-c-sai"><td>17</td><td><code>--card-line-c</code><br><span class="lab">カードの枠の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#EEEEEE"></i>#EEEEEE</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-card-line-w-sai"><td>17</td><td><code>--card-line-w</code><br><span class="lab">カードの枠の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-card-r-sai"><td>17</td><td><code>--card-r</code><br><span class="lab">カードの角丸</span></td><td><code>0</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-stat-fg-sai"><td>18</td><td><code>--stat-fg</code><br><span class="lab">数字のカードの数字の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-stat-bg-sai"><td>18</td><td><code>--stat-bg</code><br><span class="lab">数字のカードの地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-chip-on-bg-sai"><td>19</td><td><code>--chip-on-bg</code><br><span class="lab">選んだチップの地</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-chip-on-fg-sai"><td>19</td><td><code>--chip-on-fg</code><br><span class="lab">選んだチップの文字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-chip-r-sai"><td>19</td><td><code>--chip-r</code><br><span class="lab">チップの角丸</span></td><td><code>48px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-badge-bg-sai"><td>20</td><td><code>--badge-bg</code><br><span class="lab">番号の丸の地</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-badge-fg-sai"><td>20</td><td><code>--badge-fg</code><br><span class="lab">番号の丸の数字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-badge-r-sai"><td>20</td><td><code>--badge-r</code><br><span class="lab">番号の丸の角丸</span></td><td><code>50%</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-btn-bg-sai"><td>21</td><td><code>--btn-bg</code><br><span class="lab">主ボタンの地</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-btn-fg-sai"><td>21</td><td><code>--btn-fg</code><br><span class="lab">主ボタンの文字</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-btn-r-sai"><td>21</td><td><code>--btn-r</code><br><span class="lab">主ボタンの角丸</span></td><td><code>48px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-input-bg-sai"><td>22</td><td><code>--input-bg</code><br><span class="lab">入力欄の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-input-line-c-sai"><td>22</td><td><code>--input-line-c</code><br><span class="lab">入力欄の枠の色</span></td><td><code>{rule_strong}</code><br><span class="res"><i class="sw" style="background:#CCCCCC"></i>#CCCCCC</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-input-r-sai"><td>22</td><td><code>--input-r</code><br><span class="lab">入力欄の角丸</span></td><td><code>4px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-header-bg-c-sai"><td>23</td><td><code>--header-bg-c</code><br><span class="lab">ヘッダーの地の色</span></td><td><code>{paper}</code><br><span class="res"><i class="sw" style="background:#FAFAFA"></i>#FAFAFA</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-header-bg-a-sai"><td>23</td><td><code>--header-bg-a</code><br><span class="lab">ヘッダーの地の濃さ</span></td><td><code>96%</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-header-bg-sai"><td>23</td><td><code>--header-bg</code><br><span class="lab">ヘッダーの地（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-chapnav-on-c-sai"><td>24</td><td><code>--chapnav-on-c</code><br><span class="lab">章ナビの選んだ章の下線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-chapnav-on-w-sai"><td>24</td><td><code>--chapnav-on-w</code><br><span class="lab">章ナビの選んだ章の下線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-toc-on-c-sai"><td>25</td><td><code>--toc-on-c</code><br><span class="lab">目次の選んだ行の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-toc-on-w-sai"><td>25</td><td><code>--toc-on-w</code><br><span class="lab">目次の選んだ行の線の太さ</span></td><td><code>2px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-tab-on-c-sai"><td>26</td><td><code>--tab-on-c</code><br><span class="lab">選んだタブの下線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-tab-on-w-sai"><td>26</td><td><code>--tab-on-w</code><br><span class="lab">選んだタブの下線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-switch-fg-sai"><td>27</td><td><code>--switch-fg</code><br><span class="lab">テーマの切り替えボタンの色</span></td><td><code>{text}</code><br><span class="res"><i class="sw" style="background:#333333"></i>#333333</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-page-bg-sai"><td>28</td><td><code>--page-bg</code><br><span class="lab">紙（ページの地）</span></td><td><code>{paper}</code><br><span class="res"><i class="sw" style="background:#FAFAFA"></i>#FAFAFA</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-band-bg-sai"><td>29</td><td><code>--band-bg</code><br><span class="lab">節の帯（奇数番目）</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-band-alt-bg-sai"><td>29</td><td><code>--band-alt-bg</code><br><span class="lab">節の帯（偶数番目）</span></td><td><code>#F6F6F6</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-headstripe-show-sai"><td>30</td><td><code>--headstripe-show</code><br><span class="lab">ヘッダー下の縞</span></td><td><code>block</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-divider-line-c-sai"><td>31</td><td><code>--divider-line-c</code><br><span class="lab">区切り線の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#EEEEEE"></i>#EEEEEE</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-divider-line-w-sai"><td>31</td><td><code>--divider-line-w</code><br><span class="lab">区切り線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-divider-line-sai"><td>31</td><td><code>--divider-line</code><br><span class="lab">区切り線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-hero-area-bg-sai"><td>32</td><td><code>--hero-area-bg</code><br><span class="lab">ヒーローの地</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-hero-area-orn-show-sai"><td>32</td><td><code>--hero-area-orn-show</code><br><span class="lab">ヒーローの飾り</span></td><td><code>none</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-pagefoot-bg-sai"><td>33</td><td><code>--pagefoot-bg</code><br><span class="lab">フッターの地</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#EEEEEE"></i>#EEEEEE</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-pagefoot-fg-sai"><td>33</td><td><code>--pagefoot-fg</code><br><span class="lab">フッターの文字</span></td><td><code>#666666</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-icon-fg-sai"><td>34</td><td><code>--icon-fg</code><br><span class="lab">アイコンの色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-icon-w-sai"><td>34</td><td><code>--icon-w</code><br><span class="lab">アイコンの線の太さ</span></td><td><code>1.5</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-table-head-line-c-sai"><td>35</td><td><code>--table-head-line-c</code><br><span class="lab">表の見出し行の線の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-table-head-line-w-sai"><td>35</td><td><code>--table-head-line-w</code><br><span class="lab">表の見出し行の線の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-table-head-line-sai"><td>35</td><td><code>--table-head-line</code><br><span class="lab">表の見出し行の線（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-table-zebra-bg-sai"><td>35</td><td><code>--table-zebra-bg</code><br><span class="lab">表の縞</span></td><td><code>transparent</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-list-dot-bg-sai"><td>36</td><td><code>--list-dot-bg</code><br><span class="lab">箇条書きの印の色</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-figure-bg-sai"><td>37</td><td><code>--figure-bg</code><br><span class="lab">図の地</span></td><td><code>{white}</code><br><span class="res"><i class="sw" style="background:#FFFFFF"></i>#FFFFFF</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-figure-line-c-sai"><td>37</td><td><code>--figure-line-c</code><br><span class="lab">図の枠の色</span></td><td><code>{rule}</code><br><span class="res"><i class="sw" style="background:#EEEEEE"></i>#EEEEEE</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-figure-line-w-sai"><td>37</td><td><code>--figure-line-w</code><br><span class="lab">図の枠の太さ</span></td><td><code>1px</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-figure-line-sai"><td>37</td><td><code>--figure-line</code><br><span class="lab">図の枠（組み立て）</span></td><td><code>（部品から）</code></td><td>部品から組み立てる</td></tr><tr id="t-meter-fill-bg-sai"><td>38</td><td><code>--meter-fill-bg</code><br><span class="lab">バーの中身</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-meter-track-bg-sai"><td>38</td><td><code>--meter-track-bg</code><br><span class="lab">バーの溝</span></td><td><code>#DDE5E1</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-langtag-bg-sai"><td>39</td><td><code>--langtag-bg</code><br><span class="lab">言語バッジの地</span></td><td><code>{tint}</code><br><span class="res"><i class="sw" style="background:#F5F5F5"></i>#F5F5F5</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-langtag-fg-sai"><td>39</td><td><code>--langtag-fg</code><br><span class="lab">言語バッジの文字</span></td><td><code>{ink}</code><br><span class="res"><i class="sw" style="background:#111111"></i>#111111</span></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-orn-show-sai"><td>40</td><td><code>--orn-show</code><br><span class="lab">飾りの図形・モザイク</span></td><td><code>block</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr><tr id="t-motion-show-sai"><td>41</td><td><code>--motion-show</code><br><span class="lab">動き（ふわっと出る）</span></td><td><code>0</code></td><td>台帳のふだんの値（semantic.json の base）</td></tr></tbody></table></div>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">依頼 022。直し方は 00_master の <code>80_開発室/projects/design-themes/CLAUDE.md</code>「意味の名前」。</div></footer>
+<!-- ===== review mode (rv) : begin — このコメントから下を消せば完全に元へ戻ります ===== -->
+<style id="rv-style">
+#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{
+  --rv-text:#2C2C2B; --rv-border:#E6E5E3; --rv-accent:#2783DE; --rv-pin:#F0A70A;
+  --rv-bg:#FFFFFF; --rv-sub:#8A8A86; --rv-danger:#D24B4B; --rv-radius:10px;
+  font-family:var(--rv-font,system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif);
+  box-sizing:border-box; line-height:1.5; letter-spacing:0;
+}
+#rv-ui *,#rv-pop *,#rv-panel *,#rv-toast *{box-sizing:border-box;font-family:inherit}
+#rv-ui{position:fixed;right:16px;bottom:16px;z-index:2147483600;display:flex;align-items:center;gap:8px}
+#rv-ui button{border:1px solid var(--rv-border);background:var(--rv-bg);color:var(--rv-text);
+  border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.10);
+  display:inline-flex;align-items:center;gap:6px;transition:opacity .15s,background .15s,color .15s}
+#rv-ui kbd{border:1px solid currentColor;border-radius:4px;padding:0 4px;font-size:10px;opacity:.7;font-family:inherit}
+#rv-toggle{opacity:.4}
+#rv-ui:hover #rv-toggle,#rv-toggle:hover,#rv-toggle:focus-visible{opacity:1}
+#rv-ui.rv-on #rv-toggle{opacity:1;background:var(--rv-accent);border-color:var(--rv-accent);color:#fff}
+#rv-ui:not(.rv-on) #rv-list-btn,#rv-ui:not(.rv-on) #rv-copy-btn{display:none}
+#rv-tip{position:absolute;right:0;bottom:100%;margin-bottom:8px;white-space:nowrap;background:var(--rv-text);
+  color:var(--rv-bg);font-size:11px;padding:4px 8px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s}
+#rv-toggle:hover ~ #rv-tip,#rv-toggle:focus-visible ~ #rv-tip{opacity:1}
+#rv-ui.rv-on #rv-tip{display:none}
+#rv-badge{background:var(--rv-accent);color:#fff;border-radius:999px;min-width:18px;height:18px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;padding:0 5px}
+
+#rv-pins{position:fixed;inset:0;z-index:2147483400;pointer-events:none;overflow:hidden}
+.rv-pin{position:absolute;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--rv-pin,#F0A70A);
+  color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 1px 4px rgba(0,0,0,.25);font-family:system-ui,sans-serif}
+
+#rv-pop{position:fixed;z-index:2147483700;width:340px;max-width:calc(100vw - 24px);background:var(--rv-bg);
+  color:var(--rv-text);border:1px solid var(--rv-border);border-radius:var(--rv-radius);
+  box-shadow:0 12px 40px rgba(0,0,0,.18);padding:12px;display:none}
+#rv-pop.rv-open{display:block}
+#rv-pop .rv-sel{font-size:10px;color:var(--rv-sub);word-break:break-all;margin-bottom:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#rv-pop .rv-snip{font-size:12px;background:rgba(127,127,127,.10);border-radius:6px;padding:6px 8px;margin-bottom:8px;max-height:72px;overflow:auto}
+#rv-pop textarea{width:100%;min-height:88px;resize:vertical;border:1px solid var(--rv-border);border-radius:8px;
+  padding:8px;font-size:13px;color:var(--rv-text);background:transparent;outline:none}
+#rv-pop textarea:focus{border-color:var(--rv-accent)}
+#rv-pop .rv-btns{display:flex;align-items:center;gap:8px;margin-top:10px}
+#rv-pop .rv-btns .rv-spacer{flex:1}
+#rv-pop button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-text);border-radius:8px;
+  padding:6px 12px;font-size:12px;cursor:pointer}
+#rv-pop button.rv-primary{background:var(--rv-accent);border-color:var(--rv-accent);color:#fff}
+#rv-pop button.rv-danger{color:var(--rv-danger);border-color:transparent}
+#rv-pop button.rv-danger[hidden]{display:none}
+
+#rv-panel{position:fixed;right:16px;bottom:64px;z-index:2147483500;width:340px;max-width:calc(100vw - 24px);
+  max-height:min(60vh,460px);overflow:auto;background:var(--rv-bg);color:var(--rv-text);
+  border:1px solid var(--rv-border);border-radius:var(--rv-radius);box-shadow:0 12px 40px rgba(0,0,0,.18);padding:10px;display:none}
+#rv-panel.rv-open{display:block}
+#rv-panel .rv-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 4px 8px;border-bottom:1px solid var(--rv-border)}
+#rv-panel .rv-head .rv-title{font-size:11px;color:var(--rv-sub);letter-spacing:.04em}
+#rv-panel .rv-head button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-danger);
+  border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer}
+#rv-panel .rv-item{border-bottom:1px solid var(--rv-border);padding:8px 4px}
+#rv-panel .rv-item:last-child{border-bottom:0}
+#rv-panel .rv-no{font-weight:700;color:var(--rv-pin);font-size:12px;margin-right:6px}
+#rv-panel .rv-note{font-size:13px;white-space:pre-wrap;word-break:break-word}
+#rv-panel .rv-meta{font-size:10px;color:var(--rv-sub);word-break:break-all;margin-top:4px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#rv-panel .rv-acts{margin-top:6px;display:flex;gap:6px}
+#rv-panel .rv-acts button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-text);
+  border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer}
+#rv-panel .rv-acts button.rv-danger{color:var(--rv-danger)}
+#rv-panel .rv-empty{font-size:12px;color:var(--rv-sub);text-align:center;padding:24px 8px}
+#rv-panel .rv-lost{font-size:10px;color:var(--rv-danger);margin-left:6px}
+
+#rv-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);z-index:2147483800;
+  background:var(--rv-text);color:var(--rv-bg);font-size:12px;padding:8px 16px;border-radius:999px;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:80vw;text-align:center}
+#rv-toast.rv-show{opacity:.95;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-color-scheme:dark){
+  #rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{--rv-text:#EDEDEB;--rv-border:#3C3C3A;--rv-bg:#232322;--rv-sub:#9A9A96}
+}
+@media print{#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{display:none !important}}
+</style>
+<style id="rv-dyn"></style>
+<script id="rv-script">
+(function(){
+  "use strict";
+  if (window.__rvBooted) { return; }
+  window.__rvBooted = true;
+
+  var TARGETS = "p,div,span,h1,h2,h3,h4,li,ul,ol,section,header,footer,a,button,table,tr,td,th,img,strong,em,small";
+  var UI_SEL  = "#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast,#rv-style,#rv-dyn,#rv-script";
+  /* 保存先はページのパス全体で分ける。公開サイトはどのページも index.html なので、
+     ファイル名だけだとページどうしの指摘が混ざる（2026-11-21 修正） */
+  var PATH    = (function(){
+    var p = location.pathname || "/";
+    try { p = decodeURIComponent(p); } catch(e) {}
+    if (/\/$/.test(p)) { p += "index.html"; }
+    return p;
+  })();
+  var NAME    = (PATH.split("/").pop() || "index.html");
+  var FILE    = (location.protocol === "file:") ? NAME : (PATH.replace(/^\/+/, "") || "index.html");
+  var KEY     = "review-notes-v1::" + PATH;
+  var OLD_KEY = "review-notes-v1::" + NAME;   // 修正前の保存先（ファイル名だけ）
+
+  var notes = [];
+  var on = false;
+  var editing = null;     // { selector, snippet, tab, el, existing }
+  var hovered = null;
+
+  /* ---------- tokens: 既存ページのCSS変数があれば拾う ---------- */
+  function pick(names, fallback){
+    var cs = getComputedStyle(document.documentElement), v;
+    for (var i=0;i<names.length;i++){
+      v = cs.getPropertyValue(names[i]);
+      if (v && v.trim()) { return v.trim(); }
+    }
+    return fallback;
+  }
+  var TOK = {
+    text:   pick(["--color-text","--text","--color-ink","--ink","--fg","--color-fg"], "#2C2C2B"),
+    border: pick(["--color-border","--border","--color-line","--line","--rule"], "#E6E5E3"),
+    accent: pick(["--color-accent","--accent","--color-primary","--primary","--brand","--color-brand"], "#2783DE"),
+    pin:    pick(["--color-pin","--color-warning","--warning","--color-coral","--coral"], "#F0A70A"),
+    radius: pick(["--radius-md","--radius","--border-radius"], "10px")
+  };
+  function applyTokens(){
+    var els = document.querySelectorAll("#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast");
+    for (var i=0;i<els.length;i++){
+      els[i].style.setProperty("--rv-text", TOK.text);
+      els[i].style.setProperty("--rv-border", TOK.border);
+      els[i].style.setProperty("--rv-accent", TOK.accent);
+      els[i].style.setProperty("--rv-pin", TOK.pin);
+      els[i].style.setProperty("--rv-radius", TOK.radius);
+      els[i].style.setProperty("--rv-font", getComputedStyle(document.body).fontFamily || "system-ui, sans-serif");
+    }
+    document.getElementById("rv-dyn").textContent =
+      ".rv-hover{outline:2px dashed " + TOK.accent + " !important;outline-offset:1px !important;" +
+      "cursor:crosshair !important;background-color:" + hexa(TOK.accent, .07) + " !important}" +
+      ".rv-marked{outline:2px solid " + TOK.pin + " !important;outline-offset:1px !important}" +
+      "@keyframes rvFlash{0%,100%{background-color:transparent}30%{background-color:" + hexa(TOK.accent,.22) + "}}" +
+      ".rv-flash{animation:rvFlash 1s ease}";
+  }
+  function hexa(c, a){
+    var m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(c.trim());
+    if (!m) { return "rgba(39,131,222," + a + ")"; }
+    var h = m[1];
+    if (h.length === 3) { h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2]; }
+    return "rgba(" + parseInt(h.slice(0,2),16) + "," + parseInt(h.slice(2,4),16) + "," + parseInt(h.slice(4,6),16) + "," + a + ")";
+  }
+
+  /* ---------- UI ---------- */
+  var ui = document.createElement("div");
+  ui.id = "rv-ui";
+  ui.innerHTML =
+    '<button id="rv-toggle" type="button" aria-pressed="false"><span id="rv-toggle-label">🖍</span> <kbd>R</kbd></button>' +
+    '<span id="rv-tip">指摘モード（R）</span>' +
+    '<button id="rv-list-btn" type="button">一覧 <span id="rv-badge">0</span></button>' +
+    '<button id="rv-copy-btn" type="button">📋 コピー</button>';
+  document.body.appendChild(ui);
+
+  var pins = document.createElement("div"); pins.id = "rv-pins"; document.body.appendChild(pins);
+
+  var pop = document.createElement("div");
+  pop.id = "rv-pop"; pop.setAttribute("role","dialog");
+  pop.innerHTML =
+    '<div class="rv-sel"></div><div class="rv-snip"></div>' +
+    '<textarea placeholder="気になる点を書く（⌘/Ctrl+Enter で保存）"></textarea>' +
+    '<div class="rv-btns"><button type="button" class="rv-danger" hidden>削除</button><span class="rv-spacer"></span>' +
+    '<button type="button" class="rv-cancel">キャンセル</button>' +
+    '<button type="button" class="rv-primary">保存</button></div>';
+  document.body.appendChild(pop);
+
+  var panel = document.createElement("div"); panel.id = "rv-panel"; document.body.appendChild(panel);
+  var toastEl = document.createElement("div"); toastEl.id = "rv-toast"; document.body.appendChild(toastEl);
+
+  var $toggle = document.getElementById("rv-toggle");
+  var $label  = document.getElementById("rv-toggle-label");
+  var $badge  = document.getElementById("rv-badge");
+  var $ta     = pop.querySelector("textarea");
+  var $sel    = pop.querySelector(".rv-sel");
+  var $snip   = pop.querySelector(".rv-snip");
+  var $del    = pop.querySelector(".rv-danger");
+
+  applyTokens();
+
+  /* ---------- toast ---------- */
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("rv-show");
+    if (toastTimer) { clearTimeout(toastTimer); }
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("rv-show"); }, 1800);
+  }
+
+  /* ---------- storage ---------- */
+  function load(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      // 修正前の保存先に残った指摘を 1 回だけ引き継ぐ。index.html は複数ページで混ざっているおそれがあるので引き継がない
+      if (raw === null && NAME !== "index.html") {
+        raw = localStorage.getItem(OLD_KEY);
+        if (raw !== null) { localStorage.setItem(KEY, raw); localStorage.removeItem(OLD_KEY); }
+      }
+      notes = raw ? JSON.parse(raw) : [];
+      if (!(notes instanceof Array)) { notes = []; }
+    } catch(e) { notes = []; }
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(notes)); }
+    catch(e) { toast("保存できませんでした（localStorage）"); }
+  }
+
+  /* ---------- selector ---------- */
+  var SAFE_CLASS = /^[A-Za-z_][A-Za-z0-9_-]*$/;
+  function classesOf(el){
+    var cn = (typeof el.className === "string") ? el.className : (el.getAttribute("class") || "");
+    return cn.trim().split(/\s+/).filter(function(c){
+      return c && c.indexOf("rv-") !== 0 && SAFE_CLASS.test(c);
+    });
+  }
+  function buildSelector(el){
+    var parts = [], node = el;
+    while (node && node.nodeType === 1 && node !== document.body && node !== document.documentElement) {
+      if (node.id && SAFE_CLASS.test(node.id)) { parts.unshift("#" + node.id); break; }
+      var seg = node.tagName.toLowerCase();
+      var cls = classesOf(node);
+      if (cls.length) { seg += "." + cls.join("."); }
+      var parent = node.parentNode;
+      if (parent && parent.nodeType === 1) {
+        var same = [], i;
+        for (i = 0; i < parent.children.length; i++) {
+          if (parent.children[i].tagName === node.tagName) { same.push(parent.children[i]); }
+        }
+        if (same.length > 1) { seg += ":nth-of-type(" + (same.indexOf(node) + 1) + ")"; }
+      }
+      parts.unshift(seg);
+      node = parent;
+    }
+    return parts.join(" > ");
+  }
+  function resolve(selector){
+    try { return document.querySelector(selector); } catch(e) { return null; }
+  }
+  function snippetOf(el){
+    var t = (el.innerText || el.textContent || "").replace(/\s+/g, " ").trim();
+    if (!t && el.tagName === "IMG") { t = "[img] " + (el.getAttribute("alt") || el.getAttribute("src") || ""); }
+    return t.length > 120 ? t.slice(0, 120) + "…" : t;
+  }
+
+  /* ---------- tabs ---------- */
+  function hasTabs(){ return !!document.querySelector('[role="tab"]'); }
+  function activeTab(){
+    var t = document.querySelector('[role="tab"][aria-selected="true"]');
+    if (!t) {
+      var all = document.querySelectorAll('[role="tab"]');
+      for (var i = 0; i < all.length; i++) {
+        if (/(is-)?active|selected|current/.test(all[i].className)) { t = all[i]; break; }
+      }
+    }
+    return t ? (t.innerText || t.textContent || "").replace(/\s+/g, " ").trim() : "";
+  }
+  function switchToTab(label){
+    if (!label) { return; }
+    var all = document.querySelectorAll('[role="tab"]');
+    for (var i = 0; i < all.length; i++) {
+      var l = (all[i].innerText || all[i].textContent || "").replace(/\s+/g, " ").trim();
+      if (l === label) { all[i].click(); return true; }
+    }
+    return false;
+  }
+
+  /* ---------- pins ---------- */
+  var raf = null;
+  function schedule(){
+    if (raf) { return; }
+    raf = requestAnimationFrame(function(){ raf = null; renderPins(); });
+  }
+  function visible(el){
+    var r = el.getBoundingClientRect();
+    if (r.width === 0 && r.height === 0) { return null; }
+    if (r.bottom < -40 || r.top > innerHeight + 40) { return null; }
+    var cs = getComputedStyle(el);
+    if (cs.display === "none" || cs.visibility === "hidden") { return null; }
+    return r;
+  }
+  function renderPins(){
+    pins.textContent = "";
+    var marked = document.querySelectorAll(".rv-marked");
+    for (var i = 0; i < marked.length; i++) { marked[i].classList.remove("rv-marked"); }
+    notes.forEach(function(n, idx){
+      var el = resolve(n.selector);
+      if (!el) { return; }
+      var r = visible(el);
+      if (!r) { return; }
+      el.classList.add("rv-marked");
+      var p = document.createElement("div");
+      p.className = "rv-pin";
+      p.textContent = String(idx + 1);
+      p.style.left = Math.max(2, r.left - 6) + "px";
+      p.style.top  = Math.max(2, r.top - 8) + "px";
+      pins.appendChild(p);
+    });
+    $badge.textContent = String(notes.length);
+  }
+
+  /* ---------- hover ---------- */
+  function clearHover(){
+    if (hovered) { hovered.classList.remove("rv-hover"); hovered = null; }
+  }
+  document.addEventListener("mouseover", function(e){
+    if (!on) { return; }
+    var el = e.target.closest ? e.target.closest(TARGETS) : null;
+    if (!el || el.closest(UI_SEL)) { clearHover(); return; }
+    if (el === hovered) { return; }
+    clearHover();
+    hovered = el;
+    el.classList.add("rv-hover");
+  }, true);
+  document.addEventListener("mouseout", function(e){
+    if (!on) { return; }
+    if (hovered && !hovered.contains(e.relatedTarget)) { clearHover(); }
+  }, true);
+
+  /* ---------- 指摘の追加 ---------- */
+  document.addEventListener("click", function(e){
+    if (!on) { return; }
+    if (e.target.closest && e.target.closest(UI_SEL)) { return; }
+    var el = e.target.closest ? e.target.closest(TARGETS) : null;
+    if (!el) { return; }
+    e.preventDefault();
+    e.stopPropagation();
+    openPopup(el, e.clientX, e.clientY);
+  }, true);
+
+  function openPopup(el, x, y){
+    clearHover();
+    var selector = buildSelector(el);
+    var found = null;
+    for (var i = 0; i < notes.length; i++) { if (notes[i].selector === selector) { found = notes[i]; break; } }
+    editing = { selector: selector, snippet: snippetOf(el), tab: hasTabs() ? activeTab() : "", tag: el.tagName, existing: found };
+    $sel.textContent = selector;
+    $snip.textContent = editing.snippet || "（テキストなし）";
+    $ta.value = found ? found.note : "";
+    $del.hidden = !found;
+    pop.classList.add("rv-open");
+    var w = pop.offsetWidth, h = pop.offsetHeight;
+    var left = Math.min(Math.max(12, (x || innerWidth / 2) - w / 2), innerWidth - w - 12);
+    var top  = (y || innerHeight / 2) + 16;
+    if (top + h > innerHeight - 12) { top = Math.max(12, (y || innerHeight / 2) - h - 16); }
+    pop.style.left = left + "px";
+    pop.style.top  = top + "px";
+    $ta.focus();
+  }
+  function closePopup(){
+    pop.classList.remove("rv-open");
+    editing = null;
+  }
+  function saveNote(){
+    if (!editing) { return; }
+    var text = $ta.value.trim();
+    if (!text) { toast("指摘を入力してください"); $ta.focus(); return; }
+    if (editing.existing) {
+      editing.existing.note = text;
+    } else {
+      notes.push({
+        id: "rv" + Date.now() + Math.floor(Math.random() * 1000),
+        selector: editing.selector,
+        snippet: editing.snippet,
+        note: text,
+        tab: editing.tab,
+        tag: editing.tag,
+        createdAt: new Date().toISOString()
+      });
+    }
+    save(); closePopup(); renderPins(); renderPanel();
+    toast("指摘を保存しました");
+  }
+  function deleteNote(id){
+    notes = notes.filter(function(n){ return n.id !== id; });
+    save(); renderPins(); renderPanel();
+    toast("指摘を削除しました");
+  }
+  function deleteAll(){
+    if (!notes.length) { return; }
+    if (!window.confirm("指摘 " + notes.length + " 件をすべて削除します。元に戻せません。")) { return; }
+    notes = [];
+    save(); renderPins(); renderPanel();
+    toast("指摘をすべて削除しました");
+  }
+  pop.querySelector(".rv-primary").addEventListener("click", saveNote);
+  pop.querySelector(".rv-cancel").addEventListener("click", closePopup);
+  $del.addEventListener("click", function(){
+    if (editing && editing.existing) { deleteNote(editing.existing.id); closePopup(); }
+  });
+
+  /* ---------- 一覧パネル ---------- */
+  function renderPanel(){
+    panel.textContent = "";
+    if (!notes.length) {
+      var em = document.createElement("div");
+      em.className = "rv-empty";
+      em.textContent = "まだ指摘はありません。気になる箇所をクリックしてください。";
+      panel.appendChild(em);
+      return;
+    }
+    var head0 = document.createElement("div");
+    head0.className = "rv-head";
+    var title = document.createElement("span");
+    title.className = "rv-title"; title.textContent = "指摘一覧（" + notes.length + "件）";
+    var clearBtn = document.createElement("button");
+    clearBtn.type = "button"; clearBtn.textContent = "すべて削除";
+    clearBtn.addEventListener("click", deleteAll);
+    head0.appendChild(title); head0.appendChild(clearBtn);
+    panel.appendChild(head0);
+    notes.forEach(function(n, idx){
+      var el = resolve(n.selector);
+      var item = document.createElement("div");
+      item.className = "rv-item";
+
+      var head = document.createElement("div");
+      var no = document.createElement("span");
+      no.className = "rv-no"; no.textContent = "#" + (idx + 1);
+      head.appendChild(no);
+      var body = document.createElement("span");
+      body.className = "rv-note"; body.textContent = n.note;
+      head.appendChild(body);
+      if (!el) {
+        var lost = document.createElement("span");
+        lost.className = "rv-lost"; lost.textContent = "要素未検出";
+        head.appendChild(lost);
+      }
+      item.appendChild(head);
+
+      var meta = document.createElement("div");
+      meta.className = "rv-meta";
+      meta.textContent = (n.tab ? "[" + n.tab + "] " : "") + n.selector;
+      item.appendChild(meta);
+
+      var acts = document.createElement("div");
+      acts.className = "rv-acts";
+      var go = document.createElement("button");
+      go.type = "button"; go.textContent = "移動";
+      go.addEventListener("click", function(){ jumpTo(n); });
+      var del = document.createElement("button");
+      del.type = "button"; del.className = "rv-danger"; del.textContent = "削除";
+      del.addEventListener("click", function(){ deleteNote(n.id); });
+      acts.appendChild(go); acts.appendChild(del);
+      item.appendChild(acts);
+
+      panel.appendChild(item);
+    });
+  }
+  function jumpTo(n){
+    if (n.tab) { switchToTab(n.tab); }
+    setTimeout(function(){
+      var el = resolve(n.selector);
+      if (!el) { toast("対象の要素が見つかりません"); return; }
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("rv-flash");
+      setTimeout(function(){ el.classList.remove("rv-flash"); renderPins(); }, 1100);
+      schedule();
+    }, n.tab ? 180 : 0);
+  }
+
+  /* ---------- コピー ---------- */
+  function buildMarkdown(){
+    var out = [];
+    out.push("# HTML改善依頼", "");
+    out.push("対象ファイル: " + FILE + "（自己完結の単一HTML）");
+    out.push("以下のレビュー指摘をHTMLに反映してください。各指摘は対象要素のCSSセレクタと表示テキストで特定できます。");
+    out.push("デザインの統一感（余白・フォントサイズ・配色）を保ち、指摘のない箇所は変更しないでください。", "");
+    notes.forEach(function(n, i){
+      var head = "## " + (i + 1) + ". " + (n.tab ? "[タブ: " + n.tab + "] " : "") + (n.tag || "ELEMENT");
+      out.push(head);
+      out.push("- セレクタ: `" + n.selector + "`");
+      out.push("- 対象テキスト: 「" + (n.snippet || "（テキストなし）") + "」");
+      out.push("- 指摘: " + n.note, "");
+    });
+    return out.join("\n");
+  }
+  function copyMarkdown(){
+    if (!notes.length) { toast("指摘がまだありません"); return; }
+    var md = buildMarkdown();
+    var done = function(){ toast("コピーしました（" + notes.length + "件）"); };
+    var fail = function(){
+      try {
+        var t = document.createElement("textarea");
+        t.value = md;
+        t.style.cssText = "position:fixed;left:-9999px;top:0";
+        document.body.appendChild(t);
+        t.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(t);
+        ok ? done() : toast("コピーに失敗しました");
+      } catch(e) { toast("コピーに失敗しました"); }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(md).then(done, fail);
+    } else { fail(); }
+  }
+
+  /* ---------- ON/OFF ---------- */
+  function setMode(next){
+    on = next;
+    ui.classList.toggle("rv-on", on);
+    $toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    $label.textContent = on ? "✓ 指摘モード中" : "🖍";
+    if (!on) { clearHover(); closePopup(); panel.classList.remove("rv-open"); }
+    toast(on ? "指摘モード ON" : "指摘モード OFF");
+  }
+  $toggle.addEventListener("click", function(){ setMode(!on); });
+  document.getElementById("rv-list-btn").addEventListener("click", function(){
+    panel.classList.toggle("rv-open");
+    if (panel.classList.contains("rv-open")) { renderPanel(); }
+  });
+  document.getElementById("rv-copy-btn").addEventListener("click", copyMarkdown);
+
+  /* ---------- キーボード ---------- */
+  function isTyping(el){
+    if (!el) { return false; }
+    var t = el.tagName;
+    return t === "INPUT" || t === "TEXTAREA" || t === "SELECT" || el.isContentEditable;
+  }
+  document.addEventListener("keydown", function(e){
+    var popOpen = pop.classList.contains("rv-open");
+    if (e.key === "Escape" && popOpen) { closePopup(); return; }
+    if (popOpen && (e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); saveNote(); return; }
+    if (e.metaKey || e.ctrlKey || e.altKey) { return; }
+    if (popOpen || isTyping(e.target) || isTyping(document.activeElement)) { return; }
+    if (e.key === "r" || e.key === "R") { e.preventDefault(); setMode(!on); }
+  }, true);
+
+  /* ---------- 再配置 ---------- */
+  addEventListener("scroll", schedule, true);
+  addEventListener("resize", schedule);
+  document.addEventListener("click", function(e){
+    if (e.target.closest && e.target.closest('[role="tab"]')) { setTimeout(function(){ renderPins(); }, 120); }
+  }, false);
+
+  load();
+  renderPins();
+  renderPanel();
+})();
+</script>
+<!-- ===== review mode (rv) : end ===== -->
+
+</body>
+</html>
