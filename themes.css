@@ -219,6 +219,7 @@ html[data-theme="mint"] {
   --secno-bg: var(--pal-accent);
   --secno-fg: var(--pal-white);
   --secno-r: 999px;
+  --secno-pad: 12px;
   --seclabel-fg: var(--pal-accent);
   --h2-fg: var(--pal-ink);
   --h2-w: 800;
@@ -347,6 +348,7 @@ html[data-theme="bold"] {
   --secno-bg: var(--pal-highlight);
   --secno-fg: var(--pal-ink);
   --secno-r: 999px;
+  --secno-pad: 12px;
   --seclabel-fg: var(--pal-ink);
   --h2-fg: var(--pal-ink);
   --h2-w: 700;
@@ -474,6 +476,7 @@ html[data-theme="bold"] {
   --secno-bg: transparent;
   --secno-fg: var(--pal-muted);
   --secno-r: 0;
+  --secno-pad: 0;
   --seclabel-fg: var(--pal-muted);
   --h2-fg: var(--pal-ink);
   --h2-w: 700;
