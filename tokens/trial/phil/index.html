@@ -481,7 +481,8 @@ html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner) 
 html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner) :is(.sources, .refs) { border-top-color: var(--part-line-c, var(--ink)) !important; }
 html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner) .eyebrow::before { background: var(--part-line-c, var(--ink)) !important; }
 html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner) th { color: var(--small-fg, var(--muted)) !important; }
-html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner) a:not([class]) { color: var(--link-fg, var(--ink)); }
+/* v2 の上書きの a{color:var(--ink)} と同じ弱さ（:where で 0,0,1）にする。記事が個別に色を付けたリンク（参考文献など）はそちらが勝つ */
+:where(html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner)) a { color: var(--link-fg, var(--ink)); }
 html[data-theme]:has(style[id="v2-override"]) body:has(.nav-inner, .gnav-inner) :is(.need) { background: var(--card-bg, var(--white)) !important; border: var(--card-line-w, var(--bw)) solid var(--card-line-c, var(--card-line)) !important; }
 </style>
 </head>
