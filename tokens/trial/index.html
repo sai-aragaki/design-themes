@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>試しの 3 本の見比べ</title>
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- 見比べのための作業ページ。調整ページ（/tokens/）と同じく、テーマの切り替えの対象外（写真の見比べなので） -->
+<style>
+  :root { --paper: #FAFAFA; --ink: #111111; --text: #333333; --muted: #808080; --rule: #EEEEEE;
+    --en: "Work Sans", "Helvetica Neue", Arial, sans-serif; --jp: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: var(--paper); color: var(--text); font-family: var(--jp); font-size: 15px; line-height: 1.8; overflow-x: clip; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+  .hd { position: sticky; top: 0; z-index: 50; background: rgba(250, 250, 250, .95); border-bottom: 1px solid var(--rule); }
+  .hd-in { display: flex; align-items: center; gap: 12px; min-height: 56px; flex-wrap: wrap; }
+  .brand { font-family: var(--en); font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .atabs { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
+  .atab { min-height: 40px; padding: 0 14px; border: 0; border-radius: 48px; background: transparent; color: var(--muted); font: 600 13px var(--jp); cursor: pointer; }
+  .atab[aria-selected="true"] { background: var(--ink); color: #FFFFFF; }
+  .hero { padding: 36px 0 8px; }
+  .eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; font-family: var(--en); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+  .eyebrow::before { content: ""; width: 24px; height: 1px; background: currentColor; }
+  h1 { margin: 0 0 12px; font-size: 24px; line-height: 1.4; color: var(--ink); }
+  .lede { max-width: 820px; margin: 0 0 8px; }
+  .kind { margin: 20px 0 8px; font-size: 14px; color: var(--ink); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 8px; }
+  .lk { display: inline-flex; align-items: center; min-height: 44px; padding: 0 18px; border: 1px solid var(--ink); border-radius: 48px; color: var(--ink); text-decoration: none; font-size: 14px; font-weight: 600; background: #FFFFFF; }
+  .lk.pri { background: var(--ink); color: #FFFFFF; }
+  .blk { margin: 28px 0 0; padding: 18px; background: #FFFFFF; border: 1px solid var(--rule); }
+  .blk h3 { margin: 0 0 8px; font-size: 16px; color: var(--ink); }
+  .pair { margin: 14px 0 0; }
+  .spot { margin: 0 0 6px; font-size: 13px; color: var(--muted); }
+  .ba { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  figure { margin: 0; min-width: 0; }
+  figcaption { font-family: var(--en); font-size: 12px; font-weight: 600; color: var(--ink); margin: 0 0 4px; }
+  figure img { display: block; width: 100%; height: auto; border: 1px solid var(--rule); }
+  .blk[id*="-sp-"] .ba { max-width: 760px; }
+  @media (max-width: 560px) { .wrap { padding: 0 16px; } .blk { padding: 12px; } .ba { gap: 6px; } }
+  footer { color: var(--muted); font-size: 12px; padding: 32px 0 48px; }
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap hd-in"><a class="brand" href="../">Design Themes / tokens / trial</a>
+  <div class="atabs" role="tablist" aria-label="記事"><button type="button" class="atab" role="tab" data-a="ia02" aria-selected="true">情報設計 02</button><button type="button" class="atab" role="tab" data-a="mind" aria-selected="false">マインドフルネス</button><button type="button" class="atab" role="tab" data-a="phil" aria-selected="false">ベルクソンの哲学</button></div></div></header>
+<main class="wrap">
+  <section class="hero">
+    <p class="eyebrow">Trial ／ 3 本で試す</p>
+    <h1>意味の名前に置き換えた 3 本の見比べ</h1>
+    <p class="lede">研究記事 3 本（系統ごとに 1 本）を、意味の名前を使う形に置き換えました。置き換える前と後を、3 テーマ × スマホと PC × 3 か所（冒頭・最初の章見出しと章ナビ・本文の太字）で並べています。左が前、右が後です。</p>
+    <p class="lede">記事そのものを見て指摘したいときは「指摘モードつきの写しで見る」から開いてください（公開中の記事には指摘モードを入れていません）。</p>
+  </section>
+  <div class="apanel" id="ap-ia02" role="tabpanel"><p class="kind">A：SAI v2 で書き起こした系統（情報設計シリーズなど 14 本）</p><p class="links"><a class="lk pri" href="ia02/">指摘モードつきの写しで見る</a><a class="lk" href="https://research-sai.vercel.app/information-architecture/02-perception-memory/">公開中の記事</a></p><section class="blk" id="ia02-sp-mint"><h3>スマホ（375px） ／ Mint</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-mint-top-before.jpg" alt="情報設計 02 Mint 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-mint-top-after.jpg" alt="情報設計 02 Mint 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-mint-h2-before.jpg" alt="情報設計 02 Mint 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-mint-h2-after.jpg" alt="情報設計 02 Mint 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-mint-bold-before.jpg" alt="情報設計 02 Mint 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-mint-bold-after.jpg" alt="情報設計 02 Mint 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="ia02-sp-bold"><h3>スマホ（375px） ／ Bold Yellow</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-bold-top-before.jpg" alt="情報設計 02 Bold Yellow 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-bold-top-after.jpg" alt="情報設計 02 Bold Yellow 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-bold-h2-before.jpg" alt="情報設計 02 Bold Yellow 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-bold-h2-after.jpg" alt="情報設計 02 Bold Yellow 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-bold-bold-before.jpg" alt="情報設計 02 Bold Yellow 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-bold-bold-after.jpg" alt="情報設計 02 Bold Yellow 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="ia02-sp-sai"><h3>スマホ（375px） ／ SAI v2</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-sai-top-before.jpg" alt="情報設計 02 SAI v2 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-sai-top-after.jpg" alt="情報設計 02 SAI v2 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-sai-h2-before.jpg" alt="情報設計 02 SAI v2 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-sai-h2-after.jpg" alt="情報設計 02 SAI v2 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-sp-sai-bold-before.jpg" alt="情報設計 02 SAI v2 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-sp-sai-bold-after.jpg" alt="情報設計 02 SAI v2 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="ia02-pc-mint"><h3>PC（1280px） ／ Mint</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-mint-top-before.jpg" alt="情報設計 02 Mint 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-mint-top-after.jpg" alt="情報設計 02 Mint 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-mint-h2-before.jpg" alt="情報設計 02 Mint 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-mint-h2-after.jpg" alt="情報設計 02 Mint 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-mint-bold-before.jpg" alt="情報設計 02 Mint 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-mint-bold-after.jpg" alt="情報設計 02 Mint 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="ia02-pc-bold"><h3>PC（1280px） ／ Bold Yellow</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-bold-top-before.jpg" alt="情報設計 02 Bold Yellow 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-bold-top-after.jpg" alt="情報設計 02 Bold Yellow 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-bold-h2-before.jpg" alt="情報設計 02 Bold Yellow 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-bold-h2-after.jpg" alt="情報設計 02 Bold Yellow 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-bold-bold-before.jpg" alt="情報設計 02 Bold Yellow 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-bold-bold-after.jpg" alt="情報設計 02 Bold Yellow 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="ia02-pc-sai"><h3>PC（1280px） ／ SAI v2</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-sai-top-before.jpg" alt="情報設計 02 SAI v2 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-sai-top-after.jpg" alt="情報設計 02 SAI v2 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-sai-h2-before.jpg" alt="情報設計 02 SAI v2 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-sai-h2-after.jpg" alt="情報設計 02 SAI v2 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/ia02-pc-sai-bold-before.jpg" alt="情報設計 02 SAI v2 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/ia02-pc-sai-bold-after.jpg" alt="情報設計 02 SAI v2 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section></div><div class="apanel" id="ap-mind" role="tabpanel" hidden><p class="kind">B：古い型＋v2 の上書き、見出しに英語ラベル（10 本）</p><p class="links"><a class="lk pri" href="mind/">指摘モードつきの写しで見る</a><a class="lk" href="https://research-sai.vercel.app/psychology/02-mindfulness/">公開中の記事</a></p><section class="blk" id="mind-sp-mint"><h3>スマホ（375px） ／ Mint</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-mint-top-before.jpg" alt="マインドフルネス Mint 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-mint-top-after.jpg" alt="マインドフルネス Mint 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-mint-h2-before.jpg" alt="マインドフルネス Mint 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-mint-h2-after.jpg" alt="マインドフルネス Mint 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-mint-bold-before.jpg" alt="マインドフルネス Mint 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-mint-bold-after.jpg" alt="マインドフルネス Mint 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="mind-sp-bold"><h3>スマホ（375px） ／ Bold Yellow</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-bold-top-before.jpg" alt="マインドフルネス Bold Yellow 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-bold-top-after.jpg" alt="マインドフルネス Bold Yellow 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-bold-h2-before.jpg" alt="マインドフルネス Bold Yellow 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-bold-h2-after.jpg" alt="マインドフルネス Bold Yellow 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-bold-bold-before.jpg" alt="マインドフルネス Bold Yellow 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-bold-bold-after.jpg" alt="マインドフルネス Bold Yellow 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="mind-sp-sai"><h3>スマホ（375px） ／ SAI v2</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-sai-top-before.jpg" alt="マインドフルネス SAI v2 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-sai-top-after.jpg" alt="マインドフルネス SAI v2 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-sai-h2-before.jpg" alt="マインドフルネス SAI v2 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-sai-h2-after.jpg" alt="マインドフルネス SAI v2 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-sp-sai-bold-before.jpg" alt="マインドフルネス SAI v2 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-sp-sai-bold-after.jpg" alt="マインドフルネス SAI v2 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="mind-pc-mint"><h3>PC（1280px） ／ Mint</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-mint-top-before.jpg" alt="マインドフルネス Mint 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-mint-top-after.jpg" alt="マインドフルネス Mint 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-mint-h2-before.jpg" alt="マインドフルネス Mint 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-mint-h2-after.jpg" alt="マインドフルネス Mint 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-mint-bold-before.jpg" alt="マインドフルネス Mint 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-mint-bold-after.jpg" alt="マインドフルネス Mint 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="mind-pc-bold"><h3>PC（1280px） ／ Bold Yellow</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-bold-top-before.jpg" alt="マインドフルネス Bold Yellow 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-bold-top-after.jpg" alt="マインドフルネス Bold Yellow 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-bold-h2-before.jpg" alt="マインドフルネス Bold Yellow 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-bold-h2-after.jpg" alt="マインドフルネス Bold Yellow 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-bold-bold-before.jpg" alt="マインドフルネス Bold Yellow 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-bold-bold-after.jpg" alt="マインドフルネス Bold Yellow 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="mind-pc-sai"><h3>PC（1280px） ／ SAI v2</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-sai-top-before.jpg" alt="マインドフルネス SAI v2 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-sai-top-after.jpg" alt="マインドフルネス SAI v2 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-sai-h2-before.jpg" alt="マインドフルネス SAI v2 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-sai-h2-after.jpg" alt="マインドフルネス SAI v2 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/mind-pc-sai-bold-before.jpg" alt="マインドフルネス SAI v2 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/mind-pc-sai-bold-after.jpg" alt="マインドフルネス SAI v2 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section></div><div class="apanel" id="ap-phil" role="tabpanel" hidden><p class="kind">C：古い型＋v2 の上書き、見出しの頭に番号（11 本）</p><p class="links"><a class="lk pri" href="phil/">指摘モードつきの写しで見る</a><a class="lk" href="https://research-sai.vercel.app/philosophy/01-bergson-time/">公開中の記事</a></p><section class="blk" id="phil-sp-mint"><h3>スマホ（375px） ／ Mint</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-mint-top-before.jpg" alt="ベルクソンの哲学 Mint 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-mint-top-after.jpg" alt="ベルクソンの哲学 Mint 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-mint-h2-before.jpg" alt="ベルクソンの哲学 Mint 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-mint-h2-after.jpg" alt="ベルクソンの哲学 Mint 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-mint-bold-before.jpg" alt="ベルクソンの哲学 Mint 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-mint-bold-after.jpg" alt="ベルクソンの哲学 Mint 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="phil-sp-bold"><h3>スマホ（375px） ／ Bold Yellow</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-bold-top-before.jpg" alt="ベルクソンの哲学 Bold Yellow 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-bold-top-after.jpg" alt="ベルクソンの哲学 Bold Yellow 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-bold-h2-before.jpg" alt="ベルクソンの哲学 Bold Yellow 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-bold-h2-after.jpg" alt="ベルクソンの哲学 Bold Yellow 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-bold-bold-before.jpg" alt="ベルクソンの哲学 Bold Yellow 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-bold-bold-after.jpg" alt="ベルクソンの哲学 Bold Yellow 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="phil-sp-sai"><h3>スマホ（375px） ／ SAI v2</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-sai-top-before.jpg" alt="ベルクソンの哲学 SAI v2 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-sai-top-after.jpg" alt="ベルクソンの哲学 SAI v2 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-sai-h2-before.jpg" alt="ベルクソンの哲学 SAI v2 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-sai-h2-after.jpg" alt="ベルクソンの哲学 SAI v2 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-sp-sai-bold-before.jpg" alt="ベルクソンの哲学 SAI v2 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-sp-sai-bold-after.jpg" alt="ベルクソンの哲学 SAI v2 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="phil-pc-mint"><h3>PC（1280px） ／ Mint</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-mint-top-before.jpg" alt="ベルクソンの哲学 Mint 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-mint-top-after.jpg" alt="ベルクソンの哲学 Mint 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-mint-h2-before.jpg" alt="ベルクソンの哲学 Mint 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-mint-h2-after.jpg" alt="ベルクソンの哲学 Mint 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-mint-bold-before.jpg" alt="ベルクソンの哲学 Mint 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-mint-bold-after.jpg" alt="ベルクソンの哲学 Mint 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="phil-pc-bold"><h3>PC（1280px） ／ Bold Yellow</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-bold-top-before.jpg" alt="ベルクソンの哲学 Bold Yellow 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-bold-top-after.jpg" alt="ベルクソンの哲学 Bold Yellow 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-bold-h2-before.jpg" alt="ベルクソンの哲学 Bold Yellow 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-bold-h2-after.jpg" alt="ベルクソンの哲学 Bold Yellow 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-bold-bold-before.jpg" alt="ベルクソンの哲学 Bold Yellow 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-bold-bold-after.jpg" alt="ベルクソンの哲学 Bold Yellow 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section><section class="blk" id="phil-pc-sai"><h3>PC（1280px） ／ SAI v2</h3><div class="pair"><p class="spot">冒頭</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-sai-top-before.jpg" alt="ベルクソンの哲学 SAI v2 冒頭（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-sai-top-after.jpg" alt="ベルクソンの哲学 SAI v2 冒頭（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">最初の章見出しと章ナビ</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-sai-h2-before.jpg" alt="ベルクソンの哲学 SAI v2 最初の章見出しと章ナビ（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-sai-h2-after.jpg" alt="ベルクソンの哲学 SAI v2 最初の章見出しと章ナビ（置き換えた後）" loading="lazy"></figure></div></div><div class="pair"><p class="spot">本文の太字</p><div class="ba"><figure><figcaption>前</figcaption><img src="img/phil-pc-sai-bold-before.jpg" alt="ベルクソンの哲学 SAI v2 本文の太字（置き換える前）" loading="lazy"></figure><figure><figcaption>後</figcaption><img src="img/phil-pc-sai-bold-after.jpg" alt="ベルクソンの哲学 SAI v2 本文の太字（置き換えた後）" loading="lazy"></figure></div></div></section></div>
+</main>
+<footer><div class="wrap">依頼 022。置き換えの中身は 00_master の <code>80_開発室/projects/design-themes/research-semantic.css</code> と <code>tools/apply-semantic.py</code>。</div></footer>
+<script>
+document.querySelectorAll('.atab').forEach(function (b) {
+  b.addEventListener('click', function () {
+    document.querySelectorAll('.atab').forEach(function (x) { x.setAttribute('aria-selected', x === b ? 'true' : 'false'); });
+    document.querySelectorAll('.apanel').forEach(function (p) { p.hidden = p.id !== 'ap-' + b.dataset.a; });
+    window.scrollTo(0, 0);
+  });
+});
+</script>
+<!-- ===== review mode (rv) : begin — このコメントから下を消せば完全に元へ戻ります ===== -->
+<style id="rv-style">
+#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{
+  --rv-text:#2C2C2B; --rv-border:#E6E5E3; --rv-accent:#2783DE; --rv-pin:#F0A70A;
+  --rv-bg:#FFFFFF; --rv-sub:#8A8A86; --rv-danger:#D24B4B; --rv-radius:10px;
+  font-family:var(--rv-font,system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif);
+  box-sizing:border-box; line-height:1.5; letter-spacing:0;
+}
+#rv-ui *,#rv-pop *,#rv-panel *,#rv-toast *{box-sizing:border-box;font-family:inherit}
+#rv-ui{position:fixed;right:16px;bottom:16px;z-index:2147483600;display:flex;align-items:center;gap:8px}
+#rv-ui button{border:1px solid var(--rv-border);background:var(--rv-bg);color:var(--rv-text);
+  border-radius:999px;padding:8px 14px;font-size:13px;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.10);
+  display:inline-flex;align-items:center;gap:6px;transition:opacity .15s,background .15s,color .15s}
+#rv-ui kbd{border:1px solid currentColor;border-radius:4px;padding:0 4px;font-size:10px;opacity:.7;font-family:inherit}
+#rv-toggle{opacity:.4}
+#rv-ui:hover #rv-toggle,#rv-toggle:hover,#rv-toggle:focus-visible{opacity:1}
+#rv-ui.rv-on #rv-toggle{opacity:1;background:var(--rv-accent);border-color:var(--rv-accent);color:#fff}
+#rv-ui:not(.rv-on) #rv-list-btn,#rv-ui:not(.rv-on) #rv-copy-btn{display:none}
+#rv-tip{position:absolute;right:0;bottom:100%;margin-bottom:8px;white-space:nowrap;background:var(--rv-text);
+  color:var(--rv-bg);font-size:11px;padding:4px 8px;border-radius:6px;opacity:0;pointer-events:none;transition:opacity .15s}
+#rv-toggle:hover ~ #rv-tip,#rv-toggle:focus-visible ~ #rv-tip{opacity:1}
+#rv-ui.rv-on #rv-tip{display:none}
+#rv-badge{background:var(--rv-accent);color:#fff;border-radius:999px;min-width:18px;height:18px;
+  display:inline-flex;align-items:center;justify-content:center;font-size:11px;padding:0 5px}
+
+#rv-pins{position:fixed;inset:0;z-index:2147483400;pointer-events:none;overflow:hidden}
+.rv-pin{position:absolute;min-width:20px;height:20px;padding:0 5px;border-radius:999px;background:var(--rv-pin,#F0A70A);
+  color:#fff;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 1px 4px rgba(0,0,0,.25);font-family:system-ui,sans-serif}
+
+#rv-pop{position:fixed;z-index:2147483700;width:340px;max-width:calc(100vw - 24px);background:var(--rv-bg);
+  color:var(--rv-text);border:1px solid var(--rv-border);border-radius:var(--rv-radius);
+  box-shadow:0 12px 40px rgba(0,0,0,.18);padding:12px;display:none}
+#rv-pop.rv-open{display:block}
+#rv-pop .rv-sel{font-size:10px;color:var(--rv-sub);word-break:break-all;margin-bottom:6px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#rv-pop .rv-snip{font-size:12px;background:rgba(127,127,127,.10);border-radius:6px;padding:6px 8px;margin-bottom:8px;max-height:72px;overflow:auto}
+#rv-pop textarea{width:100%;min-height:88px;resize:vertical;border:1px solid var(--rv-border);border-radius:8px;
+  padding:8px;font-size:13px;color:var(--rv-text);background:transparent;outline:none}
+#rv-pop textarea:focus{border-color:var(--rv-accent)}
+#rv-pop .rv-btns{display:flex;align-items:center;gap:8px;margin-top:10px}
+#rv-pop .rv-btns .rv-spacer{flex:1}
+#rv-pop button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-text);border-radius:8px;
+  padding:6px 12px;font-size:12px;cursor:pointer}
+#rv-pop button.rv-primary{background:var(--rv-accent);border-color:var(--rv-accent);color:#fff}
+#rv-pop button.rv-danger{color:var(--rv-danger);border-color:transparent}
+#rv-pop button.rv-danger[hidden]{display:none}
+
+#rv-panel{position:fixed;right:16px;bottom:64px;z-index:2147483500;width:340px;max-width:calc(100vw - 24px);
+  max-height:min(60vh,460px);overflow:auto;background:var(--rv-bg);color:var(--rv-text);
+  border:1px solid var(--rv-border);border-radius:var(--rv-radius);box-shadow:0 12px 40px rgba(0,0,0,.18);padding:10px;display:none}
+#rv-panel.rv-open{display:block}
+#rv-panel .rv-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:2px 4px 8px;border-bottom:1px solid var(--rv-border)}
+#rv-panel .rv-head .rv-title{font-size:11px;color:var(--rv-sub);letter-spacing:.04em}
+#rv-panel .rv-head button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-danger);
+  border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer}
+#rv-panel .rv-item{border-bottom:1px solid var(--rv-border);padding:8px 4px}
+#rv-panel .rv-item:last-child{border-bottom:0}
+#rv-panel .rv-no{font-weight:700;color:var(--rv-pin);font-size:12px;margin-right:6px}
+#rv-panel .rv-note{font-size:13px;white-space:pre-wrap;word-break:break-word}
+#rv-panel .rv-meta{font-size:10px;color:var(--rv-sub);word-break:break-all;margin-top:4px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+#rv-panel .rv-acts{margin-top:6px;display:flex;gap:6px}
+#rv-panel .rv-acts button{border:1px solid var(--rv-border);background:transparent;color:var(--rv-text);
+  border-radius:6px;padding:3px 10px;font-size:11px;cursor:pointer}
+#rv-panel .rv-acts button.rv-danger{color:var(--rv-danger)}
+#rv-panel .rv-empty{font-size:12px;color:var(--rv-sub);text-align:center;padding:24px 8px}
+#rv-panel .rv-lost{font-size:10px;color:var(--rv-danger);margin-left:6px}
+
+#rv-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(8px);z-index:2147483800;
+  background:var(--rv-text);color:var(--rv-bg);font-size:12px;padding:8px 16px;border-radius:999px;
+  opacity:0;pointer-events:none;transition:opacity .2s,transform .2s;max-width:80vw;text-align:center}
+#rv-toast.rv-show{opacity:.95;transform:translateX(-50%) translateY(0)}
+
+@media (prefers-color-scheme:dark){
+  #rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{--rv-text:#EDEDEB;--rv-border:#3C3C3A;--rv-bg:#232322;--rv-sub:#9A9A96}
+}
+@media print{#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{display:none !important}}
+</style>
+<style id="rv-dyn"></style>
+<script id="rv-script">
+(function(){
+  "use strict";
+  if (window.__rvBooted) { return; }
+  window.__rvBooted = true;
+
+  var TARGETS = "p,div,span,h1,h2,h3,h4,li,ul,ol,section,header,footer,a,button,table,tr,td,th,img,strong,em,small";
+  var UI_SEL  = "#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast,#rv-style,#rv-dyn,#rv-script";
+  /* 保存先はページのパス全体で分ける。公開サイトはどのページも index.html なので、
+     ファイル名だけだとページどうしの指摘が混ざる（2026-11-21 修正） */
+  var PATH    = (function(){
+    var p = location.pathname || "/";
+    try { p = decodeURIComponent(p); } catch(e) {}
+    if (/\/$/.test(p)) { p += "index.html"; }
+    return p;
+  })();
+  var NAME    = (PATH.split("/").pop() || "index.html");
+  var FILE    = (location.protocol === "file:") ? NAME : (PATH.replace(/^\/+/, "") || "index.html");
+  var KEY     = "review-notes-v1::" + PATH;
+  var OLD_KEY = "review-notes-v1::" + NAME;   // 修正前の保存先（ファイル名だけ）
+
+  var notes = [];
+  var on = false;
+  var editing = null;     // { selector, snippet, tab, el, existing }
+  var hovered = null;
+
+  /* ---------- tokens: 既存ページのCSS変数があれば拾う ---------- */
+  function pick(names, fallback){
+    var cs = getComputedStyle(document.documentElement), v;
+    for (var i=0;i<names.length;i++){
+      v = cs.getPropertyValue(names[i]);
+      if (v && v.trim()) { return v.trim(); }
+    }
+    return fallback;
+  }
+  var TOK = {
+    text:   pick(["--color-text","--text","--color-ink","--ink","--fg","--color-fg"], "#2C2C2B"),
+    border: pick(["--color-border","--border","--color-line","--line","--rule"], "#E6E5E3"),
+    accent: pick(["--color-accent","--accent","--color-primary","--primary","--brand","--color-brand"], "#2783DE"),
+    pin:    pick(["--color-pin","--color-warning","--warning","--color-coral","--coral"], "#F0A70A"),
+    radius: pick(["--radius-md","--radius","--border-radius"], "10px")
+  };
+  function applyTokens(){
+    var els = document.querySelectorAll("#rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast");
+    for (var i=0;i<els.length;i++){
+      els[i].style.setProperty("--rv-text", TOK.text);
+      els[i].style.setProperty("--rv-border", TOK.border);
+      els[i].style.setProperty("--rv-accent", TOK.accent);
+      els[i].style.setProperty("--rv-pin", TOK.pin);
+      els[i].style.setProperty("--rv-radius", TOK.radius);
+      els[i].style.setProperty("--rv-font", getComputedStyle(document.body).fontFamily || "system-ui, sans-serif");
+    }
+    document.getElementById("rv-dyn").textContent =
+      ".rv-hover{outline:2px dashed " + TOK.accent + " !important;outline-offset:1px !important;" +
+      "cursor:crosshair !important;background-color:" + hexa(TOK.accent, .07) + " !important}" +
+      ".rv-marked{outline:2px solid " + TOK.pin + " !important;outline-offset:1px !important}" +
+      "@keyframes rvFlash{0%,100%{background-color:transparent}30%{background-color:" + hexa(TOK.accent,.22) + "}}" +
+      ".rv-flash{animation:rvFlash 1s ease}";
+  }
+  function hexa(c, a){
+    var m = /^#([0-9a-f]{3}|[0-9a-f]{6})$/i.exec(c.trim());
+    if (!m) { return "rgba(39,131,222," + a + ")"; }
+    var h = m[1];
+    if (h.length === 3) { h = h[0]+h[0]+h[1]+h[1]+h[2]+h[2]; }
+    return "rgba(" + parseInt(h.slice(0,2),16) + "," + parseInt(h.slice(2,4),16) + "," + parseInt(h.slice(4,6),16) + "," + a + ")";
+  }
+
+  /* ---------- UI ---------- */
+  var ui = document.createElement("div");
+  ui.id = "rv-ui";
+  ui.innerHTML =
+    '<button id="rv-toggle" type="button" aria-pressed="false"><span id="rv-toggle-label">🖍</span> <kbd>R</kbd></button>' +
+    '<span id="rv-tip">指摘モード（R）</span>' +
+    '<button id="rv-list-btn" type="button">一覧 <span id="rv-badge">0</span></button>' +
+    '<button id="rv-copy-btn" type="button">📋 コピー</button>';
+  document.body.appendChild(ui);
+
+  var pins = document.createElement("div"); pins.id = "rv-pins"; document.body.appendChild(pins);
+
+  var pop = document.createElement("div");
+  pop.id = "rv-pop"; pop.setAttribute("role","dialog");
+  pop.innerHTML =
+    '<div class="rv-sel"></div><div class="rv-snip"></div>' +
+    '<textarea placeholder="気になる点を書く（⌘/Ctrl+Enter で保存）"></textarea>' +
+    '<div class="rv-btns"><button type="button" class="rv-danger" hidden>削除</button><span class="rv-spacer"></span>' +
+    '<button type="button" class="rv-cancel">キャンセル</button>' +
+    '<button type="button" class="rv-primary">保存</button></div>';
+  document.body.appendChild(pop);
+
+  var panel = document.createElement("div"); panel.id = "rv-panel"; document.body.appendChild(panel);
+  var toastEl = document.createElement("div"); toastEl.id = "rv-toast"; document.body.appendChild(toastEl);
+
+  var $toggle = document.getElementById("rv-toggle");
+  var $label  = document.getElementById("rv-toggle-label");
+  var $badge  = document.getElementById("rv-badge");
+  var $ta     = pop.querySelector("textarea");
+  var $sel    = pop.querySelector(".rv-sel");
+  var $snip   = pop.querySelector(".rv-snip");
+  var $del    = pop.querySelector(".rv-danger");
+
+  applyTokens();
+
+  /* ---------- toast ---------- */
+  var toastTimer = null;
+  function toast(msg){
+    toastEl.textContent = msg;
+    toastEl.classList.add("rv-show");
+    if (toastTimer) { clearTimeout(toastTimer); }
+    toastTimer = setTimeout(function(){ toastEl.classList.remove("rv-show"); }, 1800);
+  }
+
+  /* ---------- storage ---------- */
+  function load(){
+    try {
+      var raw = localStorage.getItem(KEY);
+      // 修正前の保存先に残った指摘を 1 回だけ引き継ぐ。index.html は複数ページで混ざっているおそれがあるので引き継がない
+      if (raw === null && NAME !== "index.html") {
+        raw = localStorage.getItem(OLD_KEY);
+        if (raw !== null) { localStorage.setItem(KEY, raw); localStorage.removeItem(OLD_KEY); }
+      }
+      notes = raw ? JSON.parse(raw) : [];
+      if (!(notes instanceof Array)) { notes = []; }
+    } catch(e) { notes = []; }
+  }
+  function save(){
+    try { localStorage.setItem(KEY, JSON.stringify(notes)); }
+    catch(e) { toast("保存できませんでした（localStorage）"); }
+  }
+
+  /* ---------- selector ---------- */
+  var SAFE_CLASS = /^[A-Za-z_][A-Za-z0-9_-]*$/;
+  function classesOf(el){
+    var cn = (typeof el.className === "string") ? el.className : (el.getAttribute("class") || "");
+    return cn.trim().split(/\s+/).filter(function(c){
+      return c && c.indexOf("rv-") !== 0 && SAFE_CLASS.test(c);
+    });
+  }
+  function buildSelector(el){
+    var parts = [], node = el;
+    while (node && node.nodeType === 1 && node !== document.body && node !== document.documentElement) {
+      if (node.id && SAFE_CLASS.test(node.id)) { parts.unshift("#" + node.id); break; }
+      var seg = node.tagName.toLowerCase();
+      var cls = classesOf(node);
+      if (cls.length) { seg += "." + cls.join("."); }
+      var parent = node.parentNode;
+      if (parent && parent.nodeType === 1) {
+        var same = [], i;
+        for (i = 0; i < parent.children.length; i++) {
+          if (parent.children[i].tagName === node.tagName) { same.push(parent.children[i]); }
+        }
+        if (same.length > 1) { seg += ":nth-of-type(" + (same.indexOf(node) + 1) + ")"; }
+      }
+      parts.unshift(seg);
+      node = parent;
+    }
+    return parts.join(" > ");
+  }
+  function resolve(selector){
+    try { return document.querySelector(selector); } catch(e) { return null; }
+  }
+  function snippetOf(el){
+    var t = (el.innerText || el.textContent || "").replace(/\s+/g, " ").trim();
+    if (!t && el.tagName === "IMG") { t = "[img] " + (el.getAttribute("alt") || el.getAttribute("src") || ""); }
+    return t.length > 120 ? t.slice(0, 120) + "…" : t;
+  }
+
+  /* ---------- tabs ---------- */
+  function hasTabs(){ return !!document.querySelector('[role="tab"]'); }
+  function activeTab(){
+    var t = document.querySelector('[role="tab"][aria-selected="true"]');
+    if (!t) {
+      var all = document.querySelectorAll('[role="tab"]');
+      for (var i = 0; i < all.length; i++) {
+        if (/(is-)?active|selected|current/.test(all[i].className)) { t = all[i]; break; }
+      }
+    }
+    return t ? (t.innerText || t.textContent || "").replace(/\s+/g, " ").trim() : "";
+  }
+  function switchToTab(label){
+    if (!label) { return; }
+    var all = document.querySelectorAll('[role="tab"]');
+    for (var i = 0; i < all.length; i++) {
+      var l = (all[i].innerText || all[i].textContent || "").replace(/\s+/g, " ").trim();
+      if (l === label) { all[i].click(); return true; }
+    }
+    return false;
+  }
+
+  /* ---------- pins ---------- */
+  var raf = null;
+  function schedule(){
+    if (raf) { return; }
+    raf = requestAnimationFrame(function(){ raf = null; renderPins(); });
+  }
+  function visible(el){
+    var r = el.getBoundingClientRect();
+    if (r.width === 0 && r.height === 0) { return null; }
+    if (r.bottom < -40 || r.top > innerHeight + 40) { return null; }
+    var cs = getComputedStyle(el);
+    if (cs.display === "none" || cs.visibility === "hidden") { return null; }
+    return r;
+  }
+  function renderPins(){
+    pins.textContent = "";
+    var marked = document.querySelectorAll(".rv-marked");
+    for (var i = 0; i < marked.length; i++) { marked[i].classList.remove("rv-marked"); }
+    notes.forEach(function(n, idx){
+      var el = resolve(n.selector);
+      if (!el) { return; }
+      var r = visible(el);
+      if (!r) { return; }
+      el.classList.add("rv-marked");
+      var p = document.createElement("div");
+      p.className = "rv-pin";
+      p.textContent = String(idx + 1);
+      p.style.left = Math.max(2, r.left - 6) + "px";
+      p.style.top  = Math.max(2, r.top - 8) + "px";
+      pins.appendChild(p);
+    });
+    $badge.textContent = String(notes.length);
+  }
+
+  /* ---------- hover ---------- */
+  function clearHover(){
+    if (hovered) { hovered.classList.remove("rv-hover"); hovered = null; }
+  }
+  document.addEventListener("mouseover", function(e){
+    if (!on) { return; }
+    var el = e.target.closest ? e.target.closest(TARGETS) : null;
+    if (!el || el.closest(UI_SEL)) { clearHover(); return; }
+    if (el === hovered) { return; }
+    clearHover();
+    hovered = el;
+    el.classList.add("rv-hover");
+  }, true);
+  document.addEventListener("mouseout", function(e){
+    if (!on) { return; }
+    if (hovered && !hovered.contains(e.relatedTarget)) { clearHover(); }
+  }, true);
+
+  /* ---------- 指摘の追加 ---------- */
+  document.addEventListener("click", function(e){
+    if (!on) { return; }
+    if (e.target.closest && e.target.closest(UI_SEL)) { return; }
+    var el = e.target.closest ? e.target.closest(TARGETS) : null;
+    if (!el) { return; }
+    e.preventDefault();
+    e.stopPropagation();
+    openPopup(el, e.clientX, e.clientY);
+  }, true);
+
+  function openPopup(el, x, y){
+    clearHover();
+    var selector = buildSelector(el);
+    var found = null;
+    for (var i = 0; i < notes.length; i++) { if (notes[i].selector === selector) { found = notes[i]; break; } }
+    editing = { selector: selector, snippet: snippetOf(el), tab: hasTabs() ? activeTab() : "", tag: el.tagName, existing: found };
+    $sel.textContent = selector;
+    $snip.textContent = editing.snippet || "（テキストなし）";
+    $ta.value = found ? found.note : "";
+    $del.hidden = !found;
+    pop.classList.add("rv-open");
+    var w = pop.offsetWidth, h = pop.offsetHeight;
+    var left = Math.min(Math.max(12, (x || innerWidth / 2) - w / 2), innerWidth - w - 12);
+    var top  = (y || innerHeight / 2) + 16;
+    if (top + h > innerHeight - 12) { top = Math.max(12, (y || innerHeight / 2) - h - 16); }
+    pop.style.left = left + "px";
+    pop.style.top  = top + "px";
+    $ta.focus();
+  }
+  function closePopup(){
+    pop.classList.remove("rv-open");
+    editing = null;
+  }
+  function saveNote(){
+    if (!editing) { return; }
+    var text = $ta.value.trim();
+    if (!text) { toast("指摘を入力してください"); $ta.focus(); return; }
+    if (editing.existing) {
+      editing.existing.note = text;
+    } else {
+      notes.push({
+        id: "rv" + Date.now() + Math.floor(Math.random() * 1000),
+        selector: editing.selector,
+        snippet: editing.snippet,
+        note: text,
+        tab: editing.tab,
+        tag: editing.tag,
+        createdAt: new Date().toISOString()
+      });
+    }
+    save(); closePopup(); renderPins(); renderPanel();
+    toast("指摘を保存しました");
+  }
+  function deleteNote(id){
+    notes = notes.filter(function(n){ return n.id !== id; });
+    save(); renderPins(); renderPanel();
+    toast("指摘を削除しました");
+  }
+  function deleteAll(){
+    if (!notes.length) { return; }
+    if (!window.confirm("指摘 " + notes.length + " 件をすべて削除します。元に戻せません。")) { return; }
+    notes = [];
+    save(); renderPins(); renderPanel();
+    toast("指摘をすべて削除しました");
+  }
+  pop.querySelector(".rv-primary").addEventListener("click", saveNote);
+  pop.querySelector(".rv-cancel").addEventListener("click", closePopup);
+  $del.addEventListener("click", function(){
+    if (editing && editing.existing) { deleteNote(editing.existing.id); closePopup(); }
+  });
+
+  /* ---------- 一覧パネル ---------- */
+  function renderPanel(){
+    panel.textContent = "";
+    if (!notes.length) {
+      var em = document.createElement("div");
+      em.className = "rv-empty";
+      em.textContent = "まだ指摘はありません。気になる箇所をクリックしてください。";
+      panel.appendChild(em);
+      return;
+    }
+    var head0 = document.createElement("div");
+    head0.className = "rv-head";
+    var title = document.createElement("span");
+    title.className = "rv-title"; title.textContent = "指摘一覧（" + notes.length + "件）";
+    var clearBtn = document.createElement("button");
+    clearBtn.type = "button"; clearBtn.textContent = "すべて削除";
+    clearBtn.addEventListener("click", deleteAll);
+    head0.appendChild(title); head0.appendChild(clearBtn);
+    panel.appendChild(head0);
+    notes.forEach(function(n, idx){
+      var el = resolve(n.selector);
+      var item = document.createElement("div");
+      item.className = "rv-item";
+
+      var head = document.createElement("div");
+      var no = document.createElement("span");
+      no.className = "rv-no"; no.textContent = "#" + (idx + 1);
+      head.appendChild(no);
+      var body = document.createElement("span");
+      body.className = "rv-note"; body.textContent = n.note;
+      head.appendChild(body);
+      if (!el) {
+        var lost = document.createElement("span");
+        lost.className = "rv-lost"; lost.textContent = "要素未検出";
+        head.appendChild(lost);
+      }
+      item.appendChild(head);
+
+      var meta = document.createElement("div");
+      meta.className = "rv-meta";
+      meta.textContent = (n.tab ? "[" + n.tab + "] " : "") + n.selector;
+      item.appendChild(meta);
+
+      var acts = document.createElement("div");
+      acts.className = "rv-acts";
+      var go = document.createElement("button");
+      go.type = "button"; go.textContent = "移動";
+      go.addEventListener("click", function(){ jumpTo(n); });
+      var del = document.createElement("button");
+      del.type = "button"; del.className = "rv-danger"; del.textContent = "削除";
+      del.addEventListener("click", function(){ deleteNote(n.id); });
+      acts.appendChild(go); acts.appendChild(del);
+      item.appendChild(acts);
+
+      panel.appendChild(item);
+    });
+  }
+  function jumpTo(n){
+    if (n.tab) { switchToTab(n.tab); }
+    setTimeout(function(){
+      var el = resolve(n.selector);
+      if (!el) { toast("対象の要素が見つかりません"); return; }
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.classList.add("rv-flash");
+      setTimeout(function(){ el.classList.remove("rv-flash"); renderPins(); }, 1100);
+      schedule();
+    }, n.tab ? 180 : 0);
+  }
+
+  /* ---------- コピー ---------- */
+  function buildMarkdown(){
+    var out = [];
+    out.push("# HTML改善依頼", "");
+    out.push("対象ファイル: " + FILE + "（自己完結の単一HTML）");
+    out.push("以下のレビュー指摘をHTMLに反映してください。各指摘は対象要素のCSSセレクタと表示テキストで特定できます。");
+    out.push("デザインの統一感（余白・フォントサイズ・配色）を保ち、指摘のない箇所は変更しないでください。", "");
+    notes.forEach(function(n, i){
+      var head = "## " + (i + 1) + ". " + (n.tab ? "[タブ: " + n.tab + "] " : "") + (n.tag || "ELEMENT");
+      out.push(head);
+      out.push("- セレクタ: `" + n.selector + "`");
+      out.push("- 対象テキスト: 「" + (n.snippet || "（テキストなし）") + "」");
+      out.push("- 指摘: " + n.note, "");
+    });
+    return out.join("\n");
+  }
+  function copyMarkdown(){
+    if (!notes.length) { toast("指摘がまだありません"); return; }
+    var md = buildMarkdown();
+    var done = function(){ toast("コピーしました（" + notes.length + "件）"); };
+    var fail = function(){
+      try {
+        var t = document.createElement("textarea");
+        t.value = md;
+        t.style.cssText = "position:fixed;left:-9999px;top:0";
+        document.body.appendChild(t);
+        t.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(t);
+        ok ? done() : toast("コピーに失敗しました");
+      } catch(e) { toast("コピーに失敗しました"); }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(md).then(done, fail);
+    } else { fail(); }
+  }
+
+  /* ---------- ON/OFF ---------- */
+  function setMode(next){
+    on = next;
+    ui.classList.toggle("rv-on", on);
+    $toggle.setAttribute("aria-pressed", on ? "true" : "false");
+    $label.textContent = on ? "✓ 指摘モード中" : "🖍";
+    if (!on) { clearHover(); closePopup(); panel.classList.remove("rv-open"); }
+    toast(on ? "指摘モード ON" : "指摘モード OFF");
+  }
+  $toggle.addEventListener("click", function(){ setMode(!on); });
+  document.getElementById("rv-list-btn").addEventListener("click", function(){
+    panel.classList.toggle("rv-open");
+    if (panel.classList.contains("rv-open")) { renderPanel(); }
+  });
+  document.getElementById("rv-copy-btn").addEventListener("click", copyMarkdown);
+
+  /* ---------- キーボード ---------- */
+  function isTyping(el){
+    if (!el) { return false; }
+    var t = el.tagName;
+    return t === "INPUT" || t === "TEXTAREA" || t === "SELECT" || el.isContentEditable;
+  }
+  document.addEventListener("keydown", function(e){
+    var popOpen = pop.classList.contains("rv-open");
+    if (e.key === "Escape" && popOpen) { closePopup(); return; }
+    if (popOpen && (e.metaKey || e.ctrlKey) && e.key === "Enter") { e.preventDefault(); saveNote(); return; }
+    if (e.metaKey || e.ctrlKey || e.altKey) { return; }
+    if (popOpen || isTyping(e.target) || isTyping(document.activeElement)) { return; }
+    if (e.key === "r" || e.key === "R") { e.preventDefault(); setMode(!on); }
+  }, true);
+
+  /* ---------- 再配置 ---------- */
+  addEventListener("scroll", schedule, true);
+  addEventListener("resize", schedule);
+  document.addEventListener("click", function(e){
+    if (e.target.closest && e.target.closest('[role="tab"]')) { setTimeout(function(){ renderPins(); }, 120); }
+  }, false);
+
+  load();
+  renderPins();
+  renderPanel();
+})();
+</script>
+<!-- ===== review mode (rv) : end ===== -->
+
+</body>
+</html>
