@@ -44,6 +44,9 @@
   .tuned { display: none; position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; background: #FFF4D6; color: #3A2E00; font-size: 13px; line-height: 1.6; border-top: 1px solid #E8C96A; }
   .tuned.on { display: block; }
   body:has(.tuned.on) { padding-bottom: 96px; }
+  /* 調整ページの中（iframe）では、当てている件数は外側の帯に出すので、ここの帯は出さない */
+  html.embed .tuned { display: none !important; }
+  html.embed body { padding-bottom: 0 !important; }
   .tuned .wrap { display: flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; padding-top: 10px; padding-bottom: 10px; padding-right: 84px; max-width: 1040px; }
   @media (max-width: 560px) { .tuned .wrap { padding-right: 76px; } }
   .tuned button, .tuned a { font: inherit; font-weight: 600; color: #3A2E00; background: #FFFFFF; border: 1px solid #C9A94A; border-radius: 48px; padding: 4px 12px; cursor: pointer; text-decoration: none; }
@@ -148,7 +151,7 @@
 <body>
 <header class="hd">
   <div class="wrap wide hd-in">
-    <a class="brand" href="../">Sample</a>
+    <a class="brand" href="../#tune" target="_top">Sample</a>
     <nav class="chapnav" aria-label="章">
       <a href="#s1" class="on">ことば</a><a href="#s2">部品</a><a href="#s3">ナビ</a><a href="#s4">データ</a>
     </nav>
@@ -156,7 +159,7 @@
   </div>
 </header>
 <div class="tuned" id="tuned" role="status">
-  <div class="wrap"><span id="tuned-msg"></span><button type="button" id="tuned-off">当てない</button><a href="../">調整ページへ</a></div>
+  <div class="wrap"><span id="tuned-msg"></span><button type="button" id="tuned-off">当てない</button><a href="../#tune" target="_top">調整へ</a></div>
 </div>
 
 <main>
@@ -201,7 +204,7 @@
         <li>このページで記事全体の見え方を確かめる</li>
         <li>気に入ったら、プロンプトをコピーして依頼する</li>
       </ol>
-      <div class="actions"><a class="btn" href="../">調整ページへ戻る →</a><input class="input" type="text" placeholder="検索する" aria-label="検索の見本"></div>
+      <div class="actions"><a class="btn" href="../#tune" target="_top">調整へ戻る →</a><input class="input" type="text" placeholder="検索する" aria-label="検索の見本"></div>
     </div>
   </section>
 
@@ -242,8 +245,13 @@
   </section>
 </main>
 
-<footer><div class="wrap wide">© 2026 見本の記事 ／ <a href="../">意味の名前の調整ページ</a> ／ <a href="../table/">設定の表</a></div></footer>
+<footer><div class="wrap wide">© 2026 見本の記事 ／ <a href="../#tune" target="_top">調整</a> ／ <a href="../#table" target="_top">設定の表</a></div></footer>
 
+<script>
+/* 単独で開かれたら、まとめたページの「サンプル記事」の表示に飛ばす（調整ページの中の iframe では ?embed=1 付きで開く） */
+if (window.top === window && !/[?&]embed=1/.test(location.search)) location.replace('../#sample');
+if (window.top !== window) document.documentElement.classList.add('embed');
+</script>
 <script>
 /* 調整ページ（/tokens/）で試した値を、いまのテーマに当てる。保存先は調整ページと同じ localStorage */
 (function () {
@@ -279,6 +287,8 @@
                             : '調整ページで変えた値を ' + n + ' 件当てています（' + NAMES[t] + '）。ほかのテーマの値は、テーマを替えると当たります';
       btn.textContent = off ? '当てる' : '当てない';
     }
+    /* 調整ページの中なら、外側の帯に知らせる */
+    try { if (window.parent !== window && window.parent.tokensStatus) window.parent.tokensStatus(NAMES[t], off ? 0 : n); } catch (e) {}
   }
   document.getElementById('tuned-off').addEventListener('click', function () {
     try { sessionStorage.setItem(OFF, sessionStorage.getItem(OFF) === '1' ? '0' : '1'); } catch (e) {}
@@ -286,6 +296,7 @@
   });
   new MutationObserver(apply).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   window.addEventListener('storage', function (e) { if (e.key === KEY) apply(); });
+  window.tokensApply = apply;   /* 調整ページが値を変えるたびに呼ぶ */
   apply();
 })();
 </script>
