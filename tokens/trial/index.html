@@ -19,7 +19,9 @@
   .wrap { max-width: 1240px; margin: 0 auto; padding: 0 24px; }
   .hd { position: sticky; top: 0; z-index: 50; background: rgba(250, 250, 250, .95); border-bottom: 1px solid var(--rule); }
   .hd-in { display: flex; align-items: center; gap: 12px; min-height: 56px; flex-wrap: wrap; }
-  .brand { font-family: var(--en); font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .brand { font-family: var(--en); font-weight: 600; color: var(--ink); white-space: nowrap; }
+  .brand a { color: inherit; text-decoration: none; }
+  .brand a:hover { text-decoration: underline; }
   .atabs { display: flex; gap: 4px; margin-left: auto; flex-wrap: wrap; }
   .atab { min-height: 40px; padding: 0 14px; border: 0; border-radius: 48px; background: transparent; color: var(--muted); font: 600 13px var(--jp); cursor: pointer; }
   .atab[aria-selected="true"] { background: var(--ink); color: #FFFFFF; }
@@ -52,7 +54,7 @@
 </style>
 </head>
 <body>
-<header class="hd"><div class="wrap hd-in"><a class="brand" href="../">Design Themes / tokens / trial</a>
+<header class="hd"><div class="wrap hd-in"><span class="brand"><a href="/">Design Themes</a> / <a href="../">tokens</a> / trial</span>
   <div class="atabs" role="tablist" aria-label="記事"><button type="button" class="atab" role="tab" data-a="ia02" aria-selected="true">情報設計 02</button><button type="button" class="atab" role="tab" data-a="mind" aria-selected="false">マインドフルネス</button><button type="button" class="atab" role="tab" data-a="phil" aria-selected="false">ベルクソンの哲学</button></div></div></header>
 <main class="wrap">
   <section class="hero">

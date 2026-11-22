@@ -217,6 +217,16 @@ body:has(.nav-inner, .gnav-inner) > main > section:first-of-type::before { conte
     .sample { grid-template-columns: 1fr; }
     .header-note { display: none; }
   }
+
+  /* このサイトのページ（2026-11-22） */
+  .site-pages { margin: 32px 0 0; }
+  .site-pages-h { margin: 6px 0 14px; font-size: 18px; color: var(--ink); }
+  .site-pages-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .sp-link { display: flex; flex-direction: column; gap: 4px; min-height: 64px; padding: 14px 18px; background: var(--white); border: var(--bw) solid var(--card-line); border-radius: var(--r-card); color: var(--ink); text-decoration: none; }
+  .sp-link:hover { border-color: var(--ink); }
+  .sp-t { font-weight: 700; font-size: 15px; }
+  .sp-d { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  @media (max-width: 640px) { .site-pages-list { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -235,6 +245,16 @@ body:has(.nav-inner, .gnav-inner) > main > section:first-of-type::before { conte
     <p class="label">Shared themes</p>
     <h1>公開ページの見た目を切り替えるテーマ</h1>
     <p class="lead">research・SAI's Works・asobiji・bcdp・fable-test・shot-pjt-sai の各ページは、右上のパレットボタンで見た目を切り替えられます。テーマの中身はこのサイトの2つのファイルにあり、各ページはそれを読み込むだけです。ここを直して公開すれば、全ページに届きます。</p>
+    <nav class="site-pages" aria-label="このサイトのページ">
+      <p class="label">Pages</p>
+      <h2 class="site-pages-h">このサイトのページ</h2>
+      <ul class="site-pages-list">
+        <li><a class="sp-link" href="/tokens/"><span class="sp-t">意味の名前の調整</span><span class="sp-d">太字の線・章の番号など、名前ごとの値を 3 テーマ並べて試す</span></a></li>
+        <li><a class="sp-link" href="/tokens/#sample"><span class="sp-t">サンプルの記事</span><span class="sp-d">名前を全部使った 1 本。テーマを替えて全体の見え方を見る</span></a></li>
+        <li><a class="sp-link" href="/tokens/#table"><span class="sp-t">テーマごとの設定の表</span><span class="sp-d">名前ごとの値と出どころ、色の名前の使われ方</span></a></li>
+        <li><a class="sp-link" href="/tokens/trial/"><span class="sp-t">研究記事の見比べ</span><span class="sp-d">置き換える前と後、35 本すべての記事へのリンク</span></a></li>
+      </ul>
+    </nav>
   </div>
   <div class="stripe"></div>
 

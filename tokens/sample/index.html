@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- テーマの切り替えあり（Mint → Bold Yellow → SAI v2）。build.py が themes.css / themes.js に版（?v=）を付ける -->
-<link rel="stylesheet" href="/themes.css?v=3d7fbbb420">
+<link rel="stylesheet" href="/themes.css?v=3d356b1134">
 <script src="/themes.js?v=2c8d57ecca"></script>
 <style>
   /* 土台（SAI v2）の値。テーマは html[data-theme] で重なる。意味の名前（--strong-line など）は themes.css が持つ */
@@ -25,19 +25,19 @@
   }
   * { box-sizing: border-box; }
   html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
-  body { margin: 0; background: var(--page-bg); color: var(--text); font-family: var(--jp); font-size: 16px; line-height: 1.95; letter-spacing: .01em; overflow-x: clip; }
+  body { margin: 0; background: var(--page-bg); color: var(--body-fg); font-family: var(--jp); font-size: 16px; line-height: 1.95; letter-spacing: .01em; overflow-x: clip; }
   .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
   .wide { max-width: 1040px; }
 
   /* 23 ヘッダー・24 章ナビ・27 切り替え */
   .hd { position: sticky; top: 0; z-index: 50; background: var(--header-bg); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
   .hd-in { display: flex; align-items: center; gap: 14px; min-height: 56px; }
-  .brand { font-family: var(--en); font-weight: 600; color: var(--ink); text-decoration: none; white-space: nowrap; }
+  .brand { font-family: var(--en); font-weight: 600; color: var(--header-fg); text-decoration: none; white-space: nowrap; }
   .hd-in [data-theme-switch] { margin-left: auto; color: var(--switch-fg); }
   .chapnav { display: flex; gap: 22px; overflow-x: auto; scrollbar-width: none; font-size: 13px; padding-bottom: 2px; }
   .chapnav::-webkit-scrollbar { display: none; }
-  .chapnav a { padding: 6px 0; color: var(--muted); text-decoration: none; white-space: nowrap; border-bottom: var(--chapnav-on-w) solid transparent; }
-  .chapnav a.on { color: var(--ink); font-weight: 600; border-bottom-color: var(--chapnav-on-c); }
+  .chapnav a { padding: 6px 0; color: var(--chapnav-fg); text-decoration: none; white-space: nowrap; border-bottom: var(--chapnav-on-w) solid transparent; }
+  .chapnav a.on { color: var(--chapnav-on-fg); font-weight: 600; border-bottom-color: var(--chapnav-on-c); }
 
   /* 調整ページの値を当てているときの知らせ */
   /* 画面の下に固定。右下の指摘モードのボタンと重ならないよう右に余白 */
@@ -101,7 +101,7 @@
 
   /* 19 チップ・20 番号の丸・21 ボタン・22 入力欄 */
   .chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 20px 0; }
-  .chip { font-size: 13px; padding: 6px 14px; border-radius: var(--chip-r); border: 1px solid var(--ink); color: var(--ink); background: transparent; }
+  .chip { font-size: 13px; padding: 6px 14px; border-radius: var(--chip-r); border: 1px solid var(--chip-line-c); color: var(--chip-fg); background: transparent; }
   .chip.on { background: var(--chip-on-bg); color: var(--chip-on-fg); border-color: var(--chip-on-bg); }
   ol.steps { list-style: none; counter-reset: s; margin: 20px 0; padding: 0; }
   ol.steps li { counter-increment: s; position: relative; padding-left: 44px; margin-bottom: 14px; }
@@ -149,6 +149,8 @@
   .p-tag { font-size: 13px; padding: 3px 10px; border-radius: 4px; background: var(--part-wash-bg); color: var(--ink); }
   .p-panel { margin: 16px 0; padding: 14px 18px; background: var(--part-panel-bg); font-size: 14.5px; }
   .p-alert { margin: 0 0 4px; font-size: 12px; font-weight: 700; letter-spacing: .08em; color: var(--alert-fg); }
+  .p-title { margin: 0 0 4px; font-size: 15px; font-weight: 700; color: var(--part-head-fg); }
+  .p-refs { margin: 24px 0 0; padding-top: 12px; border-top: 1px solid var(--part-line-c); font-size: 13px; color: var(--small-fg); }
   .p-alt { margin: 20px 0; padding: 14px 18px; background: var(--note-alt-bg); border-left: 3px solid var(--note-alt-line-c); color: var(--note-alt-fg); font-size: 14.5px; }
   /* 33 フッター */
   footer { background: var(--pagefoot-bg); color: var(--pagefoot-fg); font-size: 13px; padding: 40px 0; }
@@ -262,7 +264,9 @@
       <div class="p-tags"><span class="p-tag">卓越論 eudaimonic</span><span class="p-tag">快楽論 hedonic</span></div>
       <div class="p-panel">弱めの箱やメーターの溝は、部品の面の色です。</div>
       <div class="p-box"><p class="p-alert">注意</p>注意書きのラベルは、注意の色です。</div>
+      <div class="p-box"><p class="p-title">「持続」という訳語について</p>注記の箱の題や出典の太字は、箱の題の色です。</div>
       <div class="p-alt">限界：この研究は自己報告に頼っている。注意の箱は、地・文字・左の線の 3 つの色で決まります。</div>
+      <p class="p-refs">主な出典 ── 出典の上の線は、墨の線の色です。</p>
     </div>
   </section>
 </main>

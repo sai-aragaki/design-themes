@@ -231,6 +231,7 @@ html[data-theme="mint"] {
   --h3-w: 700;
   --h3-size: 18px;
   --lede-fg: var(--pal-text);
+  --body-fg: var(--pal-text);
   --note-bg: var(--pal-white);
   --note-line-c: var(--pal-ink);
   --note-line-w: 2px;
@@ -248,6 +249,8 @@ html[data-theme="mint"] {
   --chip-on-bg: var(--pal-ink);
   --chip-on-fg: var(--pal-white);
   --chip-r: 999px;
+  --chip-fg: var(--pal-ink);
+  --chip-line-c: var(--pal-ink);
   --badge-bg: var(--pal-accent);
   --badge-fg: var(--pal-white);
   --badge-r: 50%;
@@ -260,8 +263,11 @@ html[data-theme="mint"] {
   --header-bg-c: var(--pal-paper);
   --header-bg-a: 88%;
   --header-bg: color-mix(in srgb, var(--header-bg-c) var(--header-bg-a), transparent);
+  --header-fg: var(--pal-ink);
   --chapnav-on-c: var(--pal-ink);
   --chapnav-on-w: 1.5px;
+  --chapnav-fg: var(--pal-text);
+  --chapnav-on-fg: var(--pal-ink);
   --toc-on-c: var(--pal-accent);
   --toc-on-w: 3px;
   --tab-on-c: var(--pal-ink);
@@ -302,6 +308,8 @@ html[data-theme="mint"] {
   --note-alt-bg: var(--pal-emphasis-wash);
   --note-alt-fg: var(--pal-emphasis);
   --note-alt-line-c: var(--pal-emphasis);
+  --part-head-fg: var(--pal-ink);
+  --part-line-c: var(--pal-ink);
 }
 
 /* --- 意味の名前: bold（色の名前 --pal-* + 台帳 semantic.json + テーマの "semantic" 欄）--- */
@@ -368,6 +376,7 @@ html[data-theme="bold"] {
   --h3-w: 700;
   --h3-size: 18px;
   --lede-fg: var(--pal-text);
+  --body-fg: var(--pal-text);
   --note-bg: var(--pal-white);
   --note-line-c: var(--pal-ink);
   --note-line-w: 2px;
@@ -385,6 +394,8 @@ html[data-theme="bold"] {
   --chip-on-bg: var(--pal-ink);
   --chip-on-fg: var(--pal-white);
   --chip-r: 999px;
+  --chip-fg: var(--pal-ink);
+  --chip-line-c: var(--pal-ink);
   --badge-bg: var(--pal-highlight);
   --badge-fg: var(--pal-ink);
   --badge-r: 50%;
@@ -397,8 +408,11 @@ html[data-theme="bold"] {
   --header-bg-c: var(--pal-paper);
   --header-bg-a: 96%;
   --header-bg: color-mix(in srgb, var(--header-bg-c) var(--header-bg-a), transparent);
+  --header-fg: var(--pal-ink);
   --chapnav-on-c: var(--pal-highlight);
   --chapnav-on-w: 3px;
+  --chapnav-fg: var(--pal-text);
+  --chapnav-on-fg: var(--pal-ink);
   --toc-on-c: var(--pal-highlight);
   --toc-on-w: 4px;
   --tab-on-c: var(--pal-highlight);
@@ -439,6 +453,8 @@ html[data-theme="bold"] {
   --note-alt-bg: var(--pal-emphasis-wash);
   --note-alt-fg: var(--pal-emphasis);
   --note-alt-line-c: var(--pal-emphasis);
+  --part-head-fg: var(--pal-ink);
+  --part-line-c: var(--pal-ink);
 }
 
 /* --- 意味の名前: sai（土台）（色の名前 --pal-* + 台帳 semantic.json + テーマの "semantic" 欄）--- */
@@ -504,6 +520,7 @@ html[data-theme="bold"] {
   --h3-w: 700;
   --h3-size: 18px;
   --lede-fg: var(--pal-text);
+  --body-fg: var(--pal-text);
   --note-bg: var(--pal-white);
   --note-line-c: var(--pal-ink);
   --note-line-w: 2px;
@@ -521,6 +538,8 @@ html[data-theme="bold"] {
   --chip-on-bg: var(--pal-ink);
   --chip-on-fg: var(--pal-white);
   --chip-r: 48px;
+  --chip-fg: var(--pal-ink);
+  --chip-line-c: var(--pal-ink);
   --badge-bg: var(--pal-ink);
   --badge-fg: var(--pal-white);
   --badge-r: 50%;
@@ -533,8 +552,11 @@ html[data-theme="bold"] {
   --header-bg-c: var(--pal-paper);
   --header-bg-a: 96%;
   --header-bg: color-mix(in srgb, var(--header-bg-c) var(--header-bg-a), transparent);
+  --header-fg: var(--pal-ink);
   --chapnav-on-c: var(--pal-ink);
   --chapnav-on-w: 1px;
+  --chapnav-fg: var(--pal-text);
+  --chapnav-on-fg: var(--pal-ink);
   --toc-on-c: var(--pal-ink);
   --toc-on-w: 2px;
   --tab-on-c: var(--pal-ink);
@@ -575,6 +597,8 @@ html[data-theme="bold"] {
   --note-alt-bg: var(--pal-emphasis-wash);
   --note-alt-fg: var(--pal-ink);
   --note-alt-line-c: var(--pal-emphasis);
+  --part-head-fg: var(--pal-ink);
+  --part-line-c: var(--pal-ink);
 }
 /* THEMES:GENERATED:END */
 
