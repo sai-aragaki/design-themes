@@ -10,8 +10,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <!-- このサイト自身のテーマ（同じサイトの themes.css / themes.js を読む） -->
-<link rel="stylesheet" href="/themes.css">
-<script src="/themes.js"></script>
+<link rel="stylesheet" href="/themes.css?v=40acd8e735">
+<script src="/themes.js?v=2c8d57ecca"></script>
 <style>
   /* 土台（SAI v2）の値。テーマはこの上に html[data-theme] で重なる */
   :root {
@@ -106,6 +106,10 @@
   }
 
   .sp-wrap { margin-top: 16px; }
+  .same { margin: 10px 0 0; font-size: 12px; color: var(--muted); }
+  .same code { font-size: 11px; }
+  .stale { display: none; margin: 0; padding: 12px 16px; background: #FFF4D6; color: #3A2E00; font-size: 14px; border-bottom: 1px solid #E8C96A; }
+  .stale.on { display: block; }
   .val-h { display: inline-block; font-size: 11px; color: var(--muted); margin-right: 6px; }
   .val-h2 { margin: 10px 0 4px; font-size: 11px; color: var(--muted); }
   .vals { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--rule); }
@@ -194,6 +198,7 @@
 </style>
 </head>
 <body>
+<p class="stale" id="stale">テーマの値が読み込めていません（古い themes.css が残っている可能性があります）。ページを再読み込みしてください。</p>
 <header class="hd">
   <div class="wrap hd-in">
     <a class="brand" href="/">Design Themes<span>/ tokens</span></a>
@@ -244,6 +249,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--strong-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">本文の中で<strong class="sp-strong">ここが大事</strong>という形になる。</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -285,6 +291,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--mark-fg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--mark-line</code>、<code>--mark-w</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">読み手に<mark class="sp-mark">印を付けたい語</mark>はこう見える。</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -325,6 +332,7 @@
         </div>
         <span class="chg chg-part">色だけ替わる</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">ここは<span class="sp-hl">色で強める語</span>の例。</p></div></div>
       <div class="tk-body">
@@ -367,6 +375,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       
+      <p class="same">この意味の値は、いまの案では 3 テーマとも同じ（テーマを替えても見本は変わらない）</p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">書名の <span class="sp-em">General Hospital Psychiatry</span> など。</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -407,6 +416,7 @@
         </div>
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">本文<span class="sp-small">（注：小さい注はこう）</span></p></div></div>
       <div class="tk-body">
@@ -449,6 +459,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--link-line</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">詳しくは<a class="sp-link" href="#link">こちらのリンク</a>から。</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -490,6 +501,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--code-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-p">値は <code class="sp-code">--badge-bg</code> に書く。</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -538,6 +550,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--title-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-title">ページの題名の見本</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -579,6 +592,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--eyebrow-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-eyebrow">Deep Research ／ 概念探究</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -620,6 +634,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--secno-bg・--secno-r</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-secno"><span class="sp-secno-num">01</span><span class="sp-seclabel">Seven</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -661,6 +676,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--h2-orn-show</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--h2-orn-show</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-h2"><span>章見出しの見本</span></p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -701,6 +717,7 @@
         </div>
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-h2" style="margin:0"><span>章見出し</span></p><p class="sp-secsub">What the chapter is about</p></div></div>
       <div class="tk-body">
@@ -743,6 +760,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--h3-fg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--h3-w</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-h3">小見出しの見本</p></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -783,6 +801,7 @@
         </div>
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><p class="sp-lede">リード文は、題名の下で記事の入口になる文章。</p></div></div>
       <div class="tk-body">
@@ -832,6 +851,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--note-bg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--note-bg</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-note"><b>注記</b>：左の線と地の色がここで決まる。</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -873,6 +893,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--quote-bg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--quote-bg</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-quote">引用の見本。左の線と地。</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -914,6 +935,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --card-line・--r-card）</code></p>
+      <p class="same">この意味の値は、いまの案では 3 テーマとも同じ（テーマを替えても見本は変わらない）</p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-card">カードの見本</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -955,6 +977,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--stat-bg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--stat-bg</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-stat"><span class="sp-stat-n">47</span><span class="sp-stat-l">試験の数</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -996,6 +1019,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--chip-on-fg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--chip-on-fg</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-chips"><span class="sp-chip sp-chip-on">選んだチップ</span><span class="sp-chip">ほか</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1037,6 +1061,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--badge-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-badges"><span class="sp-badge">1</span><span class="sp-badge">2</span><span class="sp-badge">3</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1078,6 +1103,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--btn-fg・--btn-r</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-btn">はじめる →</span></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1119,6 +1145,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --input-line）</code></p>
+      <p class="same">この意味の値は、いまの案では 3 テーマとも同じ（テーマを替えても見本は変わらない）</p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-input">検索する</span></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1167,6 +1194,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-header">ヘッダー</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1208,6 +1236,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--chapnav-on-w</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-nav sp-chapnav"><span class="on">地図</span><span>人物</span><span>持続</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1249,6 +1278,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --sel-line・--sel-w）</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-toc"><div class="sp-toc-row on">選んだ記事</div><div class="sp-toc-row">ほかの記事</div></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1290,6 +1320,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--tab-on-w</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-nav sp-tab"><span class="on">Projects</span><span>Skills</span><span>About</span></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1330,6 +1361,7 @@
         </div>
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-switch"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 1 10-10c0 2.8-2.2 4-4.5 4H16a2 2 0 0 0-1.5 3.3A2 2 0 0 1 12 22z"/></svg></span></div></div>
       <div class="tk-body">
@@ -1379,6 +1411,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-page">紙（ページの地）</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1420,6 +1453,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--band-bg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--band-bg</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-band">奇数番目の節</div><div class="sp-band sp-band-alt">偶数番目の節</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1461,6 +1495,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --stripe）</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-hero-mini">ヘッダー</div><div class="sp-headstripe"></div><div class="sp-after">最初の節</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1501,6 +1536,7 @@
         </div>
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-divider">一行目</div><div class="sp-divider">二行目</div></div></div>
       <div class="tk-body">
@@ -1543,6 +1579,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--hero-area-orn-show</code></p>
+      <p class="same">この意味の値は、いまの案では 3 テーマとも同じ（テーマを替えても見本は変わらない）</p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-hero"><span class="sp-hero-orn"></span>ヒーローの見本</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1584,6 +1621,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--pagefoot-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-foot">© 2026 フッターの見本</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1632,6 +1670,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--icon-w</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><svg class="sp-icon" viewBox="0 0 24 24" width="32" height="32" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></svg></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1673,6 +1712,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--table-zebra-bg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><table class="sp-table"><thead><tr><th>項目</th><th>値</th></tr></thead><tbody><tr><td>一行目</td><td>12</td></tr><tr><td>二行目</td><td>34</td></tr><tr><td>三行目</td><td>56</td></tr></tbody></table></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1713,6 +1753,7 @@
         </div>
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
+      
       
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><ul class="sp-list"><li>箇条書きの一つめ</li><li>二つめ</li></ul></div></div>
       <div class="tk-body">
@@ -1755,6 +1796,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--figure-bg</code></p>
+      <p class="same">3 テーマとも同じ値の名前：<code>--figure-bg</code></p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><figure class="sp-figure"><div class="sp-figure-body">図</div><figcaption>図のキャプション</figcaption></figure></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1796,6 +1838,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--meter-track-bg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-meter"><i style="width:62%"></i></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1837,6 +1880,7 @@
         <span class="chg chg-ok">テーマで替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>--langtag-fg</code></p>
+      
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><span class="sp-lang">JP</span> <span class="sp-lang">EN</span></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1878,6 +1922,7 @@
         <span class="chg chg-part">色だけ替わる</span>
       </header>
       <p class="rel">あわせて使う名前：<code>（いまの --mosaic）</code></p>
+      <p class="same">この意味の値は、いまの案では 3 テーマとも同じ（テーマを替えても見本は変わらない）</p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-orn"><i></i><i></i><i></i><i></i></div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1919,6 +1964,7 @@
         <span class="chg chg-no">テーマで替わらない</span>
       </header>
       
+      <p class="same">この意味の値は、いまの案では 3 テーマとも同じ（テーマを替えても見本は変わらない）</p>
       <div class="sp-wrap"><p class="sp-cap">見本（案の値で描いたもの。右上のボタンでテーマを替えると、これも替わる）</p><div class="sp"><div class="sp-motion">ふわっと出る</div></div></div>
       <div class="tk-body">
         <figure class="where">
@@ -1957,6 +2003,16 @@
 <footer>
   <div class="wrap">依頼 022 の調査。元の表と説明は 00_master の <code>80_開発室/projects/design-themes/outputs/20261122-semantic-token-inventory.md</code>。値はテーマのサイトの <a href="/">一覧</a> と同じ 3 テーマで測った。</div>
 </footer>
+<script>
+/* 意味の名前が読めていないとき（古い themes.css が残っているときなど）に知らせる */
+(function () {
+  function chk() {
+    var v = getComputedStyle(document.documentElement).getPropertyValue('--page-bg').trim();
+    if (!v) document.getElementById('stale').classList.add('on');
+  }
+  if (document.readyState === 'complete') chk(); else window.addEventListener('load', chk);
+})();
+</script>
 <!-- ===== review mode (rv) : begin — このコメントから下を消せば完全に元へ戻ります ===== -->
 <style id="rv-style">
 #rv-ui,#rv-pop,#rv-panel,#rv-pins,#rv-toast{
