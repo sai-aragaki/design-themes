@@ -186,6 +186,7 @@ html[data-theme="mint"] {
   --pal-highlight: #F2C94C;
   --pal-deep: #3F6E79;
   --pal-danger: #B0363A;
+  --pal-muted-strong: #5B6A65;
   --strong-line-c: var(--pal-highlight);
   --strong-line-a: 55%;
   --strong-line-h: 38%;
@@ -275,12 +276,12 @@ html[data-theme="mint"] {
   --hero-area-orn-show: none;
   --pagefoot-bg: var(--pal-tint);
   --pagefoot-fg: var(--pal-muted);
-  --icon-fg: #2F8B73;
+  --icon-fg: var(--pal-accent);
   --icon-w: 1.75;
   --table-head-line-c: var(--pal-ink);
   --table-head-line-w: 1px;
   --table-head-line: var(--table-head-line-w) solid var(--table-head-line-c);
-  --table-zebra-bg: #F5FAF8;
+  --table-zebra-bg: var(--pal-tint);
   --list-dot-bg: var(--pal-muted);
   --figure-bg: var(--pal-white);
   --figure-line-c: var(--pal-rule);
@@ -313,6 +314,7 @@ html[data-theme="bold"] {
   --pal-deep: #1B1B1B;
   --pal-danger: #9B2C2C;
   --pal-select-line: #E3E143;
+  --pal-muted-strong: #6E6B5E;
   --strong-line-c: var(--pal-highlight);
   --strong-line-a: 70%;
   --strong-line-h: 38%;
@@ -393,7 +395,7 @@ html[data-theme="bold"] {
   --switch-fg: var(--pal-text);
   --page-bg: var(--pal-paper);
   --band-bg: var(--pal-white);
-  --band-alt-bg: #F9F8DE;
+  --band-alt-bg: var(--pal-tint);
   --headstripe-show: block;
   --divider-line-c: var(--pal-rule);
   --divider-line-w: 1px;
@@ -439,6 +441,7 @@ html[data-theme="bold"] {
   --pal-highlight: #F2C94C;
   --pal-deep: #4F7C87;
   --pal-danger: #C84E6C;
+  --pal-muted-strong: #666666;
   --strong-line-c: var(--pal-highlight);
   --strong-line-a: 0%;
   --strong-line-h: 38%;
@@ -519,7 +522,7 @@ html[data-theme="bold"] {
   --switch-fg: var(--pal-text);
   --page-bg: var(--pal-paper);
   --band-bg: var(--pal-white);
-  --band-alt-bg: #F6F6F6;
+  --band-alt-bg: var(--pal-tint);
   --headstripe-show: block;
   --divider-line-c: var(--pal-rule);
   --divider-line-w: 1px;
@@ -527,7 +530,7 @@ html[data-theme="bold"] {
   --hero-area-bg: transparent;
   --hero-area-orn-show: none;
   --pagefoot-bg: var(--pal-rule);
-  --pagefoot-fg: #666666;
+  --pagefoot-fg: var(--pal-muted-strong);
   --icon-fg: var(--pal-ink);
   --icon-w: 1.5;
   --table-head-line-c: var(--pal-ink);
@@ -540,7 +543,7 @@ html[data-theme="bold"] {
   --figure-line-w: 1px;
   --figure-line: var(--figure-line-w) solid var(--figure-line-c);
   --meter-fill-bg: var(--pal-ink);
-  --meter-track-bg: #DDE5E1;
+  --meter-track-bg: var(--pal-rule);
   --langtag-bg: var(--pal-tint);
   --langtag-fg: var(--pal-ink);
   --orn-show: block;
